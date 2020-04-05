@@ -12,88 +12,90 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 后台管理员Service
+ * Background Administrator Service
  * Created by macro on 2018/4/26.
  */
 public interface UmsAdminService {
     /**
-     * 根据用户名获取后台管理员
+     * Get background administrator based on user name
      */
     UmsAdmin getAdminByUsername(String username);
 
     /**
-     * 注册功能
+     * Registration function
      */
     UmsAdmin register(UmsAdminParam umsAdminParam);
 
     /**
-     * 登录功能
-     * @param username 用户名
-     * @param password 密码
-     * @return 生成的JWT的token
+     * Login function
+     *
+     * @param username Username
+     * @param password Password
+     * @return The generated token of JWT
      */
-    String login(String username,String password);
+    String login(String username, String password);
 
     /**
-     * 刷新token的功能
-     * @param oldToken 旧的token
+     * Refresh token function
+     *
+     * @param oldToken Old token
      */
     String refreshToken(String oldToken);
 
     /**
-     * 根据用户id获取用户
+     * Get user based on user id
      */
     UmsAdmin getItem(Long id);
 
     /**
-     * 根据用户名或昵称分页查询用户
+     * Query users based on user name or nickname
      */
     List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
 
     /**
-     * 修改指定用户信息
+     * Modify specified user information
      */
     int update(Long id, UmsAdmin admin);
 
     /**
-     * 删除指定用户
+     * Delete the specified user
      */
     int delete(Long id);
 
     /**
-     * 修改用户角色关系
+     * Modify user role relationship
      */
     @Transactional
     int updateRole(Long adminId, List<Long> roleIds);
 
     /**
-     * 获取用户对于角色
+     * Get users for roles
      */
     List<UmsRole> getRoleList(Long adminId);
 
     /**
-     * 获取指定用户的可访问资源
+     * Get the accessible resources of the specified user
      */
     List<UmsResource> getResourceList(Long adminId);
 
     /**
-     * 修改用户的+-权限
+     * Modify user's + -permission
      */
     @Transactional
     int updatePermission(Long adminId, List<Long> permissionIds);
 
     /**
-     * 获取用户所有权限（包括角色权限和+-权限）
+     * Get all user permissions (including role permissions and +-permissions)
      */
     List<UmsPermission> getPermissionList(Long adminId);
 
     /**
-     * 修改密码
+     * change Password
      */
     int updatePassword(UpdateAdminPasswordParam updatePasswordParam);
 
     /**
-     * 获取用户信息
+     * Get user information
      */
     UserDetails loadUserByUsername(String username);
 }

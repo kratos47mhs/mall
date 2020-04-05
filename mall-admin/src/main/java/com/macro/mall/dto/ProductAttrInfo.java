@@ -2,7 +2,7 @@ package com.macro.mall.dto;
 
 
 /**
- * 商品分类对应属性信息
+ * Attribute information corresponding to product Category
  * Created by macro on 2018/5/23.
  */
 public class ProductAttrInfo {

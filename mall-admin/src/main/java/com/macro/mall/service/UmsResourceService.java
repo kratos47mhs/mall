@@ -5,27 +5,27 @@ import com.macro.mall.model.UmsResource;
 import java.util.List;
 
 /**
- * 后台资源管理Service
+ * Background Resource Management Service
  * Created by macro on 2020/2/2.
  */
 public interface UmsResourceService {
     /**
-     * 添加资源
+     * 添加资源Add resources
      */
     int create(UmsResource umsResource);
 
     /**
-     * 修改资源
+     * Modify resources
      */
     int update(Long id, UmsResource umsResource);
 
     /**
-     * 获取资源详情
+     * Get resource details
      */
     UmsResource getItem(Long id);
 
     /**
-     * 删除资源
+     * Delete resource
      */
     int delete(Long id);
 

@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 后台资源管理Service实现类
+ * Background resource management Service implementation class
  * Created by macro on 2020/2/2.
  */
 @Service
@@ -23,6 +23,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     private UmsResourceMapper resourceMapper;
     @Autowired
     private UmsAdminCacheService adminCacheService;
+
     @Override
     public int create(UmsResource umsResource) {
         umsResource.setCreateTime(new Date());
@@ -51,17 +52,17 @@ public class UmsResourceServiceImpl implements UmsResourceService {
 
     @Override
     public List<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         UmsResourceExample example = new UmsResourceExample();
         UmsResourceExample.Criteria criteria = example.createCriteria();
-        if(categoryId!=null){
+        if (categoryId != null) {
             criteria.andCategoryIdEqualTo(categoryId);
         }
-        if(StrUtil.isNotEmpty(nameKeyword)){
-            criteria.andNameLike('%'+nameKeyword+'%');
+        if (StrUtil.isNotEmpty(nameKeyword)) {
+            criteria.andNameLike('%' + nameKeyword + '%');
         }
-        if(StrUtil.isNotEmpty(urlKeyword)){
-            criteria.andUrlLike('%'+urlKeyword+'%');
+        if (StrUtil.isNotEmpty(urlKeyword)) {
+            criteria.andUrlLike('%' + urlKeyword + '%');
         }
         return resourceMapper.selectByExample(example);
     }

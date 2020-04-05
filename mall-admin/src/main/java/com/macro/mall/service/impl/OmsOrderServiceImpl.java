@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 订单管理Service实现类
+ * Order management Service implementation class
  * Created by macro on 2018/10/11.
  */
 @Service
@@ -40,17 +40,17 @@ public class OmsOrderServiceImpl implements OmsOrderService {
 
     @Override
     public int delivery(List<OmsOrderDeliveryParam> deliveryParamList) {
-        //批量发货
+        //Bulk shipment
         int count = orderDao.delivery(deliveryParamList);
-        //添加操作记录
+        //Add operation record
         List<OmsOrderOperateHistory> operateHistoryList = deliveryParamList.stream()
                 .map(omsOrderDeliveryParam -> {
                     OmsOrderOperateHistory history = new OmsOrderOperateHistory();
                     history.setOrderId(omsOrderDeliveryParam.getOrderId());
                     history.setCreateTime(new Date());
-                    history.setOperateMan("后台管理员");
+                    history.setOperateMan("Operator name");
                     history.setOrderStatus(2);
-                    history.setNote("完成发货");
+                    history.setNote("Complete delivery");
                     return history;
                 }).collect(Collectors.toList());
         orderOperateHistoryDao.insertList(operateHistoryList);
@@ -68,9 +68,9 @@ public class OmsOrderServiceImpl implements OmsOrderService {
             OmsOrderOperateHistory history = new OmsOrderOperateHistory();
             history.setOrderId(orderId);
             history.setCreateTime(new Date());
-            history.setOperateMan("后台管理员");
+            history.setOperateMan("Operator name");
             history.setOrderStatus(4);
-            history.setNote("订单关闭:"+note);
+            history.setNote("Order closed:"+note);
             return history;
         }).collect(Collectors.toList());
         orderOperateHistoryDao.insertList(historyList);
@@ -104,13 +104,13 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         order.setReceiverRegion(receiverInfoParam.getReceiverRegion());
         order.setModifyTime(new Date());
         int count = orderMapper.updateByPrimaryKeySelective(order);
-        //插入操作记录
+        //Insert operation log
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(receiverInfoParam.getOrderId());
         history.setCreateTime(new Date());
-        history.setOperateMan("后台管理员");
+        history.setOperateMan("Operator name");
         history.setOrderStatus(receiverInfoParam.getStatus());
-        history.setNote("修改收货人信息");
+        history.setNote("Modify Receiver information");
         orderOperateHistoryMapper.insert(history);
         return count;
     }
@@ -123,13 +123,13 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         order.setDiscountAmount(moneyInfoParam.getDiscountAmount());
         order.setModifyTime(new Date());
         int count = orderMapper.updateByPrimaryKeySelective(order);
-        //插入操作记录
+        //Insert operation log
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(moneyInfoParam.getOrderId());
         history.setCreateTime(new Date());
-        history.setOperateMan("后台管理员");
+        history.setOperateMan("Operator name");
         history.setOrderStatus(moneyInfoParam.getStatus());
-        history.setNote("修改费用信息");
+        history.setNote("Edit cost information");
         orderOperateHistoryMapper.insert(history);
         return count;
     }
@@ -144,9 +144,9 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         OmsOrderOperateHistory history = new OmsOrderOperateHistory();
         history.setOrderId(id);
         history.setCreateTime(new Date());
-        history.setOperateMan("后台管理员");
+        history.setOperateMan("Operator name");
         history.setOrderStatus(status);
-        history.setNote("修改备注信息："+note);
+        history.setNote("Modify note information："+note);
         orderOperateHistoryMapper.insert(history);
         return count;
     }

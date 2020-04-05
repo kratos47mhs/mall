@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 优惠券和商品分类关系自定义Dao
+ * Customize the relationship between coupon and product classification
  * Created by macro on 2018/8/28.
  */
 public interface SmsCouponProductCategoryRelationDao {

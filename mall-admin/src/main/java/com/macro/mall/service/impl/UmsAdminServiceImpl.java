@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * UmsAdminService实现类
+ * Ums Admin Service implementation class
  * Created by macro on 2018/4/26.
  */
 @Service
@@ -68,7 +68,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public UmsAdmin getAdminByUsername(String username) {
         UmsAdmin admin = adminCacheService.getAdmin(username);
-        if(admin!=null) return  admin;
+        if (admin != null) return admin;
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
@@ -86,14 +86,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         BeanUtils.copyProperties(umsAdminParam, umsAdmin);
         umsAdmin.setCreateTime(new Date());
         umsAdmin.setStatus(1);
-        //查询是否有相同用户名的用户
+        //Check if there are users with the same username
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(umsAdmin.getUsername());
         List<UmsAdmin> umsAdminList = adminMapper.selectByExample(example);
         if (umsAdminList.size() > 0) {
             return null;
         }
-        //将密码进行加密操作
+        //Encrypt the password
         String encodePassword = passwordEncoder.encode(umsAdmin.getPassword());
         umsAdmin.setPassword(encodePassword);
         adminMapper.insert(umsAdmin);
@@ -103,11 +103,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public String login(String username, String password) {
         String token = null;
-        //密码需要客户端加密后传递
+        //The password needs to be transmitted after the client encrypts
         try {
             UserDetails userDetails = loadUserByUsername(username);
-            if(!passwordEncoder.matches(password,userDetails.getPassword())){
-                throw new BadCredentialsException("密码不正确");
+            if (!passwordEncoder.matches(password, userDetails.getPassword())) {
+                throw new BadCredentialsException("The password is incorrect");
             }
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -115,18 +115,19 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 //            updateLoginTimeByUsername(username);
             insertLoginLog(username);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            LOGGER.warn("Login abnormal:{}", e.getMessage());
         }
         return token;
     }
 
     /**
-     * 添加登录记录
-     * @param username 用户名
+     * Add login record
+     *
+     * @param username Username
      */
     private void insertLoginLog(String username) {
         UmsAdmin admin = getAdminByUsername(username);
-        if(admin==null) return;
+        if (admin == null) return;
         UmsAdminLoginLog loginLog = new UmsAdminLoginLog();
         loginLog.setAdminId(admin.getId());
         loginLog.setCreateTime(new Date());
@@ -137,7 +138,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     /**
-     * 根据用户名修改登录时间
+     * Modify login time based on user name
      */
     private void updateLoginTimeByUsername(String username) {
         UmsAdmin record = new UmsAdmin();
@@ -173,14 +174,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public int update(Long id, UmsAdmin admin) {
         admin.setId(id);
         UmsAdmin rawAdmin = adminMapper.selectByPrimaryKey(id);
-        if(rawAdmin.getPassword().equals(admin.getPassword())){
-            //与原加密密码相同的不需要修改
+        if (rawAdmin.getPassword().equals(admin.getPassword())) {
+            //The same as the original encrypted password does not need to be modified
             admin.setPassword(null);
-        }else{
-            //与原加密密码不同的需要加密修改
-            if(StrUtil.isEmpty(admin.getPassword())){
+        } else {
+            //Different from the original encrypted password requires encryption modification
+            if (StrUtil.isEmpty(admin.getPassword())) {
                 admin.setPassword(null);
-            }else{
+            } else {
                 admin.setPassword(passwordEncoder.encode(admin.getPassword()));
             }
         }
@@ -200,11 +201,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public int updateRole(Long adminId, List<Long> roleIds) {
         int count = roleIds == null ? 0 : roleIds.size();
-        //先删除原来的关系
+        //First delete the original relationship
         UmsAdminRoleRelationExample adminRoleRelationExample = new UmsAdminRoleRelationExample();
         adminRoleRelationExample.createCriteria().andAdminIdEqualTo(adminId);
         adminRoleRelationMapper.deleteByExample(adminRoleRelationExample);
-        //建立新关系
+        //Build a new relationship
         if (!CollectionUtils.isEmpty(roleIds)) {
             List<UmsAdminRoleRelation> list = new ArrayList<>();
             for (Long roleId : roleIds) {
@@ -227,43 +228,43 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public List<UmsResource> getResourceList(Long adminId) {
         List<UmsResource> resourceList = adminCacheService.getResourceList(adminId);
-        if(CollUtil.isNotEmpty(resourceList)){
-            return  resourceList;
+        if (CollUtil.isNotEmpty(resourceList)) {
+            return resourceList;
         }
         resourceList = adminRoleRelationDao.getResourceList(adminId);
-        if(CollUtil.isNotEmpty(resourceList)){
-            adminCacheService.setResourceList(adminId,resourceList);
+        if (CollUtil.isNotEmpty(resourceList)) {
+            adminCacheService.setResourceList(adminId, resourceList);
         }
         return resourceList;
     }
 
     @Override
     public int updatePermission(Long adminId, List<Long> permissionIds) {
-        //删除原所有权限关系
+        //Delete all original permission relationships
         UmsAdminPermissionRelationExample relationExample = new UmsAdminPermissionRelationExample();
         relationExample.createCriteria().andAdminIdEqualTo(adminId);
         adminPermissionRelationMapper.deleteByExample(relationExample);
-        //获取用户所有角色权限
+        //Get all user role permissions
         List<UmsPermission> permissionList = adminRoleRelationDao.getRolePermissionList(adminId);
         List<Long> rolePermissionList = permissionList.stream().map(UmsPermission::getId).collect(Collectors.toList());
         if (!CollectionUtils.isEmpty(permissionIds)) {
             List<UmsAdminPermissionRelation> relationList = new ArrayList<>();
-            //筛选出+权限
+            //Filter out + permissions
             List<Long> addPermissionIdList = permissionIds.stream().filter(permissionId -> !rolePermissionList.contains(permissionId)).collect(Collectors.toList());
-            //筛选出-权限
+            //Filter out-permissions
             List<Long> subPermissionIdList = rolePermissionList.stream().filter(permissionId -> !permissionIds.contains(permissionId)).collect(Collectors.toList());
-            //插入+-权限关系
-            relationList.addAll(convert(adminId,1,addPermissionIdList));
-            relationList.addAll(convert(adminId,-1,subPermissionIdList));
+            //Insert + -permission relationship
+            relationList.addAll(convert(adminId, 1, addPermissionIdList));
+            relationList.addAll(convert(adminId, -1, subPermissionIdList));
             return adminPermissionRelationDao.insertList(relationList);
         }
         return 0;
     }
 
     /**
-     * 将+-权限关系转化为对象
+     * Translate + -permission relationship into object
      */
-    private List<UmsAdminPermissionRelation> convert(Long adminId,Integer type,List<Long> permissionIdList) {
+    private List<UmsAdminPermissionRelation> convert(Long adminId, Integer type, List<Long> permissionIdList) {
         List<UmsAdminPermissionRelation> relationList = permissionIdList.stream().map(permissionId -> {
             UmsAdminPermissionRelation relation = new UmsAdminPermissionRelation();
             relation.setAdminId(adminId);
@@ -281,19 +282,19 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public int updatePassword(UpdateAdminPasswordParam param) {
-        if(StrUtil.isEmpty(param.getUsername())
-                ||StrUtil.isEmpty(param.getOldPassword())
-                ||StrUtil.isEmpty(param.getNewPassword())){
+        if (StrUtil.isEmpty(param.getUsername())
+                || StrUtil.isEmpty(param.getOldPassword())
+                || StrUtil.isEmpty(param.getNewPassword())) {
             return -1;
         }
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(param.getUsername());
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
-        if(CollUtil.isEmpty(adminList)){
+        if (CollUtil.isEmpty(adminList)) {
             return -2;
         }
         UmsAdmin umsAdmin = adminList.get(0);
-        if(!passwordEncoder.matches(param.getOldPassword(),umsAdmin.getPassword())){
+        if (!passwordEncoder.matches(param.getOldPassword(), umsAdmin.getPassword())) {
             return -3;
         }
         umsAdmin.setPassword(passwordEncoder.encode(param.getNewPassword()));
@@ -303,13 +304,13 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username){
-        //获取用户信息
+    public UserDetails loadUserByUsername(String username) {
+        //Get user information
         UmsAdmin admin = getAdminByUsername(username);
         if (admin != null) {
             List<UmsResource> resourceList = getResourceList(admin.getId());
-            return new AdminUserDetails(admin,resourceList);
+            return new AdminUserDetails(admin, resourceList);
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        throw new UsernameNotFoundException("wrong username or password");
     }
 }

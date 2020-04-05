@@ -6,52 +6,52 @@ import com.macro.mall.model.UmsResource;
 import java.util.List;
 
 /**
- * 后台用户缓存操作类
+ * Admin cache operation class
  * Created by macro on 2020/3/13.
  */
 public interface UmsAdminCacheService {
     /**
-     * 删除后台用户缓存
+     * Delete Admin cache
      */
     void delAdmin(Long adminId);
 
     /**
-     * 删除后台用户资源列表缓存
+     * Delete Admin resource list cache
      */
     void delResourceList(Long adminId);
 
     /**
-     * 当角色相关资源信息改变时删除相关后台用户缓存
+     * Delete the relevant Admin cache when the role-related resource information changes
      */
     void delResourceListByRole(Long roleId);
 
     /**
-     * 当角色相关资源信息改变时删除相关后台用户缓存
+     * Delete the relevant admin cache when the role-related resource information changes
      */
     void delResourceListByRoleIds(List<Long> roleIds);
 
     /**
-     * 当资源信息改变时，删除资源项目后台用户缓存
+     * When the resource information changes, delete the resource user admin cache
      */
     void delResourceListByResource(Long resourceId);
 
     /**
-     * 获取缓存后台用户信息
+     * Get cached user information
      */
     UmsAdmin getAdmin(String username);
 
     /**
-     * 设置缓存后台用户信息
+     * Set to cache admin information
      */
     void setAdmin(UmsAdmin admin);
 
     /**
-     * 获取缓存后台用户资源列表
+     * Get a list of cached admin resources
      */
     List<UmsResource> getResourceList(Long adminId);
 
     /**
-     * 设置后台后台用户资源列表
+     * Set the background and admin resource list
      */
     void setResourceList(Long adminId, List<UmsResource> resourceList);
 }

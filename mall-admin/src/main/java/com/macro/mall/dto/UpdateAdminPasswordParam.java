@@ -7,19 +7,19 @@ import lombok.Setter;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 修改用户名密码参数
+ * Modify username and password parameters
  * Created by macro on 2019/10/9.
  */
 @Getter
 @Setter
 public class UpdateAdminPasswordParam {
-    @ApiModelProperty(value = "用户名", required = true)
-    @NotEmpty(message = "用户名不能为空")
+    @ApiModelProperty(value = "Username", required = true)
+    @NotEmpty(message = "Username can not be empty")
     private String username;
-    @ApiModelProperty(value = "旧密码", required = true)
-    @NotEmpty(message = "旧密码不能为空")
+    @ApiModelProperty(value = "Old Password", required = true)
+    @NotEmpty(message = "Old password cannot be empty")
     private String oldPassword;
-    @ApiModelProperty(value = "新密码", required = true)
-    @NotEmpty(message = "新密码不能为空")
+    @ApiModelProperty(value = "New Password", required = true)
+    @NotEmpty(message = "The new password cannot be empty")
     private String newPassword;
 }

@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * Commodity topic Service implementation class
+ * Product topic Service implementation class
  * Created by macro on 2018/6/1.
  */
 @Service

@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * UmsAdminCacheService实现类
+ * Ums Admin Cache Service implementation class
  * Created by macro on 2020/3/13.
  */
 @Service

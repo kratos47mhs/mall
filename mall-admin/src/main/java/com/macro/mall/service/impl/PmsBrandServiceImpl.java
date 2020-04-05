@@ -17,7 +17,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * Commodity brand service implementation class
+ * Product brand service implementation class
  * Created by macro on 2018/4/26.
  */
 @Service

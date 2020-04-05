@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 限时购及商品信息封装
+ * Flash Promotion and product information packaging
  * Created by macro on 2018/11/16.
  */
 public class SmsFlashPromotionProduct extends SmsFlashPromotionProductRelation{

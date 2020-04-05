@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 后台资源分类管理Service实现类
+ * Background resource Category management Service implementation class
  * Created by macro on 2020/2/5.
  */
 @Service

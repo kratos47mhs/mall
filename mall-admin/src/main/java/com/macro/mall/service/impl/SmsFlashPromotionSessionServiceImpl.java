@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 限时购场次管理Service实现类
+ * Service implementation class for Flash Promotion session management
  * Created by macro on 2018/11/16.
  */
 @Service

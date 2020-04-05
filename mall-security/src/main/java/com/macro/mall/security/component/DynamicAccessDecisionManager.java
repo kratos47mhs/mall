@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * 动态权限决策管理器，用于判断用户是否有访问权限
+ * Dynamic authority decision manager, used to judge whether the user has access authority
  * Created by macro on 2020/2/7.
  */
 public class DynamicAccessDecisionManager implements AccessDecisionManager {
@@ -20,14 +20,14 @@ public class DynamicAccessDecisionManager implements AccessDecisionManager {
     @Override
     public void decide(Authentication authentication, Object object,
                        Collection<ConfigAttribute> configAttributes) throws AccessDeniedException, InsufficientAuthenticationException {
-        // 当接口未被配置资源时直接放行
+        // Release directly when the interface is not configured with resources
         if (CollUtil.isEmpty(configAttributes)) {
             return;
         }
         Iterator<ConfigAttribute> iterator = configAttributes.iterator();
         while (iterator.hasNext()) {
             ConfigAttribute configAttribute = iterator.next();
-            //将访问所需资源或用户拥有资源进行比对
+            //Compare resources required for access or resources owned by users
             String needAuthority = configAttribute.getAttribute();
             for (GrantedAuthority grantedAuthority : authentication.getAuthorities()) {
                 if (needAuthority.trim().equals(grantedAuthority.getAuthority())) {
@@ -35,7 +35,7 @@ public class DynamicAccessDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        throw new AccessDeniedException("抱歉，您没有访问权限");
+        throw new AccessDeniedException("Sorry, you do not have access");
     }
 
     @Override

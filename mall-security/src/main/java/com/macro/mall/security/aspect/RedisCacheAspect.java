@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 
 /**
- * Redis缓存切面，防止Redis宕机影响正常业务逻辑
+ * Redis cache aspect to prevent Redis downtime from affecting normal business logic
  * Created by macro on 2020/3/17.
  */
 @Aspect
@@ -37,7 +37,7 @@ public class RedisCacheAspect {
         try {
             result = joinPoint.proceed();
         } catch (Throwable throwable) {
-            //有CacheException注解的方法需要抛出异常
+            //Methods annotated with Cache Exception need to throw an exception
             if (method.isAnnotationPresent(CacheException.class)) {
                 throw throwable;
             } else {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Receiving Address Management Service Implementation Class
+ * List Company Address Management Service Implementation Class
  * Created by macro on 2018/10/18.
  */
 @Service

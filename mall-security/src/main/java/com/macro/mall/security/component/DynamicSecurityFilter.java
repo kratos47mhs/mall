@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * 动态权限过滤器，用于实现基于路径的动态权限过滤
+ * Dynamic permission filter, used to implement path-based dynamic permission filtering
  * Created by macro on 2020/2/7.
  */
 public class DynamicSecurityFilter extends AbstractSecurityInterceptor implements Filter {
@@ -38,12 +38,12 @@ public class DynamicSecurityFilter extends AbstractSecurityInterceptor implement
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         FilterInvocation fi = new FilterInvocation(servletRequest, servletResponse, filterChain);
-        //OPTIONS请求直接放行
+        //OPTIONS request direct release
         if(request.getMethod().equals(HttpMethod.OPTIONS.toString())){
             fi.getChain().doFilter(fi.getRequest(), fi.getResponse());
             return;
         }
-        //白名单请求直接放行
+        //Whitelist request for direct release
         PathMatcher pathMatcher = new AntPathMatcher();
         for (String path : ignoreUrlsConfig.getUrls()) {
             if(pathMatcher.match(path,request.getRequestURI())){
@@ -51,7 +51,7 @@ public class DynamicSecurityFilter extends AbstractSecurityInterceptor implement
                 return;
             }
         }
-        //此处会调用AccessDecisionManager中的decide方法进行鉴权操作
+        //Here will call the decide method in Access Decision Manager for authentication operation
         InterceptorStatusToken token = super.beforeInvocation(fi);
         try {
             fi.getChain().doFilter(fi.getRequest(), fi.getResponse());

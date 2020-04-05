@@ -8,27 +8,27 @@ import com.macro.mall.model.OmsOrderReturnApply;
 import java.util.List;
 
 /**
- * 退货申请管理Service
+ * Return Order Application Management Service
  * Created by macro on 2018/10/18.
  */
 public interface OmsOrderReturnApplyService {
     /**
-     * 分页查询申请
+     * Query application by page
      */
     List<OmsOrderReturnApply> list(OmsReturnApplyQueryParam queryParam, Integer pageSize, Integer pageNum);
 
     /**
-     * 批量删除申请
+     * Delete applications in bulk
      */
     int delete(List<Long> ids);
 
     /**
-     * 修改申请状态
+     * Modify application status
      */
     int updateStatus(Long id, OmsUpdateStatusParam statusParam);
 
     /**
-     * 获取指定申请详情
+     * Get specific application details
      */
     OmsOrderReturnApplyResult getItem(Long id);
 }

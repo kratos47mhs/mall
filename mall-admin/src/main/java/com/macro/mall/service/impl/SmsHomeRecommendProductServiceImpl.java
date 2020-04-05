@@ -12,13 +12,14 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * 首页人气推荐管理Service实现类
+ * Home Product Recommendation Management Service Implementation Class
  * Created by macro on 2018/11/7.
  */
 @Service
 public class SmsHomeRecommendProductServiceImpl implements SmsHomeRecommendProductService {
     @Autowired
     private SmsHomeRecommendProductMapper recommendProductMapper;
+
     @Override
     public int create(List<SmsHomeRecommendProduct> homeRecommendProductList) {
         for (SmsHomeRecommendProduct recommendProduct : homeRecommendProductList) {
@@ -50,18 +51,18 @@ public class SmsHomeRecommendProductServiceImpl implements SmsHomeRecommendProdu
         example.createCriteria().andIdIn(ids);
         SmsHomeRecommendProduct record = new SmsHomeRecommendProduct();
         record.setRecommendStatus(recommendStatus);
-        return recommendProductMapper.updateByExampleSelective(record,example);
+        return recommendProductMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public List<SmsHomeRecommendProduct> list(String productName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         SmsHomeRecommendProductExample example = new SmsHomeRecommendProductExample();
         SmsHomeRecommendProductExample.Criteria criteria = example.createCriteria();
-        if(!StringUtils.isEmpty(productName)){
-            criteria.andProductNameLike("%"+productName+"%");
+        if (!StringUtils.isEmpty(productName)) {
+            criteria.andProductNameLike("%" + productName + "%");
         }
-        if(recommendStatus!=null){
+        if (recommendStatus != null) {
             criteria.andRecommendStatusEqualTo(recommendStatus);
         }
         example.setOrderByClause("sort desc");

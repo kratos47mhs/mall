@@ -5,37 +5,37 @@ import com.macro.mall.model.SmsHomeAdvertise;
 import java.util.List;
 
 /**
- * 首页广告管理Service
+ * Homepage Advertising Management Service
  * Created by macro on 2018/11/7.
  */
 public interface SmsHomeAdvertiseService {
     /**
-     * 添加广告
+     * Add ad
      */
     int create(SmsHomeAdvertise advertise);
 
     /**
-     * 批量删除广告
+     * Delete ads in bulk
      */
     int delete(List<Long> ids);
 
     /**
-     * 修改上、下线状态
+     * Modify the online and offline status
      */
     int updateStatus(Long id, Integer status);
 
     /**
-     * 获取广告详情
+     * Get ad details
      */
     SmsHomeAdvertise getItem(Long id);
 
     /**
-     * 更新广告
+     * Update ads
      */
     int update(Long id, SmsHomeAdvertise advertise);
 
     /**
-     * 分页查询广告
+     * Pagination query ads
      */
     List<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum);
 }
