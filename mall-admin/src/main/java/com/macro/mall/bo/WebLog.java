@@ -1,32 +1,32 @@
 package com.macro.mall.bo;
 
 /**
- * Controller层的日志封装类
+ * Controller layer log encapsulation class
  * Created by macro on 2018/4/26.
  */
 public class WebLog {
     /**
-     * 操作描述
+     * Operation description
      */
     private String description;
 
     /**
-     * 操作用户
+     * Operating user
      */
     private String username;
 
     /**
-     * 操作时间
+     * Operating time
      */
     private Long startTime;
 
     /**
-     * 消耗时间
+     * Time consuming
      */
     private Integer spendTime;
 
     /**
-     * 根路径
+     * Base path
      */
     private String basePath;
 
@@ -41,12 +41,12 @@ public class WebLog {
     private String url;
 
     /**
-     * 请求类型
+     * Request type
      */
     private String method;
 
     /**
-     * IP地址
+     * IP address
      */
     private String ip;
 

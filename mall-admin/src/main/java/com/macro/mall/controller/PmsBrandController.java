@@ -16,24 +16,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 品牌功能Controller
+ * Brand Function Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsBrandController", description = "商品品牌管理")
+@Api(tags = "PmsBrandController", description = "Commodity brand management")
 @RequestMapping("/brand")
 public class PmsBrandController {
     @Autowired
     private PmsBrandService brandService;
 
-    @ApiOperation(value = "获取全部品牌列表")
+    @ApiOperation(value = "Get a list of all brands")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> getList() {
         return CommonResult.success(brandService.listAllBrand());
     }
 
-    @ApiOperation(value = "添加品牌")
+    @ApiOperation(value = "Add brand")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@Validated @RequestBody PmsBrandParam pmsBrand, BindingResult result) {
@@ -47,7 +47,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "更新品牌")
+    @ApiOperation(value = "Update brand")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable("id") Long id,
@@ -63,7 +63,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "删除品牌")
+    @ApiOperation(value = "Remove brand")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@PathVariable("id") Long id) {
@@ -75,7 +75,7 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "根据品牌名称分页获取品牌列表")
+    @ApiOperation(value = "Get a list of brands based on the brand name page")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsBrand>> getList(@RequestParam(value = "keyword", required = false) String keyword,
@@ -85,14 +85,14 @@ public class PmsBrandController {
         return CommonResult.success(CommonPage.restPage(brandList));
     }
 
-    @ApiOperation(value = "根据编号查询品牌信息")
+    @ApiOperation(value = "Query brand information by number")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsBrand> getItem(@PathVariable("id") Long id) {
         return CommonResult.success(brandService.getBrand(id));
     }
 
-    @ApiOperation(value = "批量删除品牌")
+    @ApiOperation(value = "Delete brands in bulk")
     @RequestMapping(value = "/delete/batch", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult deleteBatch(@RequestParam("ids") List<Long> ids) {
@@ -104,11 +104,11 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "批量更新显示状态")
+    @ApiOperation(value = "Batch update display status")
     @RequestMapping(value = "/update/showStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateShowStatus(@RequestParam("ids") List<Long> ids,
-                                   @RequestParam("showStatus") Integer showStatus) {
+                                         @RequestParam("showStatus") Integer showStatus) {
         int count = brandService.updateShowStatus(ids, showStatus);
         if (count > 0) {
             return CommonResult.success(count);
@@ -117,11 +117,11 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "批量更新厂家制造商状态")
+    @ApiOperation(value = "Update the manufacturer status in batches")
     @RequestMapping(value = "/update/factoryStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateFactoryStatus(@RequestParam("ids") List<Long> ids,
-                                      @RequestParam("factoryStatus") Integer factoryStatus) {
+                                            @RequestParam("factoryStatus") Integer factoryStatus) {
         int count = brandService.updateFactoryStatus(ids, factoryStatus);
         if (count > 0) {
             return CommonResult.success(count);

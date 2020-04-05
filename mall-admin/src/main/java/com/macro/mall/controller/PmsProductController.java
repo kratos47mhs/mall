@@ -17,17 +17,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 商品管理Controller
+ * Product Management Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductController", description = "商品管理")
+@Api(tags = "PmsProductController", description = "Commodity management")
 @RequestMapping("/product")
 public class PmsProductController {
     @Autowired
     private PmsProductService productService;
 
-    @ApiOperation("创建商品")
+    @ApiOperation("Create product")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody PmsProductParam productParam, BindingResult bindingResult) {
@@ -39,7 +39,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("根据商品id获取商品编辑信息")
+    @ApiOperation("Get product editing information based on product id")
     @RequestMapping(value = "/updateInfo/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsProductResult> getUpdateInfo(@PathVariable Long id) {
@@ -47,7 +47,7 @@ public class PmsProductController {
         return CommonResult.success(productResult);
     }
 
-    @ApiOperation("更新商品")
+    @ApiOperation("Update product")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody PmsProductParam productParam, BindingResult bindingResult) {
@@ -59,7 +59,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("查询商品")
+    @ApiOperation("Check product")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsProduct>> getList(PmsProductQueryParam productQueryParam,
@@ -69,7 +69,7 @@ public class PmsProductController {
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
-    @ApiOperation("根据商品名称或货号模糊查询")
+    @ApiOperation("Fuzzy query based on product name or article number")
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> getList(String keyword) {
@@ -77,7 +77,7 @@ public class PmsProductController {
         return CommonResult.success(productList);
     }
 
-    @ApiOperation("批量修改审核状态")
+    @ApiOperation("Bulk edit review status")
     @RequestMapping(value = "/update/verifyStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateVerifyStatus(@RequestParam("ids") List<Long> ids,
@@ -91,7 +91,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量上下架")
+    @ApiOperation("Batch loading and unloading")
     @RequestMapping(value = "/update/publishStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updatePublishStatus(@RequestParam("ids") List<Long> ids,
@@ -104,7 +104,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量推荐商品")
+    @ApiOperation("Recommended products in bulk")
     @RequestMapping(value = "/update/recommendStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateRecommendStatus(@RequestParam("ids") List<Long> ids,
@@ -117,7 +117,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量设为新品")
+    @ApiOperation("Batch set as new")
     @RequestMapping(value = "/update/newStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateNewStatus(@RequestParam("ids") List<Long> ids,
@@ -130,7 +130,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量修改删除状态")
+    @ApiOperation("Bulk edit and delete status")
     @RequestMapping(value = "/update/deleteStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateDeleteStatus(@RequestParam("ids") List<Long> ids,

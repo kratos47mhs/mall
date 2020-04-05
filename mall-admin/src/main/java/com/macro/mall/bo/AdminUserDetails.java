@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * SpringSecurity需要的用户详情
+ * User details required by Spring Security
  * Created by macro on 2018/4/26.
  */
 public class AdminUserDetails implements UserDetails {
@@ -24,7 +24,7 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        //返回当前用户的角色
+        //Returns the current user's role
         return resourceList.stream()
                 .map(role ->new SimpleGrantedAuthority(role.getId()+":"+role.getName()))
                 .collect(Collectors.toList());

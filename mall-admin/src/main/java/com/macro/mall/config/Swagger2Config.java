@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger2API文档的配置
+ * Swagger 2 API documentation configuration
  * Created by macro on 2018/4/26.
  */
 @Configuration
@@ -38,15 +38,15 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mall后台系统")
-                .description("mall后台模块")
-                .contact("macro")
+                .title("mall backend system")
+                .description("mall backend module")
+                .contact("kratos47mhs")
                 .version("1.0")
                 .build();
     }
 
     private List<ApiKey> securitySchemes() {
-        //设置请求头信息
+        //Set request header information
         List<ApiKey> result = new ArrayList<>();
         ApiKey apiKey = new ApiKey("Authorization", "Authorization", "header");
         result.add(apiKey);
@@ -54,7 +54,7 @@ public class Swagger2Config {
     }
 
     private List<SecurityContext> securityContexts() {
-        //设置需要登录认证的路径
+        //Set the path that requires login authentication
         List<SecurityContext> result = new ArrayList<>();
         result.add(getContextByPath("/brand/.*"));
         result.add(getContextByPath("/product/.*"));
