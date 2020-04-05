@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface PmsProductAttributeCategoryDao {
     /**
-     * 获取包含商品属性的商品属性分类列表
+     * 获取包含属性的商品属性分类
      */
     List<PmsProductAttributeCategoryItem> getListWithAttr();
 }

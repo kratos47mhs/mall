@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface PmsProductCategoryDao {
     /**
-     * 获取包括子分类的商品分类列表
+     * 获取商品分类及其子分类
      */
     List<PmsProductCategoryWithChildrenItem> listWithChildren();
 }
