@@ -62,37 +62,37 @@ docker tag macro/eureka-server:0.0.1 localhost:5000/macro/eureka-server:0.0.1
     pom.xml修改<imageName>192.168.1.71:5000/macro/${project.artifactId}:${project.version}</imageName>
 - tip：
     docker要支持http:echo '{ "insecure-registries":["39.98.190.128:5000"] }' > /etc/docker/daemon.json 
-### 修改Docker镜像存放位置
+### Modify the storage location of the Docker image
 1. 查看Docker的存放位置：docker info | grep "Docker Root Dir"（默认为/var/lib/docker）
 2. 关闭Docker服务：systemctl stop docker
 3. 移动目录到目标路径：mv /var/lib/docker /root/data/docker
 4. 建立软连接：ln -s /root/data/docker /var/lib/docker
 
 ## Docker compose
-### 安装
-1. 下载地址：https://github.com/docker/compose/releases
-2. 安装地址：/usr/local/bin/docker-compose
-3. 设置为可执行：sudo chmod +x /usr/local/bin/docker-compose
-4. 测试是否安装成功：docker-compose --version
+### installation
+1. download link：https://github.com/docker/compose/releases
+2. Installation address：/usr/local/bin/docker-compose
+3. Set as executable：sudo chmod +x /usr/local/bin/docker-compose
+4. Test whether the installation is successful：docker-compose --version
 
-### 安装命令补全工具
+### Install command completion tool
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.22.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
-### 常用命令
-- 构建、创建、启动相关容器：docker-compose up
-- 列出所有容器：docker-compose ps
-- 删除指定服务的容器：docker-compose rm eureka
-- 对容器进行动态扩容：docker-compose scale eureka=3
-- 停止相关容器：docker-compose stop eureka
-- 启动相关容器：docker-compose start eureka
+### Common commands
+- Build, create, and start related containers：docker-compose up
+- List all containers：docker-compose ps
+- Delete the specified service container：docker-compose rm eureka
+- Dynamically expand containers：docker-compose scale eureka=3
+- Stop related container：docker-compose stop eureka
+- Start the relevant container：docker-compose start eureka
 
-### 编排SpringCloud微服务
-#### 所使用到的工程
+### Orchestrate Spring Cloud microservices
+#### The project used
 - eureka-server
 - hello-service
 - feign-consumer
 - api-gateway
-#### 编排模式
-1. 编排SpringCloud微服务：见eureka-server/docker-res/docker-compose.yml
-2. 简化SpringCloud微服务编排：见eureka-server/docker-res/docker-compose-simple.yml
-3. 编排高可用的注册中心：见eureka-server/docker-res/docker-compose-eureka.yml
+#### Orchestration mode
+1. Orchestrate Spring Cloud microservices：See eureka-server/docker-res/docker-compose.yml
+2. Simplify orchestration of Spring Cloud microservices：See eureka-server/docker-res/docker-compose-simple.yml
+3. Orchestrate a highly available registry：See eureka-server/docker-res/docker-compose-eureka.yml

@@ -19,7 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
 /**
- * SpringSecurity的配置
+ * Spring Security configuration
  */
 @Configuration
 @EnableWebSecurity
@@ -29,29 +29,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()//配置权限
-//                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
-                .antMatchers("/").authenticated()//该路径需要登录认证
-//                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
+        http.authorizeRequests()//Configure permissions
+//                .antMatchers("/").access("hasRole('TEST')")//This path requires the TEST role
+                .antMatchers("/").authenticated()//This path requires login authentication
+//                .antMatchers("/brand/list").hasAuthority("TEST")//This path requires TEST permission
                 .antMatchers("/**").permitAll()
-                .and()//启用基于http的认证
+                .and()//Enable http-based authentication
                 .httpBasic()
                 .realmName("/")
-                .and()//配置登录页面
+                .and()//Configure login page
                 .formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
-                .and()//配置退出路径
+                .and()//Configure exit path
                 .logout()
                 .logoutSuccessUrl("/")
-//                .and()//记住密码功能
+//                .and()//Remember password function
 //                .rememberMe()
 //                .tokenValiditySeconds(60*60*24)
 //                .key("rememberMeKey")
-                .and()//关闭跨域伪造
+                .and()//Turn off cross-domain forgery
                 .csrf()
                 .disable()
-                .headers()//去除X-Frame-Options
+                .headers()//Remove X-Frame-Options
                 .frameOptions()
                 .disable();
     }
@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        //获取登录用户信息
+        //Get login user information
         return new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -73,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 if (umsAdminList != null && umsAdminList.size() > 0) {
                     return new AdminUserDetails(umsAdminList.get(0));
                 }
-                throw new UsernameNotFoundException("用户名或密码错误");
+                throw new UsernameNotFoundException("Wrong Username or Password");
             }
         };
     }

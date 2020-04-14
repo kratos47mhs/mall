@@ -11,4 +11,4 @@ target/
 .project
 
 # Vscode #
-.vscode/
+/.vscode/

@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Dynamic authority decision manager, used to judge whether the user has access authority
+ * Dynamic Access decision manager, used to judge whether the user has access authority
  * Created by macro on 2020/2/7.
  */
 public class DynamicAccessDecisionManager implements AccessDecisionManager {

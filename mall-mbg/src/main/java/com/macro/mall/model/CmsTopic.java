@@ -1,6 +1,7 @@
 package com.macro.mall.model;
 
 import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -17,21 +18,21 @@ public class CmsTopic implements Serializable {
 
     private Date endTime;
 
-    @ApiModelProperty(value = "参与人数")
+    @ApiModelProperty(value = "The number of participants")
     private Integer attendCount;
 
-    @ApiModelProperty(value = "关注人数")
+    @ApiModelProperty(value = "Followers")
     private Integer attentionCount;
 
     private Integer readCount;
 
-    @ApiModelProperty(value = "奖品名称")
+    @ApiModelProperty(value = "Award name")
     private String awardName;
 
-    @ApiModelProperty(value = "参与方式")
+    @ApiModelProperty(value = "way of participation")
     private String attendType;
 
-    @ApiModelProperty(value = "话题内容")
+    @ApiModelProperty(value = "Topic content")
     private String content;
 
     private static final long serialVersionUID = 1L;

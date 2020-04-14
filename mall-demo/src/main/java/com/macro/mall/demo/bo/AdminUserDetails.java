@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * SpringSecurity需要的用户详情
+ * User details required by Spring Security
  */
 public class AdminUserDetails implements UserDetails {
     private UmsAdmin umsAdmin;
@@ -20,7 +20,7 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        //返回当前用户的权限
+        //Returns the current user's permissions
         return Arrays.asList(new SimpleGrantedAuthority("TEST"));
     }
 

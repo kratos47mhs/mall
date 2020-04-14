@@ -11,7 +11,7 @@ spring:
     encoding: utf-8
     servlet:
       content-type: text/html
-    cache: false #开发时关闭缓存,不然没法看到实时页面
+    cache: false #Turn off the cache during development, otherwise you can't see the real-time page
 
 mybatis:
   mapper-locations:
@@ -20,11 +20,11 @@ mybatis:
 
 logging:
   level:
-    root: info #日志配置DEBUG,INFO,WARN,ERROR
+    root: info #Log configuration DEBUG,INFO,WARN,ERROR
     com.macro.mall: debug
-#  file: demo_log.log #配置日志生成路径
-#  path: /var/logs #配置日志文件名称
+#  file: demo_log.log #Configure log generation path
+#  path: /var/logs #Configure the log file name
 
 host:
   mall:
-   admin: http://localhost:8080
+    admin: http://localhost:8080
