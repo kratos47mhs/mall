@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 
 /**
- * 对SpringSecurity的配置的扩展，支持自定义白名单资源路径和查询用户逻辑
+ * Extension to the configuration of Spring Security, support custom whitelist resource path and query user logic
  * Created by macro on 2019/11/5.
  */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -31,33 +31,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
                 .authorizeRequests();
-        //不需要保护的资源路径允许访问
+        //Allow access to resource paths that do not require protection
         for (String url : ignoreUrlsConfig().getUrls()) {
             registry.antMatchers(url).permitAll();
         }
-        //允许跨域请求的OPTIONS请求
+        //Allow OPTIONS requests across domains
         registry.antMatchers(HttpMethod.OPTIONS)
                 .permitAll();
-        // 任何请求需要身份认证
+        // Any request requires authentication
         registry.and()
                 .authorizeRequests()
                 .anyRequest()
                 .authenticated()
-                // 关闭跨站请求防护及不使用session
+                // Turn off cross-site request protection and do not use session
                 .and()
                 .csrf()
                 .disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                // 自定义权限拒绝处理类
+                // Custom permission denied processing class
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler())
                 .authenticationEntryPoint(restAuthenticationEntryPoint())
-                // 自定义权限拦截器JWT过滤器
+                // Custom permission interceptor JWT filter
                 .and()
                 .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-        //有动态权限配置时添加动态权限校验过滤器
+        //Add dynamic permission verification filter when there is dynamic permission configuration
         if(dynamicSecurityService!=null){
             registry.and().addFilterBefore(dynamicSecurityFilter(), FilterSecurityInterceptor.class);
         }

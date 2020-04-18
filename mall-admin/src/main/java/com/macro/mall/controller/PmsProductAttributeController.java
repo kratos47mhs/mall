@@ -22,7 +22,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductAttributeController", description = "Commodity attribute management")
+@Api(tags = "PmsProductAttributeController", description = "Product attribute management")
 @RequestMapping("/productAttribute")
 public class PmsProductAttributeController {
     @Autowired

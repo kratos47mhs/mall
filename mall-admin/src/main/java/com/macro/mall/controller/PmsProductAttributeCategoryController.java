@@ -18,7 +18,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductAttributeCategoryController", description = "Commodity attribute classification management")
+@Api(tags = "PmsProductAttributeCategoryController", description = "Product attribute classification management")
 @RequestMapping("/productAttribute/category")
 public class PmsProductAttributeCategoryController {
     @Autowired

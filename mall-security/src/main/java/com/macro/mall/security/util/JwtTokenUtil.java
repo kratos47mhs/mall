@@ -58,7 +58,7 @@ public class JwtTokenUtil {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            LOGGER.info("JWT格式验证失败:{}", token);
+            LOGGER.info("JWT format verification failed:{}", token);
         }
         return claims;
     }
@@ -122,55 +122,56 @@ public class JwtTokenUtil {
     }
 
     /**
-<<<<<<< HEAD:mall-admin/src/main/java/com/macro/mall/util/JwtTokenUtil.java
+     * <<<<<<< HEAD:mall-admin/src/main/java/com/macro/mall/util/JwtTokenUtil.java
      * Determine if the token can be refreshed
-=======
-     * 当原来的token没过期时是可以刷新的
+     * =======
+     * It can be refreshed when the original token has not expired
      *
      * @param oldToken 带tokenHead的token
->>>>>>> 7e420f19689f24fbd05f2452fed85dc991ea73b7:mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java
+     *                 >>>>>>> 7e420f19689f24fbd05f2452fed85dc991ea73b7:mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java
      */
     public String refreshHeadToken(String oldToken) {
-        if(StrUtil.isEmpty(oldToken)){
+        if (StrUtil.isEmpty(oldToken)) {
             return null;
         }
         String token = oldToken.substring(tokenHead.length());
-        if(StrUtil.isEmpty(token)){
+        if (StrUtil.isEmpty(token)) {
             return null;
         }
-        //token校验不通过
+        //token verification failed
         Claims claims = getClaimsFromToken(token);
-        if(claims==null){
+        if (claims == null) {
             return null;
         }
-        //如果token已经过期，不支持刷新
-        if(isTokenExpired(token)){
+        //If the token has expired, refresh is not supported
+        if (isTokenExpired(token)) {
             return null;
         }
-        //如果token在30分钟之内刚刷新过，返回原token
-        if(tokenRefreshJustBefore(token,30*60)){
+        //If the token has been refreshed within 30 minutes, return to the original token
+        if (tokenRefreshJustBefore(token, 30 * 60)) {
             return token;
-        }else{
+        } else {
             claims.put(CLAIM_KEY_CREATED, new Date());
             return generateToken(claims);
         }
     }
 
     /**
-<<<<<<< HEAD:mall-admin/src/main/java/com/macro/mall/util/JwtTokenUtil.java
+     * <<<<<<< HEAD:mall-admin/src/main/java/com/macro/mall/util/JwtTokenUtil.java
      * Refresh token
-=======
-     * 判断token在指定时间内是否刚刚刷新过
+     * =======
+     * Determine if the token has just been refreshed within the specified time
+     *
      * @param token 原token
-     * @param time 指定时间（秒）
->>>>>>> 7e420f19689f24fbd05f2452fed85dc991ea73b7:mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java
+     * @param time  Specified time (seconds)
+     *              >>>>>>> 7e420f19689f24fbd05f2452fed85dc991ea73b7:mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java
      */
     private boolean tokenRefreshJustBefore(String token, int time) {
         Claims claims = getClaimsFromToken(token);
         Date created = claims.get(CLAIM_KEY_CREATED, Date.class);
         Date refreshDate = new Date();
-        //刷新时间在创建时间的指定时间内
-        if(refreshDate.after(created)&&refreshDate.before(DateUtil.offsetSecond(created,time))){
+        //Refresh time is within the specified time of creation time
+        if (refreshDate.after(created) && refreshDate.before(DateUtil.offsetSecond(created, time))) {
             return true;
         }
         return false;

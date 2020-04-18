@@ -5,10 +5,11 @@ target/
 .idea/
 *.iml
 
+# Vscode #
+.vscode/
+
 # Eclipse #
 .settings/
 .classpath
-.project
 
-# Vscode #
-/.vscode/
+

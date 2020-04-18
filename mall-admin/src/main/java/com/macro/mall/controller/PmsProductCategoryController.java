@@ -21,7 +21,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductCategoryController", description = "Commodity classification management")
+@Api(tags = "PmsProductCategoryController", description = "Product classification management")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {
     @Autowired
@@ -31,7 +31,7 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam,
-                         BindingResult result) {
+                               BindingResult result) {
         int count = productCategoryService.create(productCategoryParam);
         if (count > 0) {
             return CommonResult.success(count);
@@ -44,9 +44,9 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id,
-                         @Validated
-                         @RequestBody PmsProductCategoryParam productCategoryParam,
-                         BindingResult result) {
+                               @Validated
+                               @RequestBody PmsProductCategoryParam productCategoryParam,
+                               BindingResult result) {
         int count = productCategoryService.update(id, productCategoryParam);
         if (count > 0) {
             return CommonResult.success(count);
