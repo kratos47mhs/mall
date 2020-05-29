@@ -15,7 +15,7 @@ public class UmsAdminLoginLog implements Serializable {
 
     private String address;
 
-    @ApiModelProperty(value = "浏览器登录类型")
+    @ApiModelProperty(value = "Loged Browser type")
     private String userAgent;
 
     private static final long serialVersionUID = 1L;

@@ -143,7 +143,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     private String getFullReductionPromotionMessage(PmsProductFullReduction fullReduction) {
         StringBuilder sb = new StringBuilder();
         sb.append("Full discount:");
-        sb.append("满");
+        sb.append("Completely");
         sb.append(fullReduction.getFullPrice());
         sb.append("Yuan，");
         sb.append("Reduced");
@@ -193,7 +193,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     private String getLadderPromotionMessage(PmsProductLadder ladder) {
         StringBuilder sb = new StringBuilder();
         sb.append("Discounts:");
-        sb.append("满");
+        sb.append("Completely");
         sb.append(ladder.getCount());
         sb.append("Item，");
         sb.append("Breaks");

@@ -9,55 +9,55 @@ public class UmsMember implements Serializable {
 
     private Long memberLevelId;
 
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "Username")
     private String username;
 
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "Password")
     private String password;
 
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty(value = "Nickname")
     private String nickname;
 
-    @ApiModelProperty(value = "手机号码")
+    @ApiModelProperty(value = "cellphone number")
     private String phone;
 
-    @ApiModelProperty(value = "帐号启用状态:0->禁用；1->启用")
+    @ApiModelProperty(value = "Account enable status: 0-> disable; 1-> enable")
     private Integer status;
 
-    @ApiModelProperty(value = "注册时间")
+    @ApiModelProperty(value = "Registration time")
     private Date createTime;
 
-    @ApiModelProperty(value = "头像")
+    @ApiModelProperty(value = "Avatar")
     private String icon;
 
-    @ApiModelProperty(value = "性别：0->未知；1->男；2->女")
+    @ApiModelProperty(value = "Gender: 0-> Unknown; 1-> Male; 2-> Female")
     private Integer gender;
 
-    @ApiModelProperty(value = "生日")
+    @ApiModelProperty(value = "Birthday")
     private Date birthday;
 
-    @ApiModelProperty(value = "所做城市")
+    @ApiModelProperty(value = "City")
     private String city;
 
-    @ApiModelProperty(value = "职业")
+    @ApiModelProperty(value = "Job occupation")
     private String job;
 
-    @ApiModelProperty(value = "个性签名")
+    @ApiModelProperty(value = "Signature")
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "用户来源")
+    @ApiModelProperty(value = "User source")
     private Integer sourceType;
 
-    @ApiModelProperty(value = "积分")
+    @ApiModelProperty(value = "Integration")
     private Integer integration;
 
-    @ApiModelProperty(value = "成长值")
+    @ApiModelProperty(value = "Growth Value")
     private Integer growth;
 
-    @ApiModelProperty(value = "剩余抽奖次数")
+    @ApiModelProperty(value = "Number of remaining draws")
     private Integer luckeyCount;
 
-    @ApiModelProperty(value = "历史积分数量")
+    @ApiModelProperty(value = "Number of historical points")
     private Integer historyIntegration;
 
     private static final long serialVersionUID = 1L;

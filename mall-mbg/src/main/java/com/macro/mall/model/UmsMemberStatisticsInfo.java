@@ -10,28 +10,28 @@ public class UmsMemberStatisticsInfo implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "累计消费金额")
+    @ApiModelProperty(value = "Cumulative consumption amount")
     private BigDecimal consumeAmount;
 
-    @ApiModelProperty(value = "订单数量")
+    @ApiModelProperty(value = "Quantity of Order")
     private Integer orderCount;
 
-    @ApiModelProperty(value = "优惠券数量")
+    @ApiModelProperty(value = "Number of coupons")
     private Integer couponCount;
 
-    @ApiModelProperty(value = "评价数")
+    @ApiModelProperty(value = "Number of Comments")
     private Integer commentCount;
 
     @ApiModelProperty(value = "Quantity returned")
     private Integer returnOrderCount;
 
-    @ApiModelProperty(value = "登录次数")
+    @ApiModelProperty(value = "Number of Login")
     private Integer loginCount;
 
-    @ApiModelProperty(value = "关注数量")
+    @ApiModelProperty(value = "Follow quantity")
     private Integer attendCount;
 
-    @ApiModelProperty(value = "粉丝数量")
+    @ApiModelProperty(value = "Number of fans")
     private Integer fansCount;
 
     private Integer collectProductCount;
@@ -44,7 +44,7 @@ public class UmsMemberStatisticsInfo implements Serializable {
 
     private Integer inviteFriendCount;
 
-    @ApiModelProperty(value = "最后一次下订单时间")
+    @ApiModelProperty(value = "Time of last order")
     private Date recentOrderTime;
 
     private static final long serialVersionUID = 1L;

@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Commodity Optimization Management Controller
+ * Product Optimization Management Controller
  * Created by macro on 2018/6/1.
  */
 @Controller
-@Api(tags = "CmsPrefrenceAreaController", description = "Commodity optimization management")
+@Api(tags = "CmsPrefrenceAreaController", description = "Product optimization management")
 @RequestMapping("/prefrenceArea")
 public class CmsPrefrenceAreaController {
     @Autowired

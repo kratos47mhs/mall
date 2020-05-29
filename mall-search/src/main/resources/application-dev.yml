@@ -8,7 +8,7 @@ spring:
       min-idle: 10 #Minimum idle connections
       max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Exclusions this type of data
       stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid

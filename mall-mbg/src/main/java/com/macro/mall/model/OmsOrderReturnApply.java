@@ -11,7 +11,7 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Order id")
     private Long orderId;
 
-    @ApiModelProperty(value = "收货地址表id")
+    @ApiModelProperty(value = "Company Address Id")
     private Long companyAddressId;
 
     @ApiModelProperty(value = "Returned Product id")
@@ -20,13 +20,13 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Order serial number")
     private String orderSn;
 
-    @ApiModelProperty(value = "申请时间")
+    @ApiModelProperty(value = "Application Time")
     private Date createTime;
 
     @ApiModelProperty(value = "Member username")
     private String memberUsername;
 
-    @ApiModelProperty(value = "退款金额")
+    @ApiModelProperty(value = "Refund amount")
     private BigDecimal returnAmount;
 
     @ApiModelProperty(value = "Returnee's name")
@@ -35,10 +35,10 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Returnee phone")
     private String returnPhone;
 
-    @ApiModelProperty(value = "申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty(value = "Application status: 0-> pending; 1-> return of goods; 2-> completed; 3-> rejected")
     private Integer status;
 
-    @ApiModelProperty(value = "处理时间")
+    @ApiModelProperty(value = "Processing time")
     private Date handleTime;
 
     @ApiModelProperty(value = "product picture")
@@ -71,19 +71,19 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Certificate pictures, separated by commas")
     private String proofPics;
 
-    @ApiModelProperty(value = "处理备注")
+    @ApiModelProperty(value = "Processing notes")
     private String handleNote;
 
-    @ApiModelProperty(value = "处理人员")
+    @ApiModelProperty(value = "Handler")
     private String handleMan;
 
-    @ApiModelProperty(value = "收货人")
+    @ApiModelProperty(value = "Receiver")
     private String receiveMan;
 
-    @ApiModelProperty(value = "收货时间")
+    @ApiModelProperty(value = "Time of receipt")
     private Date receiveTime;
 
-    @ApiModelProperty(value = "收货备注")
+    @ApiModelProperty(value = "Receipt notes")
     private String receiveNote;
 
     private static final long serialVersionUID = 1L;

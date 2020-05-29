@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev #默认为开发环境
+    active: dev #The default is the development environment
 
 server:
   port: 8081

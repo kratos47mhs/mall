@@ -1,6 +1,7 @@
 package com.macro.mall.model;
 
 import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -23,41 +24,41 @@ public class OmsOrderItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "销售价格")
+    @ApiModelProperty(value = "Product Price")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "购买数量")
+    @ApiModelProperty(value = "Product Quantity")
     private Integer productQuantity;
 
-    @ApiModelProperty(value = "商品sku编号")
+    @ApiModelProperty(value = "Product Sku id")
     private Long productSkuId;
 
-    @ApiModelProperty(value = "商品sku条码")
+    @ApiModelProperty(value = "Product Sku Code")
     private String productSkuCode;
 
-    @ApiModelProperty(value = "商品分类id")
+    @ApiModelProperty(value = "Product Category Id")
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "商品促销名称")
+    @ApiModelProperty(value = "Product promotion name")
     private String promotionName;
 
-    @ApiModelProperty(value = "商品促销分解金额")
+    @ApiModelProperty(value = "Promotion Amount")
     private BigDecimal promotionAmount;
 
-    @ApiModelProperty(value = "优惠券优惠分解金额")
+    @ApiModelProperty(value = "Coupon Amount")
     private BigDecimal couponAmount;
 
-    @ApiModelProperty(value = "积分优惠分解金额")
+    @ApiModelProperty(value = "Points discount amount")
     private BigDecimal integrationAmount;
 
-    @ApiModelProperty(value = "该商品经过优惠后的分解金额")
+    @ApiModelProperty(value = "The decomposed amount of this product after discount")
     private BigDecimal realAmount;
 
     private Integer giftIntegration;
 
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    @ApiModelProperty(value = "Product sales attributes: [{'key': 'color', 'value': 'color'}, {'key': 'capacity', 'value': '4 G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

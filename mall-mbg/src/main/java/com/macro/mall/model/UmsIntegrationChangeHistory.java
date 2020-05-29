@@ -11,19 +11,19 @@ public class UmsIntegrationChangeHistory implements Serializable {
 
     private Date createTime;
 
-    @ApiModelProperty(value = "改变类型：0->增加；1->减少")
+    @ApiModelProperty(value = "Change type: 0-> increase; 1-> decrease")
     private Integer changeType;
 
-    @ApiModelProperty(value = "积分改变数量")
+    @ApiModelProperty(value = "Number of points changed")
     private Integer changeCount;
 
-    @ApiModelProperty(value = "操作人员")
+    @ApiModelProperty(value = "Operator")
     private String operateMan;
 
-    @ApiModelProperty(value = "操作备注")
+    @ApiModelProperty(value = "Operation notes")
     private String operateNote;
 
-    @ApiModelProperty(value = "积分来源：0->购物；1->管理员修改")
+    @ApiModelProperty(value = "Source of points: 0-> Shopping; 1-> Administrator modification")
     private Integer sourceType;
 
     private static final long serialVersionUID = 1L;

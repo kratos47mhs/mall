@@ -6,27 +6,27 @@ import java.io.Serializable;
 public class PmsProductCategory implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "上机分类的编号：0表示一级分类")
+    @ApiModelProperty(value = "The number of the Product Category: 0 means first class")
     private Long parentId;
 
     private String name;
 
-    @ApiModelProperty(value = "分类级别：0->1级；1->2级")
+    @ApiModelProperty(value = "Category level: 0-> 1 level; 1-> 2 level")
     private Integer level;
 
     private Integer productCount;
 
     private String productUnit;
 
-    @ApiModelProperty(value = "是否显示在导航栏：0->不显示；1->显示")
+    @ApiModelProperty(value = "Whether it is displayed in the navigation bar: 0-> Not displayed; 1-> Displayed")
     private Integer navStatus;
 
-    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
+    @ApiModelProperty(value = "Display status: 0-> Not displayed; 1-> Displayed")
     private Integer showStatus;
 
     private Integer sort;
 
-    @ApiModelProperty(value = "图标")
+    @ApiModelProperty(value = "Icon")
     private String icon;
 
     private String keywords;

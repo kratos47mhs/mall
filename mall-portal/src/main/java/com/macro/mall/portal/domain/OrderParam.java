@@ -7,11 +7,11 @@ package com.macro.mall.portal.domain;
 public class OrderParam {
     //Delivery address id
     private Long memberReceiveAddressId;
-    //优惠券idCoupon id
+    //Coupon id
     private Long couponId;
     //Points used
     private Integer useIntegration;
-    //支付方式payment method
+    //Payment method
     private Integer payType;
 
     public Long getMemberReceiveAddressId() {

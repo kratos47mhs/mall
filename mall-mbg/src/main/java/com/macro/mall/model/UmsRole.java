@@ -7,19 +7,19 @@ import java.util.Date;
 public class UmsRole implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "名称")
+    @ApiModelProperty(value = "Name")
     private String name;
 
     @ApiModelProperty(value = "Description")
     private String description;
 
-    @ApiModelProperty(value = "后台用户数量")
+    @ApiModelProperty(value = "Number of Admins")
     private Integer adminCount;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "Creation time")
     private Date createTime;
 
-    @ApiModelProperty(value = "启用状态：0->禁用；1->启用")
+    @ApiModelProperty(value = "Enable status: 0-> disable; 1-> enable")
     private Integer status;
 
     private Integer sort;

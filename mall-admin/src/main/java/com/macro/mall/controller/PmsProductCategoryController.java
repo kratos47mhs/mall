@@ -21,7 +21,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductCategoryController", description = "Product classification management")
+@Api(tags = "PmsProductCategoryController", description = "Product Category management")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {
     @Autowired
@@ -55,7 +55,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("Query product classification by page")
+    @ApiOperation("Query product Category by page")
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsProductCategory>> getList(@PathVariable Long parentId,

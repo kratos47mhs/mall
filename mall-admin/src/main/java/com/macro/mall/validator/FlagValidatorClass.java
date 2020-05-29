@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * Status flag checker
+ * Flag Validator
  * Created by macro on 2018/4/26.
  */
 public class FlagValidatorClass implements ConstraintValidator<FlagValidator, Integer> {

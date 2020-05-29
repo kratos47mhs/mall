@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 会员收藏管理Controller
+ * Member Collection Management Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "MemberCollectionController", description = "会员收藏管理")
+@Api(tags = "MemberCollectionController", description = "Member Collection Management")
 @RequestMapping("/member/collection")
 public class MemberCollectionController {
     @Autowired
     private MemberCollectionService memberCollectionService;
 
-    @ApiOperation("添加商品收藏")
+    @ApiOperation("Add product collection")
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult addProduct(@RequestBody MemberProductCollection productCollection) {
@@ -34,7 +34,7 @@ public class MemberCollectionController {
         }
     }
 
-    @ApiOperation("删除收藏商品")
+    @ApiOperation("Delete favorite products")
     @RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult deleteProduct(Long memberId, Long productId) {

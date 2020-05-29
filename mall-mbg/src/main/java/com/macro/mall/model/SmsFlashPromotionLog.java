@@ -15,7 +15,7 @@ public class SmsFlashPromotionLog implements Serializable {
 
     private String productName;
 
-    @ApiModelProperty(value = "会员订阅时间")
+    @ApiModelProperty(value = "Member subscription time")
     private Date subscribeTime;
 
     private Date sendTime;

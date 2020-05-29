@@ -10,16 +10,16 @@ public class OmsOrderOperateHistory implements Serializable {
     @ApiModelProperty(value = "Order id")
     private Long orderId;
 
-    @ApiModelProperty(value = "操作人：用户；系统；后台管理员")
+    @ApiModelProperty(value = "Operator: User; Administrator; System Administrator")
     private String operateMan;
 
-    @ApiModelProperty(value = "操作时间")
+    @ApiModelProperty(value = "Operating time")
     private Date createTime;
 
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty(value = "Order status: 0-> pending payment; 1-> pending delivery; 2-> shipped; 3-> completed; 4-> closed; 5-> invalid order")
     private Integer orderStatus;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 
     private static final long serialVersionUID = 1L;

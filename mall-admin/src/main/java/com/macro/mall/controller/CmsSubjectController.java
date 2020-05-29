@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Commodity Topic Controller
+ * Product Topic Controller
  * Created by macro on 2018/6/1.
  */
 @Controller

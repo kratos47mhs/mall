@@ -9,20 +9,20 @@ public class PmsFeightTemplate implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "计费类型:0->按重量；1->按件数")
+    @ApiModelProperty(value = "Billing type: 0-> by weight; 1-> by piece")
     private Integer chargeType;
 
-    @ApiModelProperty(value = "首重kg")
+    @ApiModelProperty(value = "First weight kg")
     private BigDecimal firstWeight;
 
-    @ApiModelProperty(value = "首费（Yuan）")
+    @ApiModelProperty(value = "First Fee（Yuan）")
     private BigDecimal firstFee;
 
     private BigDecimal continueWeight;
 
     private BigDecimal continmeFee;
 
-    @ApiModelProperty(value = "目的地（省、市）")
+    @ApiModelProperty(value = "Destination (Province, City)")
     private String dest;
 
     private static final long serialVersionUID = 1L;

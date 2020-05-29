@@ -11,7 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Swagger2API文档的配置
+ * Swagger 2 API documentation configuration
  * Created by macro on 2018/4/26.
  */
 @Configuration
@@ -29,8 +29,8 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mall搜索系统")
-                .description("mall搜索模块")
+                .title("mall search system")
+                .description("mall search module")
                 .contact("macro")
                 .version("1.0")
                 .build();

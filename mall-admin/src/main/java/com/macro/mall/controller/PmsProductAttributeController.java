@@ -28,7 +28,7 @@ public class PmsProductAttributeController {
     @Autowired
     private PmsProductAttributeService productAttributeService;
 
-    @ApiOperation("Query attribute list or parameter list according to classification")
+    @ApiOperation("Query attribute list or parameter list according to Category")
     @ApiImplicitParams({@ApiImplicitParam(name = "type", value = "0 means attribute，1 means parameter", required = true, paramType = "query", dataType = "integer")})
     @RequestMapping(value = "/list/{cid}", method = RequestMethod.GET)
     @ResponseBody
@@ -84,7 +84,7 @@ public class PmsProductAttributeController {
         }
     }
 
-    @ApiOperation("Obtain product attributes and attribute classifications based on product classification id")
+    @ApiOperation("Obtain product attributes and attribute Category based on product classification id")
     @RequestMapping(value = "/attrInfo/{productCategoryId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<ProductAttrInfo>> getAttrInfo(@PathVariable Long productCategoryId) {

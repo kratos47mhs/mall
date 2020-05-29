@@ -18,7 +18,7 @@ public class PmsProductOperateLog implements Serializable {
 
     private BigDecimal salePriceNew;
 
-    @ApiModelProperty(value = "赠送的积分")
+    @ApiModelProperty(value = "Gift points")
     private Integer giftPointOld;
 
     private Integer giftPointNew;
