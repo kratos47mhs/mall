@@ -7,7 +7,7 @@ import java.util.Date;
 public class OmsOrderOperateHistory implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "Order id")
     private Long orderId;
 
     @ApiModelProperty(value = "操作人：用户；系统；后台管理员")

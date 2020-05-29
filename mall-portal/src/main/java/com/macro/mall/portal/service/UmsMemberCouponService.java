@@ -8,24 +8,24 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 用户优惠券管理Service
+ * User Coupon Management Service
  * Created by macro on 2018/8/29.
  */
 public interface UmsMemberCouponService {
     /**
-     * 会员添加优惠券
+     * Members add coupons
      */
     @Transactional
     void add(Long couponId);
 
     /**
-     * 获取优惠券列表
-     * @param useStatus 优惠券的使用状态
+     * Get a list of coupons
+     * @param useStatus Coupon usage status
      */
     List<SmsCouponHistory> list(Integer useStatus);
 
     /**
-     * 根据购物车信息获取可用优惠券
+     * Get available coupons based on shopping cart information
      */
     List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartItemList, Integer type);
 }

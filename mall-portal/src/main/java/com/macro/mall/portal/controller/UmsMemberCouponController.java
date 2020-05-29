@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 用户优惠券管理Controller
+ * User Coupon Management Controller
  * Created by macro on 2018/8/29.
  */
 @Controller
-@Api(tags = "UmsMemberCouponController", description = "用户优惠券管理")
+@Api(tags = "UmsMemberCouponController", description = "User coupon management")
 @RequestMapping("/member/coupon")
 public class UmsMemberCouponController {
     @Autowired
@@ -31,16 +31,16 @@ public class UmsMemberCouponController {
     @Autowired
     private UmsMemberService memberService;
 
-    @ApiOperation("领取指定优惠券")
+    @ApiOperation("Receive designated coupons")
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@PathVariable Long couponId) {
         memberCouponService.add(couponId);
-        return CommonResult.success(null,"领取成功");
+        return CommonResult.success(null,"Successfully received");
     }
 
-    @ApiOperation("获取用户优惠券列表")
-    @ApiImplicitParam(name = "useStatus", value = "优惠券筛选类型:0->未使用；1->已使用；2->已过期",
+    @ApiOperation("Get a list of user coupons")
+    @ApiImplicitParam(name = "useStatus", value = "Coupon screening type: 0-> unused; 1-> used; 2-> expired",
             allowableValues = "0,1,2", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
@@ -49,8 +49,8 @@ public class UmsMemberCouponController {
         return CommonResult.success(couponHistoryList);
     }
 
-    @ApiOperation("获取登录会员购物车的相关优惠券")
-    @ApiImplicitParam(name = "type", value = "使用可用:0->不可用；1->可用",
+    @ApiOperation("Get coupons related to the member's shopping cart")
+    @ApiImplicitParam(name = "type", value = "Use available: 0-> not available; 1-> available",
             defaultValue = "1", allowableValues = "0,1", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)
     @ResponseBody

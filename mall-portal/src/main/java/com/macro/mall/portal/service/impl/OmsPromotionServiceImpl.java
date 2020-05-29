@@ -19,7 +19,7 @@ import java.util.*;
 
 /**
  * Created by macro on 2018/8/27.
- * 促销管理Service实现类
+ * Promotion Management Service Implementation Class
  */
 @Service
 public class OmsPromotionServiceImpl implements OmsPromotionService {
@@ -28,11 +28,11 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
 
     @Override
     public List<CartPromotionItem> calcCartPromotion(List<OmsCartItem> cartItemList) {
-        //1.先根据productId对CartItem进行分组，以spu为单位进行计算优惠
+        //1. First group the Cart Item according to product Id and calculate the discount in units of spu
         Map<Long, List<OmsCartItem>> productCartMap = groupCartItemBySpu(cartItemList);
-        //2.查询所有商品的优惠相关信息
+        //2. Inquire about the discount information of all products
         List<PromotionProduct> promotionProductList = getPromotionProductList(cartItemList);
-        //3.根据商品促销类型计算商品促销优惠价格
+        //3. Calculate the promotional price of merchandise according to the type of merchandise promotion
         List<CartPromotionItem> cartPromotionItemList = new ArrayList<>();
         for (Map.Entry<Long, List<OmsCartItem>> entry : productCartMap.entrySet()) {
             Long productId = entry.getKey();
@@ -40,12 +40,12 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
             List<OmsCartItem> itemList = entry.getValue();
             Integer promotionType = promotionProduct.getPromotionType();
             if (promotionType == 1) {
-                //单品促销
+                //Single product promotion
                 for (OmsCartItem item : itemList) {
                     CartPromotionItem cartPromotionItem = new CartPromotionItem();
                     BeanUtils.copyProperties(item,cartPromotionItem);
-                    cartPromotionItem.setPromotionMessage("单品促销");
-                    //商品原价-促销价
+                    cartPromotionItem.setPromotionMessage("Single product promotion");
+                    //Original price-promotional price
                     PmsSkuStock skuStock = getOriginalPrice(promotionProduct, item.getProductSkuId());
                     BigDecimal originalPrice = skuStock.getPrice();
                     cartPromotionItem.setReduceAmount(originalPrice.subtract(skuStock.getPromotionPrice()));
@@ -55,7 +55,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
                     cartPromotionItemList.add(cartPromotionItem);
                 }
             } else if (promotionType == 3) {
-                //打折优惠
+                //Discount
                 int count = getCartItemCount(itemList);
                 PmsProductLadder ladder = getProductLadder(count, promotionProduct.getProductLadderList());
                 if(ladder!=null){
@@ -64,7 +64,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
                         BeanUtils.copyProperties(item,cartPromotionItem);
                         String message = getLadderPromotionMessage(ladder);
                         cartPromotionItem.setPromotionMessage(message);
-                        //商品原价-折扣*商品原价
+                        //Original price-discount * original price
                         PmsSkuStock skuStock = getOriginalPrice(promotionProduct,item.getProductSkuId());
                         BigDecimal originalPrice = skuStock.getPrice();
                         BigDecimal reduceAmount = originalPrice.subtract(ladder.getDiscount().multiply(originalPrice));
@@ -78,7 +78,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
                     handleNoReduce(cartPromotionItemList,itemList,promotionProduct);
                 }
             } else if (promotionType == 4) {
-                //满减
+                //Full reduction
                 BigDecimal totalAmount= getCartItemAmount(itemList,promotionProductList);
                 PmsProductFullReduction fullReduction = getProductFullReduction(totalAmount,promotionProduct.getProductFullReductionList());
                 if(fullReduction!=null){
@@ -87,7 +87,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
                         BeanUtils.copyProperties(item,cartPromotionItem);
                         String message = getFullReductionPromotionMessage(fullReduction);
                         cartPromotionItem.setPromotionMessage(message);
-                        //(商品原价/总价)*满减金额
+                        //(Original price / total price) * full reduction
                         PmsSkuStock skuStock= getOriginalPrice(promotionProduct, item.getProductSkuId());
                         BigDecimal originalPrice = skuStock.getPrice();
                         BigDecimal reduceAmount = originalPrice.divide(totalAmount,RoundingMode.HALF_EVEN).multiply(fullReduction.getReducePrice());
@@ -101,7 +101,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
                     handleNoReduce(cartPromotionItemList,itemList,promotionProduct);
                 }
             } else {
-                //无优惠
+                //No discount
                 handleNoReduce(cartPromotionItemList, itemList,promotionProduct);
             }
         }
@@ -109,7 +109,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 查询所有商品的优惠相关信息
+     * Inquire about the discount information of all products
      */
     private List<PromotionProduct> getPromotionProductList(List<OmsCartItem> cartItemList) {
         List<Long> productIdList = new ArrayList<>();
@@ -120,7 +120,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 以spu为单位对购物车中商品进行分组
+     * Group the items in the shopping cart by spu
      */
     private Map<Long, List<OmsCartItem>> groupCartItemBySpu(List<OmsCartItem> cartItemList) {
         Map<Long, List<OmsCartItem>> productCartMap = new TreeMap<>();
@@ -138,28 +138,28 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 获取满减促销消息
+     * Get full sales promotion news
      */
     private String getFullReductionPromotionMessage(PmsProductFullReduction fullReduction) {
         StringBuilder sb = new StringBuilder();
-        sb.append("满减优惠：");
+        sb.append("Full discount:");
         sb.append("满");
         sb.append(fullReduction.getFullPrice());
-        sb.append("元，");
-        sb.append("减");
+        sb.append("Yuan，");
+        sb.append("Reduced");
         sb.append(fullReduction.getReducePrice());
-        sb.append("元");
+        sb.append("Yuan");
         return sb.toString();
     }
 
     /**
-     * 对没满足优惠条件的商品进行处理
+     * Handle products that do not meet the preferential conditions
      */
     private void handleNoReduce(List<CartPromotionItem> cartPromotionItemList, List<OmsCartItem> itemList,PromotionProduct promotionProduct) {
         for (OmsCartItem item : itemList) {
             CartPromotionItem cartPromotionItem = new CartPromotionItem();
             BeanUtils.copyProperties(item,cartPromotionItem);
-            cartPromotionItem.setPromotionMessage("无优惠");
+            cartPromotionItem.setPromotionMessage("No discount");
             cartPromotionItem.setReduceAmount(new BigDecimal(0));
             PmsSkuStock skuStock = getOriginalPrice(promotionProduct,item.getProductSkuId());
             if(skuStock!=null){
@@ -172,7 +172,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     private PmsProductFullReduction getProductFullReduction(BigDecimal totalAmount,List<PmsProductFullReduction> fullReductionList) {
-        //按条件从高到低排序
+        //Sort by condition from highest to lowest
         fullReductionList.sort(new Comparator<PmsProductFullReduction>() {
             @Override
             public int compare(PmsProductFullReduction o1, PmsProductFullReduction o2) {
@@ -188,25 +188,25 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 获取打折优惠的促销信息
+     * Get discounted promotional information
      */
     private String getLadderPromotionMessage(PmsProductLadder ladder) {
         StringBuilder sb = new StringBuilder();
-        sb.append("打折优惠：");
+        sb.append("Discounts:");
         sb.append("满");
         sb.append(ladder.getCount());
-        sb.append("件，");
-        sb.append("打");
+        sb.append("Item，");
+        sb.append("Breaks");
         sb.append(ladder.getDiscount().multiply(new BigDecimal(10)));
-        sb.append("折");
+        sb.append("Discount");
         return sb.toString();
     }
 
     /**
-     * 根据购买商品数量获取满足条件的打折优惠策略
+     * Obtain discounted discount strategies that meet the conditions based on the number of goods purchased
      */
     private PmsProductLadder getProductLadder(int count, List<PmsProductLadder> productLadderList) {
-        //按数量从大到小排序
+        //Sort by quantity from largest to smallest
         productLadderList.sort(new Comparator<PmsProductLadder>() {
             @Override
             public int compare(PmsProductLadder o1, PmsProductLadder o2) {
@@ -222,7 +222,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 获取购物车中指定商品的数量
+     * Get the number of specified items in the shopping cart
      */
     private int getCartItemCount(List<OmsCartItem> itemList) {
         int count = 0;
@@ -233,12 +233,12 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 获取购物车中指定商品的总价
+     * Get the total price of the specified product in the shopping cart
      */
     private BigDecimal getCartItemAmount(List<OmsCartItem> itemList, List<PromotionProduct> promotionProductList) {
         BigDecimal amount = new BigDecimal(0);
         for (OmsCartItem item : itemList) {
-            //计算出商品原价
+            //Calculate the original price of the product
             PromotionProduct promotionProduct = getPromotionProductById(item.getProductId(), promotionProductList);
             PmsSkuStock skuStock = getOriginalPrice(promotionProduct,item.getProductSkuId());
             amount = amount.add(skuStock.getPrice().multiply(new BigDecimal(item.getQuantity())));
@@ -247,7 +247,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 获取商品的原价
+     * Get the original price of the product
      */
     private PmsSkuStock getOriginalPrice(PromotionProduct promotionProduct, Long productSkuId) {
         for (PmsSkuStock skuStock : promotionProduct.getSkuStockList()) {
@@ -259,7 +259,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 根据商品id获取商品的促销信息
+     * Obtain product promotion information based on product id
      */
     private PromotionProduct getPromotionProductById(Long productId, List<PromotionProduct> promotionProductList) {
         for (PromotionProduct promotionProduct : promotionProductList) {

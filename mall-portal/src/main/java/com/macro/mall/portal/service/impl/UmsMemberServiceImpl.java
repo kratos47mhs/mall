@@ -158,7 +158,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         if(member!=null){
             return new MemberDetails(member);
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        throw new UsernameNotFoundException("wrong user name or password");
     }
 
     @Override

@@ -7,21 +7,21 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * 确认单信息封装
+ * Confirmation information package
  * Created by macro on 2018/8/30.
  */
 public class ConfirmOrderResult {
-    //包含优惠信息的购物车信息
+    //Shopping cart information with discount information
     private List<CartPromotionItem> cartPromotionItemList;
-    //用户收货地址列表
+    //User delivery address list
     private List<UmsMemberReceiveAddress> memberReceiveAddressList;
-    //用户可用优惠券列表
+    //List of available coupons for users
     private List<SmsCouponHistoryDetail> couponHistoryDetailList;
-    //积分使用规则
+    //Points usage rules
     private UmsIntegrationConsumeSetting integrationConsumeSetting;
-    //会员持有的积分
+    //Points held by members
     private Integer memberIntegration;
-    //计算的金额
+    //Calculated amount
     private CalcAmount calcAmount;
 
     public List<CartPromotionItem> getCartPromotionItemList() {
@@ -72,14 +72,14 @@ public class ConfirmOrderResult {
         this.calcAmount = calcAmount;
     }
 
-    public static class CalcAmount{
-        //订单商品总金额
+    public static class CalcAmount {
+        //Total order amount
         private BigDecimal totalAmount;
-        //运费
+        //Freight amount
         private BigDecimal freightAmount;
-        //活动优惠
+        //promotion amount
         private BigDecimal promotionAmount;
-        //应付金额
+        //Amounts payable
         private BigDecimal payAmount;
 
         public BigDecimal getTotalAmount() {

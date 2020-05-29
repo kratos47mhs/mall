@@ -10,7 +10,7 @@ public class UmsRole implements Serializable {
     @ApiModelProperty(value = "名称")
     private String name;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "Description")
     private String description;
 
     @ApiModelProperty(value = "后台用户数量")

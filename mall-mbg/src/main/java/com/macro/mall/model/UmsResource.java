@@ -16,7 +16,7 @@ public class UmsResource implements Serializable {
     @ApiModelProperty(value = "资源URL")
     private String url;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "Description")
     private String description;
 
     @ApiModelProperty(value = "资源分类ID")

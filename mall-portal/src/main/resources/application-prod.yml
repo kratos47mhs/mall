@@ -7,12 +7,12 @@ spring:
     username: reader
     password: 123456
     druid:
-      initial-size: 5 #连接池初始化大小
-      min-idle: 10 #最小空闲连接数
-      max-active: 20 #最大连接数
+      initial-size: 5 #Connection pool initialization size
+      min-idle: 10 #Minimum idle connections
+      max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
-      stat-view-servlet: #访问监控网页的登录用户名和密码
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
+      stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
 
@@ -23,11 +23,11 @@ spring:
       database: mall-port
 
   redis:
-    host: redis # Redis服务器地址
-    database: 0 # Redis数据库索引（默认为0）
-    port: 6379 # Redis服务器连接端口
-    password: # Redis服务器连接密码（默认为空）
-    timeout: 300ms # 连接超时时间（毫秒）
+    host: redis # Redis server address
+    database: 0 # Redis database index (default is 0)
+    port: 6379 # Redis server connection port
+    password: # Redis server connection password (default is blank)
+    timeout: 300ms # Connection timeout (ms)
 
   rabbitmq:
     host: rabbit
@@ -35,8 +35,7 @@ spring:
     virtual-host: /mall
     username: mall
     password: mall
-    publisher-confirms: true #如果对异步消息需要回调必须设置为true
-# 日志配置
+    publisher-confirms: true #If the callback is required for asynchronous messages, it must be set to true
+# Log configuration
 logging:
   path: /var/logs
-

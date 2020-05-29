@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * 申请退货管理Controller
+ * Apply for return management
  * Created by macro on 2018/10/17.
  */
 @Controller
-@Api(tags = "OmsPortalOrderReturnApplyController", description = "申请退货管理")
+@Api(tags = "OmsPortalOrderReturnApplyController", description = "Request return management")
 @RequestMapping("/returnApply")
 public class OmsPortalOrderReturnApplyController {
     @Autowired
     private OmsPortalOrderReturnApplyService returnApplyService;
 
-    @ApiOperation("申请退货")
+    @ApiOperation("Application for return")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody OmsOrderReturnApplyParam returnApply) {

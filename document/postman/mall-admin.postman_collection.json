@@ -168,7 +168,7 @@
 			"response": []
 		},
 		{
-			"name": "刷新token",
+			"name": "Refresh token",
 			"request": {
 				"url": "{{admin.mall}}/admin/token/refresh",
 				"method": "GET",

@@ -10,8 +10,8 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 
 /**
- * Jackson配置类
- * json不返回null的字段
+ * Jackson configuration class
+ * json does not return null fields
  * Created by macro on 2018/8/2.
  */
 @Configuration
@@ -22,14 +22,14 @@ public class JacksonConfig {
     public ObjectMapper jacksonObjectMapper(Jackson2ObjectMapperBuilder builder) {
         ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 
-        // 通过该方法对mapper对象进行设置，所有序列化的对象都将按改规则进行系列化
-        // Include.Include.ALWAYS 默认
-        // Include.NON_DEFAULT 属性为默认值不序列化
-        // Include.NON_EMPTY 属性为 空（""） 或者为 NULL 都不序列化，则返回的json是没有这个字段的。这样对移动端会更省流量
-        // Include.NON_NULL 属性为NULL 不序列化,就是为null的字段不参加序列化
+        // Through this method to set the mapper object, all serialized objects will be serialized according to the rules
+        // Include.Include.ALWAYS Default
+        // Include.NON_DEFAULT property is not serialized by default
+        // If the Include.NON_EMPTY attribute is empty ("") or NULL, it is not serialized, and the returned json does not have this field. This will save more data for mobile
+        // Include.NON_NULL attribute is NULL not serialized, that is, null fields do not participate in serialization
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
-        // 字段保留，将null值转为""
+        // The field is reserved and the null value is converted to""
 //        objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>()
 //        {
 //            @Override

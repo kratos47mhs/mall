@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 会员关注品牌管理Controller
+ * Members follow brand management Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "MemberAttentionController", description = "会员关注品牌管理")
+@Api(tags = "MemberAttentionController", description = "Members pay attention to brand management")
 @RequestMapping("/member/attention")
 public class MemberAttentionController {
     @Autowired
     private MemberAttentionService memberAttentionService;
-    @ApiOperation("添加品牌关注")
+    @ApiOperation("Add brand attention")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody MemberBrandAttention memberBrandAttention) {
@@ -33,7 +33,7 @@ public class MemberAttentionController {
         }
     }
 
-    @ApiOperation("取消关注")
+    @ApiOperation("Unsubscribe")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(Long memberId, Long brandId) {
@@ -45,7 +45,7 @@ public class MemberAttentionController {
         }
     }
 
-    @ApiOperation("显示关注列表")
+    @ApiOperation("Show watchlist")
     @RequestMapping(value = "/list/{memberId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<MemberBrandAttention>> list(@PathVariable Long memberId) {

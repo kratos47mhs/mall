@@ -8,31 +8,31 @@ import java.util.Date;
 public class OmsOrderReturnApply implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "Order id")
     private Long orderId;
 
     @ApiModelProperty(value = "收货地址表id")
     private Long companyAddressId;
 
-    @ApiModelProperty(value = "退货商品id")
+    @ApiModelProperty(value = "Returned Product id")
     private Long productId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "Order serial number")
     private String orderSn;
 
     @ApiModelProperty(value = "申请时间")
     private Date createTime;
 
-    @ApiModelProperty(value = "会员用户名")
+    @ApiModelProperty(value = "Member username")
     private String memberUsername;
 
     @ApiModelProperty(value = "退款金额")
     private BigDecimal returnAmount;
 
-    @ApiModelProperty(value = "退货人姓名")
+    @ApiModelProperty(value = "Returnee's name")
     private String returnName;
 
-    @ApiModelProperty(value = "退货人电话")
+    @ApiModelProperty(value = "Returnee phone")
     private String returnPhone;
 
     @ApiModelProperty(value = "申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
@@ -41,34 +41,34 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "处理时间")
     private Date handleTime;
 
-    @ApiModelProperty(value = "商品图片")
+    @ApiModelProperty(value = "product picture")
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "product name")
     private String productName;
 
-    @ApiModelProperty(value = "商品品牌")
+    @ApiModelProperty(value = "product brand")
     private String productBrand;
 
-    @ApiModelProperty(value = "商品销售属性：颜色：红色；尺码：xl;")
+    @ApiModelProperty(value = "Merchandise sales attributes: color: red; size: xl;")
     private String productAttr;
 
-    @ApiModelProperty(value = "退货数量")
+    @ApiModelProperty(value = "Quantity returned")
     private Integer productCount;
 
-    @ApiModelProperty(value = "商品单价")
+    @ApiModelProperty(value = "Product price")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "商品实际支付单价")
+    @ApiModelProperty(value = "The actual unit price of the product")
     private BigDecimal productRealPrice;
 
-    @ApiModelProperty(value = "原因")
+    @ApiModelProperty(value = "Reason")
     private String reason;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "Description")
     private String description;
 
-    @ApiModelProperty(value = "凭证图片，以逗号隔开")
+    @ApiModelProperty(value = "Certificate pictures, separated by commas")
     private String proofPics;
 
     @ApiModelProperty(value = "处理备注")

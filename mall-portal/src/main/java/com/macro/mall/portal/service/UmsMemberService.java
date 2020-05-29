@@ -32,7 +32,7 @@ public interface UmsMemberService {
     String generateAuthCode(String telephone);
 
     /**
-     * 修改密码
+     * change Password
      */
     @Transactional
     void updatePassword(String telephone, String password, String authCode);
@@ -59,7 +59,7 @@ public interface UmsMemberService {
     String login(String username, String password);
 
     /**
-     * 刷新token
+     * Refresh token
      */
     String refreshToken(String token);
 }

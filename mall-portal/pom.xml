@@ -31,12 +31,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-        <!--redis依赖配置-->
+        <!--Redis dependent configuration-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!--集成消息队列-->
+        <!--Integrated message queue-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
@@ -65,7 +65,7 @@
                 <configuration>
                     <imageName>mall/${project.artifactId}:${project.version}</imageName>
                     <dockerHost>${docker.host}</dockerHost>
-                    <baseImage>java:8</baseImage>
+                    <baseImage>openjdk:8-jdk-alpine</baseImage>
                     <entryPoint>["java", "-jar","-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]
                     </entryPoint>
                     <resources>

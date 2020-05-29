@@ -31,7 +31,7 @@ public class PmsProductCategory implements Serializable {
 
     private String keywords;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "Description")
     private String description;
 
     private static final long serialVersionUID = 1L;

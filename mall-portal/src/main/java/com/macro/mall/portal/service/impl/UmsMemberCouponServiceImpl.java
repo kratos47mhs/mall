@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 会员优惠券管理Service实现类
+ * Member Coupon Management Service Implementation Class
  * Created by macro on 2018/8/29.
  */
 @Service
@@ -35,45 +35,45 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     @Override
     public void add(Long couponId) {
         UmsMember currentMember = memberService.getCurrentMember();
-        //获取优惠券信息，判断数量
+        //Get coupon information and judge the quantity
         SmsCoupon coupon = couponMapper.selectByPrimaryKey(couponId);
         if(coupon==null){
-            Asserts.fail("优惠券不存在");
+            Asserts.fail("Coupon does not exist");
         }
         if(coupon.getCount()<=0){
-            Asserts.fail("优惠券已经领完了");
+            Asserts.fail("Coupons have been collected");
         }
         Date now = new Date();
         if(now.before(coupon.getEnableTime())){
-            Asserts.fail("优惠券还没到领取时间");
+            Asserts.fail("Coupon is not yet available for collection");
         }
-        //判断用户领取的优惠券数量是否超过限制
+        //Determine whether the number of coupons received by the user exceeds the limit
         SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
         couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(currentMember.getId());
         long count = couponHistoryMapper.countByExample(couponHistoryExample);
         if(count>=coupon.getPerLimit()){
-            Asserts.fail("您已经领取过该优惠券");
+            Asserts.fail("You have already received the coupon");
         }
-        //生成领取优惠券历史
+        //Generate coupon collection history
         SmsCouponHistory couponHistory = new SmsCouponHistory();
         couponHistory.setCouponId(couponId);
         couponHistory.setCouponCode(generateCouponCode(currentMember.getId()));
         couponHistory.setCreateTime(now);
         couponHistory.setMemberId(currentMember.getId());
         couponHistory.setMemberNickname(currentMember.getNickname());
-        //主动领取
+        //Take the initiative
         couponHistory.setGetType(1);
-        //未使用
+        //Unused
         couponHistory.setUseStatus(0);
         couponHistoryMapper.insert(couponHistory);
-        //修改优惠券表的数量、领取数量
+        //Modify the number of coupon tables and the number of receipts
         coupon.setCount(coupon.getCount()-1);
         coupon.setReceiveCount(coupon.getReceiveCount()==null?1:coupon.getReceiveCount()+1);
         couponMapper.updateByPrimaryKey(coupon);
     }
 
     /**
-     * 16位优惠码生成：时间戳后8位+4位随机数+用户id后4位
+     * 16-bit promo code generation: 8 digits after the time stamp + 4 random numbers + 4 digits after the user id
      */
     private String generateCouponCode(Long memberId) {
         StringBuilder sb = new StringBuilder();
@@ -108,9 +108,9 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     public List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartItemList, Integer type) {
         UmsMember currentMember = memberService.getCurrentMember();
         Date now = new Date();
-        //获取该用户所有优惠券
+        //Get all coupons for this user
         List<SmsCouponHistoryDetail> allList = couponHistoryDao.getDetailList(currentMember.getId());
-        //根据优惠券使用类型来判断优惠券是否可用
+        //According to the type of coupon used to determine whether the coupon is available
         List<SmsCouponHistoryDetail> enableList = new ArrayList<>();
         List<SmsCouponHistoryDetail> disableList = new ArrayList<>();
         for (SmsCouponHistoryDetail couponHistoryDetail : allList) {
@@ -118,9 +118,9 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
             BigDecimal minPoint = couponHistoryDetail.getCoupon().getMinPoint();
             Date endTime = couponHistoryDetail.getCoupon().getEndTime();
             if(useType.equals(0)){
-                //0->全场通用
-                //判断是否满足优惠起点
-                //计算购物车商品的总价
+                //0-> Universal
+                //Determine whether the discount starting point is met
+                //Calculate the total price of shopping cart items
                 BigDecimal totalAmount = calcTotalAmount(cartItemList);
                 if(now.before(endTime)&&totalAmount.subtract(minPoint).intValue()>=0){
                     enableList.add(couponHistoryDetail);
@@ -128,8 +128,8 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
                     disableList.add(couponHistoryDetail);
                 }
             }else if(useType.equals(1)){
-                //1->指定分类
-                //计算指定分类商品的总价
+                //1-> Specify classification
+                //Calculate the total price of the specified category of goods
                 List<Long> productCategoryIds = new ArrayList<>();
                 for (SmsCouponProductCategoryRelation categoryRelation : couponHistoryDetail.getCategoryRelationList()) {
                     productCategoryIds.add(categoryRelation.getProductCategoryId());
@@ -141,8 +141,8 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
                     disableList.add(couponHistoryDetail);
                 }
             }else if(useType.equals(2)){
-                //2->指定商品
-                //计算指定商品的总价
+                //2-> Designated Products
+                //Calculate the total price of the specified product
                 List<Long> productIds = new ArrayList<>();
                 for (SmsCouponProductRelation productRelation : couponHistoryDetail.getProductRelationList()) {
                     productIds.add(productRelation.getProductId());

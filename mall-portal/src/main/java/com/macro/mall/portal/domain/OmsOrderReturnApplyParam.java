@@ -7,43 +7,43 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 申请退货参数
+ * Request return parameters
  * Created by macro on 2018/10/17.
  */
 @Getter
 @Setter
 public class OmsOrderReturnApplyParam {
-    @ApiModelProperty("订单id")
+    @ApiModelProperty("Order id")
     private Long orderId;
-    @ApiModelProperty("退货商品id")
+    @ApiModelProperty("Returned Product id")
     private Long productId;
-    @ApiModelProperty("订单编号")
+    @ApiModelProperty("Order serial number")
     private String orderSn;
-    @ApiModelProperty("会员用户名")
+    @ApiModelProperty("Member username")
     private String memberUsername;
-    @ApiModelProperty("退货人姓名")
+    @ApiModelProperty("Returnee's name")
     private String returnName;
-    @ApiModelProperty("退货人电话")
+    @ApiModelProperty("Returnee phone")
     private String returnPhone;
-    @ApiModelProperty("商品图片")
+    @ApiModelProperty("product picture")
     private String productPic;
-    @ApiModelProperty("商品名称")
+    @ApiModelProperty("product name")
     private String productName;
-    @ApiModelProperty("商品品牌")
+    @ApiModelProperty("product brand")
     private String productBrand;
-    @ApiModelProperty("商品销售属性：颜色：红色；尺码：xl;")
+    @ApiModelProperty("Merchandise sales attributes: color: red; size: xl;")
     private String productAttr;
-    @ApiModelProperty("退货数量")
+    @ApiModelProperty("Quantity returned")
     private Integer productCount;
-    @ApiModelProperty("商品单价")
+    @ApiModelProperty("Product price")
     private BigDecimal productPrice;
-    @ApiModelProperty("商品实际支付单价")
+    @ApiModelProperty("The actual unit price of the product")
     private BigDecimal productRealPrice;
-    @ApiModelProperty("原因")
+    @ApiModelProperty("Reason")
     private String reason;
-    @ApiModelProperty("描述")
+    @ApiModelProperty("Description")
     private String description;
-    @ApiModelProperty("凭证图片，以逗号隔开")
+    @ApiModelProperty("Certificate pictures, separated by commas")
     private String proofPics;
 
 }

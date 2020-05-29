@@ -46,7 +46,7 @@ public class MemberCollectionController {
         }
     }
 
-    @ApiOperation("显示关注列表")
+    @ApiOperation("Show watchlist")
     @RequestMapping(value = "/listProduct/{memberId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<MemberProductCollection>> listProduct(@PathVariable Long memberId) {

@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "会员登录",
+			"name": "Member Login",
 			"request": {
 				"url": "{{portal.mall}}/sso/login",
 				"method": "POST",
@@ -52,7 +52,7 @@
 			"response": []
 		},
 		{
-			"name": "清空购物车",
+			"name": "Empty shopping cart",
 			"request": {
 				"url": "{{portal.mall}}/cart/clear",
 				"method": "POST",
@@ -83,7 +83,7 @@
 			"response": []
 		},
 		{
-			"name": "获取购物车列表（包括促销信息）",
+			"name": "获取购物车列表（Including promotional information）",
 			"request": {
 				"url": "{{portal.mall}}/cart/list/promotion",
 				"method": "GET",
@@ -130,7 +130,7 @@
 			"response": []
 		},
 		{
-			"name": "添加收货地址",
+			"name": "Add shipping address",
 			"request": {
 				"url": "{{portal.mall}}/member/address/add",
 				"method": "POST",
@@ -150,7 +150,7 @@
 			"response": []
 		},
 		{
-			"name": "删除收货地址",
+			"name": "Delete shipping address",
 			"request": {
 				"url": "{{portal.mall}}/member/address/delete/2",
 				"method": "POST",
@@ -172,7 +172,7 @@
 			"response": []
 		},
 		{
-			"name": "修改收货地址",
+			"name": "Modify shipping address",
 			"request": {
 				"url": "{{portal.mall}}/member/address/update/3",
 				"method": "POST",
@@ -296,7 +296,7 @@
 			"response": []
 		},
 		{
-			"name": "取消单个超时订单",
+			"name": "Cancel a single overtime order",
 			"request": {
 				"url": {
 					"raw": "{{portal.mall}}/order/cancelOrder?orderId=13",

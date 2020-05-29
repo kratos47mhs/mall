@@ -7,41 +7,41 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Map;
 
 /**
- * 前台订单管理Service
+ * Front Order Management Service
  * Created by macro on 2018/8/30.
  */
 public interface OmsPortalOrderService {
     /**
-     * 根据用户购物车信息生成确认单信息
+     * Generate confirmation slip information based on user shopping cart information
      */
     ConfirmOrderResult generateConfirmOrder();
 
     /**
-     * 根据提交信息生成订单
+     * Generate order based on submission information
      */
     @Transactional
     Map<String, Object> generateOrder(OrderParam orderParam);
 
     /**
-     * 支付成功后的回调
+     * Callback after successful payment
      */
     @Transactional
     Integer paySuccess(Long orderId);
 
     /**
-     * 自动取消超时订单
+     * Automatically cancel overtime orders
      */
     @Transactional
     Integer cancelTimeOutOrder();
 
     /**
-     * 取消单个超时订单
+     * Cancel a single overtime order
      */
     @Transactional
     void cancelOrder(Long orderId);
 
     /**
-     * 发送延迟消息取消订单
+     * Send a delay message to cancel the order
      */
     void sendDelayMessageCancelOrder(Long orderId);
 }

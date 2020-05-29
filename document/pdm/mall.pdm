@@ -9126,7 +9126,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522115634</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>描述</a:Comment>
+<a:Comment>Description</a:Comment>
 <a:DataType>text</a:DataType>
 </o:Column>
 </c:Columns>
@@ -9215,7 +9215,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1521783579</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>首费（元）</a:Comment>
+<a:Comment>首费（Yuan）</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -11963,7 +11963,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541748864</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品名称</a:Comment>
+<a:Comment>product name</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -12135,7 +12135,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541490628</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单id</a:Comment>
+<a:Comment>Order id</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 <o:Column Id="o643">
@@ -13774,7 +13774,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522388810</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货数量</a:Comment>
+<a:Comment>Quantity returned</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o766">
@@ -14831,7 +14831,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541490586</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单id</a:Comment>
+<a:Comment>Order id</a:Comment>
 <a:DataType>bigint</a:DataType>
 <a:Identity>1</a:Identity>
 <a:Column.Mandatory>1</a:Column.Mandatory>
@@ -14865,7 +14865,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522658432</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单编号</a:Comment>
+<a:Comment>Order serial number</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15404,7 +15404,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660776</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单id</a:Comment>
+<a:Comment>Order id</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 <o:Column Id="o889">
@@ -15415,7 +15415,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660781</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单编号</a:Comment>
+<a:Comment>Order serial number</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15683,7 +15683,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522725342</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单id</a:Comment>
+<a:Comment>Order id</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 <o:Column Id="o911">
@@ -15880,7 +15880,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733198</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单id</a:Comment>
+<a:Comment>Order id</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 <o:Column Id="o925">
@@ -15902,7 +15902,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539746553</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货商品id</a:Comment>
+<a:Comment>Returned Product id</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 <o:Column Id="o927">
@@ -15913,7 +15913,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733474</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单编号</a:Comment>
+<a:Comment>Order serial number</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15936,7 +15936,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745698</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员用户名</a:Comment>
+<a:Comment>Member username</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15961,7 +15961,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745642</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货人姓名</a:Comment>
+<a:Comment>Returnee's name</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -15973,7 +15973,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733653</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货人电话</a:Comment>
+<a:Comment>Returnee phone</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -16008,7 +16008,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745750</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品图片</a:Comment>
+<a:Comment>product picture</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16020,7 +16020,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745756</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品名称</a:Comment>
+<a:Comment>product name</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -16032,7 +16032,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745719</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品品牌</a:Comment>
+<a:Comment>product brand</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -16044,7 +16044,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733369</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品销售属性：颜色：红色；尺码：xl;</a:Comment>
+<a:Comment>Merchandise sales attributes: color: red; size: xl;</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16056,7 +16056,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733395</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货数量</a:Comment>
+<a:Comment>Quantity returned</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o940">
@@ -16067,7 +16067,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539746212</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品单价</a:Comment>
+<a:Comment>Product price</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -16080,7 +16080,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539746225</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品实际支付单价</a:Comment>
+<a:Comment>The actual unit price of the product</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -16093,7 +16093,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733657</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>原因</a:Comment>
+<a:Comment>Reason</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -16105,7 +16105,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733663</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>描述</a:Comment>
+<a:Comment>Description</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16117,7 +16117,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522733740</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>凭证图片，以逗号隔开</a:Comment>
+<a:Comment>Certificate pictures, separated by commas</a:Comment>
 <a:DataType>varchar(1000)</a:DataType>
 <a:Length>1000</a:Length>
 </o:Column>
@@ -16533,7 +16533,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533171249</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品名称</a:Comment>
+<a:Comment>product name</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16715,7 +16715,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538201128</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>描述</a:Comment>
+<a:Comment>Description</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -17565,7 +17565,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580805939</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>描述</a:Comment>
+<a:Comment>Description</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>

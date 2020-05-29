@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 public class OmsOrderItem implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "Order id")
     private Long orderId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "Order serial number")
     private String orderSn;
 
     private Long productId;

@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 /**
- * 订单管理Controller
+ * Order Management Controller
  * Created by macro on 2018/8/30.
  */
 @Controller
-@Api(tags = "OmsPortalOrderController", description = "订单管理")
+@Api(tags = "OmsPortalOrderController", description = "Order management")
 @RequestMapping("/order")
 public class OmsPortalOrderController {
     @Autowired
     private OmsPortalOrderService portalOrderService;
 
-    @ApiOperation("根据购物车信息生成确认单信息")
+    @ApiOperation("Generate confirmation information based on shopping cart information")
     @RequestMapping(value = "/generateConfirmOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ConfirmOrderResult> generateConfirmOrder() {
@@ -31,15 +31,15 @@ public class OmsPortalOrderController {
         return CommonResult.success(confirmOrderResult);
     }
 
-    @ApiOperation("根据购物车信息生成订单")
+    @ApiOperation("Generate orders based on shopping cart information")
     @RequestMapping(value = "/generateOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
         Map<String, Object> result = portalOrderService.generateOrder(orderParam);
-        return CommonResult.success(result, "下单成功");
+        return CommonResult.success(result, "successfully ordered");
     }
 
-    @ApiOperation("支付成功的回调")
+    @ApiOperation("Callback for successful payment")
     @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult paySuccess(@RequestParam Long orderId) {
@@ -47,7 +47,7 @@ public class OmsPortalOrderController {
         return CommonResult.success(count, "支付成功");
     }
 
-    @ApiOperation("自动取消超时订单")
+    @ApiOperation("Automatically cancel overtime orders")
     @RequestMapping(value = "/cancelTimeOutOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelTimeOutOrder() {
@@ -55,7 +55,7 @@ public class OmsPortalOrderController {
         return CommonResult.success(null);
     }
 
-    @ApiOperation("取消单个超时订单")
+    @ApiOperation("Cancel a single overtime order")
     @RequestMapping(value = "/cancelOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelOrder(Long orderId) {

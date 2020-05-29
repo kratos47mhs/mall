@@ -8,49 +8,49 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 购物车管理Service
+ * Shopping Cart Management Service
  * Created by macro on 2018/8/2.
  */
 public interface OmsCartItemService {
     /**
-     * 查询购物车中是否包含该商品，有增加数量，无添加到购物车
+     * Check if the product is included in the shopping cart, there is an increase in quantity, nothing is added to the shopping cart
      */
     @Transactional
     int add(OmsCartItem cartItem);
 
     /**
-     * 根据会员编号获取购物车列表
+     * Get shopping cart list according to member number
      */
     List<OmsCartItem> list(Long memberId);
 
     /**
-     * 获取包含促销活动信息的购物车列表
+     * Get a list of shopping carts with information about promotions
      */
     List<CartPromotionItem> listPromotion(Long memberId);
 
     /**
-     * 修改某个购物车商品的数量
+     * Modify the number of items in a shopping cart
      */
     int updateQuantity(Long id, Long memberId, Integer quantity);
 
     /**
-     * 批量删除购物车中的商品
+     * Bulk delete items in shopping cart
      */
     int delete(Long memberId,List<Long> ids);
 
     /**
-     *获取购物车中用于选择商品规格的商品信息
+     * Get product information for selecting product specifications in the shopping cart
      */
     CartProduct getCartProduct(Long productId);
 
     /**
-     * 修改购物车中商品的规格
+     * Modify the specifications of the products in the shopping cart
      */
     @Transactional
     int updateAttr(OmsCartItem cartItem);
 
     /**
-     * 清空购物车
+     * Empty shopping cart
      */
     int clear(Long memberId);
 }
