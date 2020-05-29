@@ -12157,7 +12157,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522218107</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>Recipient's nickname</a:Comment>
+<a:Comment>Recipient nickname</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15961,7 +15961,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745642</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>Returnee's name</a:Comment>
+<a:Comment>Returnees name</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>

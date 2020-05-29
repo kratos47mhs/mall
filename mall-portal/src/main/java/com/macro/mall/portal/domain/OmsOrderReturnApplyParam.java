@@ -21,7 +21,7 @@ public class OmsOrderReturnApplyParam {
     private String orderSn;
     @ApiModelProperty("Member username")
     private String memberUsername;
-    @ApiModelProperty("Returnee's name")
+    @ApiModelProperty("Returnees name")
     private String returnName;
     @ApiModelProperty("Returnee phone")
     private String returnPhone;

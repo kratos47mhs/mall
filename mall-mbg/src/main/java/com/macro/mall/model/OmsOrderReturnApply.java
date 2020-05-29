@@ -29,7 +29,7 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Refund amount")
     private BigDecimal returnAmount;
 
-    @ApiModelProperty(value = "Returnee's name")
+    @ApiModelProperty(value = "Returnees name")
     private String returnName;
 
     @ApiModelProperty(value = "Returnee phone")

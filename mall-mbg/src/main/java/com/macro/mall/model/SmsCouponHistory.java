@@ -13,7 +13,7 @@ public class SmsCouponHistory implements Serializable {
 
     private String couponCode;
 
-    @ApiModelProperty(value = "Recipient's nickname")
+    @ApiModelProperty(value = "Recipient nickname")
     private String memberNickname;
 
     @ApiModelProperty(value = "Acquisition type: 0-> Background gift; 1-> Active acquisition")
