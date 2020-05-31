@@ -36,7 +36,7 @@ public class CmsSubject implements Serializable {
     @ApiModelProperty(value = "Display status: 0-> not displayed; 1-> displayed")
     private Integer showStatus;
 
-    @ApiModelProperty(value = "Number of reposts")
+    @ApiModelProperty(value = "Number of forwards")
     private Integer forwardCount;
 
     @ApiModelProperty(value = "Thematic category name")

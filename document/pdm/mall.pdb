@@ -7858,7 +7858,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1542179559</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品信息</a:Comment>
+<a:Comment>Product information Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o317">
@@ -8283,7 +8283,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522721101</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>促销开始时间</a:Comment>
+<a:Comment>Promotion start time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o354">
@@ -8416,7 +8416,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522116692</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>品牌表</a:Comment>
+<a:Comment>Brand table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o364">
@@ -8571,7 +8571,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1582621117</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>sku的库存</a:Comment>
+<a:Comment>SKU stock Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o376">
@@ -8731,7 +8731,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1521770349</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品审核记录</a:Comment>
+<a:Comment>Product vertify record Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o388">
@@ -8950,7 +8950,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1521771275</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>操作人</a:Comment>
+<a:Comment>Operator name</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -8991,7 +8991,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522115630</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品分类</a:Comment>
+<a:Comment>Product category Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o408">
@@ -9156,7 +9156,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1521783539</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>运费模版</a:Comment>
+<a:Comment>Freight template Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o421">
@@ -9283,7 +9283,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1528184156</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品会员价格表</a:Comment>
+<a:Comment>Product member price Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o430">
@@ -9369,7 +9369,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522721483</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品阶梯价格表(只针对同商品)</a:Comment>
+<a:Comment>Product ladder price Table (only for the same product)</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o436">
@@ -9458,7 +9458,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522721499</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品满减表(只针对同商品)</a:Comment>
+<a:Comment>Product full reduction Table (only for the same product)</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o442">
@@ -9534,7 +9534,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522044533</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品属性分类表</a:Comment>
+<a:Comment>Product attribute category Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o447">
@@ -9609,7 +9609,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522045805</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品属性参数表</a:Comment>
+<a:Comment>Product attribute Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o452">
@@ -9700,7 +9700,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522045152</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>分类筛选样式：1-&gt;普通；1-&gt;颜色</a:Comment>
+<a:Comment>分类筛选样式：1-&gt;普通；1-&gt;color</a:Comment>
 <a:DataType>int(1)</a:DataType>
 <a:Length>1</a:Length>
 </o:Column>
@@ -9779,7 +9779,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522046456</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>存储产品参数信息的表</a:Comment>
+<a:Comment>Product attribute value Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o465">
@@ -9853,7 +9853,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141317</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>话题表</a:Comment>
+<a:Comment>Topic list</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o470">
@@ -9927,7 +9927,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141052</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>参与人数</a:Comment>
+<a:Comment>The number of participants</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o477">
@@ -9938,7 +9938,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141063</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>关注人数</a:Comment>
+<a:Comment>Number of Followers</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o478">
@@ -9959,7 +9959,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522140997</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>奖品名称</a:Comment>
+<a:Comment>Award Name</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -9971,7 +9971,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141043</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>参与方式</a:Comment>
+<a:Comment>Type of participation</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -9983,7 +9983,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141083</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>话题内容</a:Comment>
+<a:Comment>Topic content</a:Comment>
 <a:DataType>text</a:DataType>
 </o:Column>
 </c:Columns>
@@ -10172,7 +10172,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522215883</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）</a:Comment>
+<a:Comment>Product Category and attribute relationship Table, used to set Category filtering conditions (only supports first-level Category)</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o494">
@@ -10234,7 +10234,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522119143</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品评价表</a:Comment>
+<a:Comment>Product comment Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o498">
@@ -10429,7 +10429,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522119205</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>产品评价回复表</a:Comment>
+<a:Comment>Product comment replay Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o514">
@@ -10536,7 +10536,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522120230</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>相册表</a:Comment>
+<a:Comment>Album Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o522">
@@ -10631,7 +10631,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522120295</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>画册图片表</a:Comment>
+<a:Comment>Picture Album Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o529">
@@ -10899,7 +10899,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522215878</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题商品关系表</a:Comment>
+<a:Comment>Subject Product relations table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o550">
@@ -10961,7 +10961,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522139176</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题分类表</a:Comment>
+<a:Comment>Subject Category Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o554">
@@ -10995,7 +10995,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522139093</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>分类图标</a:Comment>
+<a:Comment>Category Icon</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -11007,7 +11007,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522139135</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题数量</a:Comment>
+<a:Comment>Number of subjects</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o558">
@@ -11058,7 +11058,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141232</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题评论表</a:Comment>
+<a:Comment>Subject Comment Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o561">
@@ -11164,7 +11164,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522399064</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题评论表</a:Comment>
+<a:Comment>Subject Comment Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o569">
@@ -11270,7 +11270,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141297</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>话题分类表</a:Comment>
+<a:Comment>Topic category table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o577">
@@ -11304,7 +11304,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141269</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>分类图标</a:Comment>
+<a:Comment>Category Icon</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -11316,7 +11316,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141269</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题数量</a:Comment>
+<a:Comment>Number of subjects</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o581">
@@ -11517,7 +11517,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141950</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>分类图标</a:Comment>
+<a:Comment>Category Icon</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -11529,7 +11529,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522141999</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>专题数量</a:Comment>
+<a:Comment>Number of subjects</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o597">
@@ -11601,7 +11601,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522142646</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>举报类型：0-&gt;商品评价；1-&gt;话题内容；2-&gt;用户评论</a:Comment>
+<a:Comment>举报类型：0-&gt;商品评价；1-&gt;Topic content；2-&gt;用户评论</a:Comment>
 <a:DataType>int(1)</a:DataType>
 <a:Length>1</a:Length>
 </o:Column>
@@ -11613,7 +11613,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522142303</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>举报人</a:Comment>
+<a:Comment>Reporter name</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -11683,7 +11683,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541664280</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>优惠卷表</a:Comment>
+<a:Comment>Coupon Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o608">
@@ -11920,7 +11920,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541748859</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>优惠券和产品的关系表</a:Comment>
+<a:Comment>Coupon and product relationship Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o627">
@@ -12006,7 +12006,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541749816</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>优惠券和产品分类关系表</a:Comment>
+<a:Comment>Coupon and product Category relationship table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o633">
@@ -12092,7 +12092,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541490649</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>优惠券使用、领取历史表</a:Comment>
+<a:Comment>Coupon use, collection history Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o639">
@@ -12245,7 +12245,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533115911</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员表</a:Comment>
+<a:Comment>Member Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o651">
@@ -12495,7 +12495,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522224364</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>首页推荐品牌表</a:Comment>
+<a:Comment>Home Recommended Brand Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o671">
@@ -12579,7 +12579,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522225874</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>新鲜好物表</a:Comment>
+<a:Comment>Home new Product Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o677">
@@ -12664,7 +12664,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541490586</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>人气推荐商品表</a:Comment>
+<a:Comment>Home Recommended Product Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o683">
@@ -12749,7 +12749,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1542179474</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>首页推荐专题表</a:Comment>
+<a:Comment>Home Recommended Subjects Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o689">
@@ -12833,7 +12833,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541578000</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>首页轮播广告表</a:Comment>
+<a:Comment>Home Carousel Advertisement Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o695">
@@ -13003,7 +13003,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522301372</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>限时购表</a:Comment>
+<a:Comment>Flash Promotion Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o708">
@@ -13101,7 +13101,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522303410</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>限时购通知记录</a:Comment>
+<a:Comment>Flash Promotion Log Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o715">
@@ -13206,7 +13206,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538200957</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户表</a:Comment>
+<a:Comment>Admin User Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o723">
@@ -13355,7 +13355,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522304178</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户登录日志表</a:Comment>
+<a:Comment>Admin User login Logs Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o734">
@@ -13451,7 +13451,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1542179474</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员等级表</a:Comment>
+<a:Comment>Member Level Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o741">
@@ -13633,7 +13633,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522387526</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员与产品分类关系表（用户喜欢的分类）</a:Comment>
+<a:Comment>Member and Product Category relationship Table (the users favorite Category)</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o755">
@@ -13695,7 +13695,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522390765</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员统计信息</a:Comment>
+<a:Comment>Member Statistics Information Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o759">
@@ -13898,7 +13898,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1535437101</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员收货地址表</a:Comment>
+<a:Comment>Member receive address Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o776">
@@ -14045,7 +14045,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522747822</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员登录记录</a:Comment>
+<a:Comment>Member Login Logs Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o787">
@@ -14152,7 +14152,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522391227</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>用户标签表</a:Comment>
+<a:Comment>Member Tag Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o795">
@@ -14229,7 +14229,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522391380</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>用户和标签关系表</a:Comment>
+<a:Comment>Member and Member tag relation Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o800">
@@ -14291,7 +14291,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522396758</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>积分变化历史记录表</a:Comment>
+<a:Comment>Integration change history Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o804">
@@ -14412,7 +14412,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522396864</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>成长值变化历史记录表</a:Comment>
+<a:Comment>Growth value change history record Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o813">
@@ -14533,7 +14533,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522397290</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员任务表</a:Comment>
+<a:Comment>Member Task Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o822">
@@ -14620,7 +14620,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522397900</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员积分成长规则表</a:Comment>
+<a:Comment>Member Points Growth Rule setting Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o828">
@@ -14733,7 +14733,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1535615091</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>积分消费设置</a:Comment>
+<a:Comment>Integration Consume Setting Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o836">
@@ -14820,7 +14820,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1541490586</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单表</a:Comment>
+<a:Comment>Order Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o842">
@@ -14877,7 +14877,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522658633</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>提交时间</a:Comment>
+<a:Comment>Submit time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o847">
@@ -14888,7 +14888,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522658689</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>用户帐号</a:Comment>
+<a:Comment>User Account</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -14900,7 +14900,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522723559</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单总金额</a:Comment>
+<a:Comment>The total amount of orders</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14913,7 +14913,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1535611836</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>应付金额（实际支付金额）</a:Comment>
+<a:Comment>Amount payable (actual payment amount)</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14926,7 +14926,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522723610</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>运费金额</a:Comment>
+<a:Comment>Freight amount</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14939,7 +14939,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522723859</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>促销优化金额（促销价、满减、阶梯价）</a:Comment>
+<a:Comment>Promotion optimization amount (promotional price, full reduction, step price)</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14952,7 +14952,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522723942</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>积分抵扣金额</a:Comment>
+<a:Comment>Points deduction amount</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14965,7 +14965,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522724255</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>优惠券抵扣金额</a:Comment>
+<a:Comment>Coupon deduction amount</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -14978,7 +14978,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522724828</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>管理员后台调整订单使用的折扣金额</a:Comment>
+<a:Comment>The administrator adjusts the discount amount used by the order in the back-end</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -15039,7 +15039,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522725481</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>物流公司(配送方式)</a:Comment>
+<a:Comment>Delivery company (distribution method)</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15051,7 +15051,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522659902</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>物流单号</a:Comment>
+<a:Comment>Delivery Serial Number</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15063,7 +15063,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522659955</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>自动确认时间（天）</a:Comment>
+<a:Comment>Automatic confirmation time (days)</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o862">
@@ -15074,7 +15074,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660021</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>可以获得的积分</a:Comment>
+<a:Comment>Points you can earn</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o863">
@@ -15085,7 +15085,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660081</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>可以活动的成长值</a:Comment>
+<a:Comment>Active growth value</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o864">
@@ -15096,7 +15096,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660086</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>活动信息</a:Comment>
+<a:Comment>Promotion information</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 </o:Column>
@@ -15120,7 +15120,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660226</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>发票抬头</a:Comment>
+<a:Comment>bill header</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -15132,7 +15132,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660256</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>发票内容</a:Comment>
+<a:Comment>bill content</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -15144,7 +15144,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660326</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收票人电话</a:Comment>
+<a:Comment>Receiver phone</a:Comment>
 <a:DataType>varchar(32)</a:DataType>
 <a:Length>32</a:Length>
 </o:Column>
@@ -15156,7 +15156,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660344</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收票人邮箱</a:Comment>
+<a:Comment>Receiver email</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -15168,7 +15168,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1535612363</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收货人姓名</a:Comment>
+<a:Comment>Receiver name</a:Comment>
 <a:DataType>varchar(100)</a:DataType>
 <a:Length>100</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
@@ -15181,7 +15181,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1535612363</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收货人电话</a:Comment>
+<a:Comment>Receiver phone</a:Comment>
 <a:DataType>varchar(32)</a:DataType>
 <a:Length>32</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
@@ -15194,7 +15194,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660472</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收货人邮编</a:Comment>
+<a:Comment>Receiver postcode</a:Comment>
 <a:DataType>varchar(32)</a:DataType>
 <a:Length>32</a:Length>
 </o:Column>
@@ -15242,7 +15242,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522660613</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>详细地址</a:Comment>
+<a:Comment>Detail Address</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -15254,7 +15254,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522724915</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单备注</a:Comment>
+<a:Comment>Order note</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -15296,7 +15296,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1536136230</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>下单时使用的积分</a:Comment>
+<a:Comment>Points used when placing an order</a:Comment>
 <a:DataType>int</a:DataType>
 </o:Column>
 <o:Column Id="o881">
@@ -15307,7 +15307,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539236349</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>支付时间</a:Comment>
+<a:Comment>Payment time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o882">
@@ -15318,7 +15318,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539236252</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>发货时间</a:Comment>
+<a:Comment>Delivery time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o883">
@@ -15329,7 +15329,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539236359</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>确认收货时间</a:Comment>
+<a:Comment>Receive time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o884">
@@ -15340,7 +15340,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539236415</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>评价时间</a:Comment>
+<a:Comment>Comment time</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o885">
@@ -15351,7 +15351,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539236440</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>修改时间</a:Comment>
+<a:Comment>Modify Date</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 </c:Columns>
@@ -15381,7 +15381,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1540542634</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单中所包含的商品</a:Comment>
+<a:Comment>Ordered Item Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o887">
@@ -15663,7 +15663,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1540542637</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;颜色&quot;,&quot;value&quot;:&quot;颜色&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
+<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;color&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -15694,7 +15694,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522725331</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单操作历史记录</a:Comment>
+<a:Comment>Order operation history Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o912">
@@ -15794,7 +15794,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522731991</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单设置表</a:Comment>
+<a:Comment>Order setting Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o919">
@@ -15891,7 +15891,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539746524</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>订单退货申请</a:Comment>
+<a:Comment>Order return application Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o926">
@@ -16241,7 +16241,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745228</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>公司收发货地址表</a:Comment>
+<a:Comment>Company delivery address table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o954">
@@ -16264,7 +16264,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522745253</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>地址名称</a:Comment>
+<a:Comment>Address name</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -16300,7 +16300,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745228</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收发货人姓名</a:Comment>
+<a:Comment>Receiver name</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -16312,7 +16312,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1522745508</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>收货人电话</a:Comment>
+<a:Comment>Receiver phone</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -16324,7 +16324,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745209</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>省/直辖市</a:Comment>
+<a:Comment>State/Province</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -16336,7 +16336,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745217</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>市</a:Comment>
+<a:Comment>City</a:Comment>
 <a:DataType>varchar(64)</a:DataType>
 <a:Length>64</a:Length>
 </o:Column>
@@ -16360,7 +16360,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539745239</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>详细地址</a:Comment>
+<a:Comment>Detail Address</a:Comment>
 <a:DataType>varchar(200)</a:DataType>
 <a:Length>200</a:Length>
 </o:Column>
@@ -16391,7 +16391,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1539238788</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>退货原因表</a:Comment>
+<a:Comment>Order return reason Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o965">
@@ -16478,7 +16478,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1582621132</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>购物车表</a:Comment>
+<a:Comment>Order Shopping cart table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o971">
@@ -16542,7 +16542,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533108790</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>添加到购物车的价格</a:Comment>
+<a:Comment>Price added to cart</a:Comment>
 <a:DataType>decimal(10,2)</a:DataType>
 <a:Length>10</a:Length>
 <a:Precision>2</a:Precision>
@@ -16555,7 +16555,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533171242</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品主图</a:Comment>
+<a:Comment>Product main picture</a:Comment>
 <a:DataType>varchar(1000)</a:DataType>
 <a:Length>1000</a:Length>
 </o:Column>
@@ -16601,7 +16601,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533171264</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品副标题（卖点）</a:Comment>
+<a:Comment>Product subtitle (selling point)</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16625,7 +16625,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533171328</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>会员昵称</a:Comment>
+<a:Comment>Member Nickname</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16648,7 +16648,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533171341</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>修改时间</a:Comment>
+<a:Comment>Modify Date</a:Comment>
 <a:DataType>datetime</a:DataType>
 </o:Column>
 <o:Column Id="o986">
@@ -16659,7 +16659,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1533172643</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>是否删除</a:Comment>
+<a:Comment>Delete or not Delete</a:Comment>
 <a:DefaultValue>0</a:DefaultValue>
 <a:DataType>int(1)</a:DataType>
 <a:Length>1</a:Length>
@@ -16683,7 +16683,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1540542603</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;颜色&quot;,&quot;value&quot;:&quot;银色&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
+<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;银色&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16714,7 +16714,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538201383</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户角色表</a:Comment>
+<a:Comment>Admin user role Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o990">
@@ -16826,7 +16826,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538202362</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户权限表</a:Comment>
+<a:Comment>Admin user permission Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o998">
@@ -16977,7 +16977,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538202492</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户和角色关系表</a:Comment>
+<a:Comment>Admin user and role relationship Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1009">
@@ -17039,7 +17039,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538202588</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户角色和权限关系表</a:Comment>
+<a:Comment>Admin user Role and Permission relation Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1013">
@@ -17101,7 +17101,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1538203086</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台用户和权限关系表(除角色中定义的权限以外的加减权限)</a:Comment>
+<a:Comment>Admin user and permission relationship Table (addition and subtraction permissions in addition to the permissions defined in the role)</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1017">
@@ -17174,7 +17174,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1542178475</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>限时购场次表</a:Comment>
+<a:Comment>Flash Promotion Session Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1022">
@@ -17274,7 +17274,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1542179474</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品限时购与商品关系表</a:Comment>
+<a:Comment>Flash Promotion and Product Relationship Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1029">
@@ -17394,7 +17394,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580625146</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台菜单表</a:Comment>
+<a:Comment>Admin menu Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1038">
@@ -17530,7 +17530,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580869150</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台资源表</a:Comment>
+<a:Comment>Admin resource Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1048">
@@ -17630,7 +17630,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580625352</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台角色菜单关系表</a:Comment>
+<a:Comment>Admin role menu relation Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1055">
@@ -17694,7 +17694,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580625435</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>后台角色资源关系表</a:Comment>
+<a:Comment>Admin Role Resource relation Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1059">
@@ -17758,7 +17758,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1581324455</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>资源分类表</a:Comment>
+<a:Comment>Resource Category Table</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o1063">

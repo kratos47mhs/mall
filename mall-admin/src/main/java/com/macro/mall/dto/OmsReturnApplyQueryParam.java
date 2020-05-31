@@ -15,7 +15,7 @@ public class OmsReturnApplyQueryParam {
     private Long id;
     @ApiModelProperty(value = "Receiver name / number")
     private String receiverKeyword;
-    @ApiModelProperty(value = "Application status: 0-> pending; 1-> return of goods; 2-> completed; 3-> rejected")
+    @ApiModelProperty(value = "Application status: 0-> pending; 1-> return of Product; 2-> completed; 3-> rejected")
     private Integer status;
     @ApiModelProperty(value = "application time")
     private String createTime;

@@ -35,7 +35,7 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Returnee phone")
     private String returnPhone;
 
-    @ApiModelProperty(value = "Application status: 0-> pending; 1-> return of goods; 2-> completed; 3-> rejected")
+    @ApiModelProperty(value = "Application status: 0-> pending; 1-> return of Product; 2-> completed; 3-> rejected")
     private Integer status;
 
     @ApiModelProperty(value = "Processing time")
