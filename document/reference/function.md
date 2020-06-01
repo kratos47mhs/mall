@@ -1,8 +1,8 @@
-# mall功能结构说明
+# Mall functional structure description
 
-## 后台管理系统
+## Back-end management system
 
-### 商品管理
+### Product management
 
 ![功能结构图-商品.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_product.jpg)
 
@@ -10,18 +10,18 @@
 
 ![功能结构图-订单.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_order.jpg)
 
-### 促销管理
+### Sale management
 
 ![功能结构图-促销.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_sale.jpg)
 
-### 内容管理
+### Content management
 
 ![功能结构图-内容.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_content.jpg)
 
-### 用户管理
+### Member Management
 
 ![功能结构图-用户.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_member.jpg)
 
-## 前台商城系统 
+### Portal Management
 
 ![功能结构图-前台.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_portal.jpg)

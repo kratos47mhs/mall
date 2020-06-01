@@ -2,7 +2,7 @@
 
 ## 框架搭建
 
-功能 | 完成 
+功能 | Complete 
 ----|----
 集成MyBatis | ✔
 集成MyBatisGenerator | ✔
@@ -41,21 +41,21 @@ SpringSecurity权限管理功能 | ✔
 - 后台用户登录后获取token
 - 刷新token功能
 
-### 商品管理 
+### Product management 
 
-> **商品分类管理**
+> **Product Category management**
 
 - 按父分类编号分页查看分类列表
 - 添加、编辑、删除分类
 - 转移分类商品
 
-> **商品品牌管理**
+> **Product brand management**
 
 - 按品牌名称搜索分页查看品牌列表
 - 添加、编辑、删除品牌
 - 查看当前品牌的所有产品
 
-> **商品属性分类管理**
+> **Product attribute Category management**
 
 - 添加商品属性分类（Name）
 - 分页查询全部商品属性分类
@@ -63,7 +63,7 @@ SpringSecurity权限管理功能 | ✔
 - 修改单个属性分类名称
 - 查询单个属性分类信息
 
-> **商品属性管理**
+> **Product attribute management**
 
 - 根据分类查询属性列表或参数列表（分页，支持类型）
 - 添加商品属性
@@ -72,14 +72,14 @@ SpringSecurity权限管理功能 | ✔
 - 批量删除商品属性
 - 分页查询全部商品属性
 
-> **添加商品**
+> **Adding Product**
 
-- 选择商品分类：根据商品分类id查找分类
-- 选择品牌：查询全部品牌
-- 选择运费模版：查询全部运费模版
-- 设置会员价格：查询所有会员等级，传入List<PmsMemberPrice>
-- 添加阶梯价格: 参数传入List<PmsProductLadder>
-- 设置满减价格: 参数传入List<PmsProductFullReduction>
+- Select a product category: find a category based on the product category id
+- Select brand: check all brands
+- Select freight template: check all freight templates
+- Set member price: check all member levels and pass in List<PmsMemberPrice>
+- Add ladder price: parameter incoming List<PmsProductLadder>
+- Set the full reduction price: parameters passed in List<PmsProductFullReduction>
 - 选择商品属性类别:获取所有商品属性分类，根据商品属性分类的id获取规格和参数(type=0->规格；type=1->参数)
 - 选择规格并生成库存信息：前端实现
 - 添加sku库存信息：参数传入List<PmsSkuStock>

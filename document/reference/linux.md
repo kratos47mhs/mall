@@ -132,9 +132,9 @@
 
 ### iptables
 
-- 开启防火墙：systemctl start iptables.service
-- 关闭防火墙：systemctl stop iptables.service
-- 查看防火墙状态：systemctl status iptables.service
+- Turn on the firewall：systemctl start iptables.service
+- Turn off the firewall：systemctl stop iptables.service
+- View firewall status：systemctl status iptables.service
 - 设置开机启动：systemctl enable iptables.service
 - 禁用开机启动：systemctl disable iptables.service
 - 查看filter表的链信息：iptables -L -n

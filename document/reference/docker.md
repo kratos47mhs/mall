@@ -1,72 +1,72 @@
-# Docker入门手册
+# Docker Getting Started Manual
 
-## Docker 镜像常用命令
-### 搜索镜像
-docker search java
-### 下载镜像
+## Common commands for Docker images
+### Search images
+- docker search java
+### Download images
 - docker pull java:8
 - docker pull macro/eureka-server:0.0.1
-### 列出镜像
+### List images
 docker images
-### 删除镜像
+### Delete images
 - docker rmi java
 - docker rmi -f java 
 - docker rmi -f $(docker images)
 
-## Docker 容器常用命令
-### 新建并启动容器
+## Common commands for Docker containers
+### Create and start a container
 docker run -d -p 91:80 nginx
-### 列出容器
+### List containers
 docker ps
-### 停止容器
+### Stop the container
 docker stop $ContainerId
-### 强制停止容器
+### Force stop container
 docker kill $ContainerId
-### 启动已停止的容器
+### Start a stopped container
 docker start $ContainerId
 ### 进入容器
 - docker inspect --format "{{.State.Pid}}" $ContainerId
 - nsenter --target "$pid" --mount --uts --ipc --net --pid
-### 删除容器
+### Delete container
 - docker rm $ContainerId
 - docker rm -f $(docker ps -a -q)
-### 查看启动错误日志
+### View startup error log
 docker logs $ContainerIdName(或者$ContainerId)
-### 查看容器的IP地址（172.17.0.*）
+### View the IP address of the container（172.17.0.*）
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' $ContainerId
-### 同步宿主机时间到容器
+### Synchronize host time to container
 docker cp /etc/localtime $ContainerName:/etc/
-### 在宿主机查看docker使用cpu、内存、网络、io情况
-- 查看指定容器情况：docker stats $ContainerName
-- 查看所有容器情况：docker stats -a
-### 进入docker内部的bash
+### View docker usage cpu, memory, network, io on the host machine
+- View the specified container：docker stats $ContainerName
+- View all containers：docker stats -a
+### Enter bash inside docker
 docker exec -it $ContainerName /bin/bash
 
 ## Docker Registry
-### Docker Registry 2.0搭建
+### Docker Registry 2.0 build
 docker run -d -p 5000:5000 --restart=always --name registry2 registry:2
-### 推送到私有仓库
+### Push to private Registry
 docker push localhost:5000/macro/eureka-server:0.0.1
-### 修改镜像标签
+### Modify image label
 docker tag macro/eureka-server:0.0.1 localhost:5000/macro/eureka-server:0.0.1
 
-## 使用maven构建Docker镜像
-### 构建镜像
+## Use maven to build Docker images
+### Build image
 - command：mvn clean package docker:build
 - tip：
-    Linux服务器需要开启远程api:vi /usr/lib/systemd/system/docker.service
-    修改为：ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock   
-### 推送镜像到私有仓库
+    Linux server needs to open remote api :vi /usr/lib/systemd/system/docker.service
+    Modify to：ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock   
+### Push the image to a private Registry
 - command：mvn clean package docker:build -DpushImage
 - tip：
-    pom.xml修改<imageName>192.168.1.71:5000/macro/${project.artifactId}:${project.version}</imageName>
+    pom.xml Modify <imageName>192.168.1.71:5000/macro/${project.artifactId}:${project.version}</imageName>
 - tip：
-    docker要支持http:echo '{ "insecure-registries":["39.98.190.128:5000"] }' > /etc/docker/daemon.json 
+    docker to support http:echo '{ "insecure-registries":["39.98.190.128:5000"] }' > /etc/docker/daemon.json 
 ### Modify the storage location of the Docker image
-1. 查看Docker的存放位置：docker info | grep "Docker Root Dir"（默认为/var/lib/docker）
-2. 关闭Docker服务：systemctl stop docker
-3. 移动目录到目标路径：mv /var/lib/docker /root/data/docker
-4. 建立软连接：ln -s /root/data/docker /var/lib/docker
+1. View the storage location of Docker：docker info | grep "Docker Root Dir"（The default is /var/lib/docker）
+2. Shut down the Docker service：systemctl stop docker
+3. Move directory to target path：mv /var/lib/docker /root/data/docker
+4. Make a symbolic link：ln -s /root/data/docker /var/lib/docker
 
 ## Docker compose
 ### installation
