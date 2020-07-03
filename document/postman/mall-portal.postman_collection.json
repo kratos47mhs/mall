@@ -76,7 +76,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"price\": 5499,\r\n  \"productId\": 29,\r\n  \"productName\": \"Apple iPhone 8 Plus\",\r\n  \"productSkuCode\": \"201808270029001\",\r\n  \"productSkuId\": 106,\r\n  \"productSubTitle\": \"[Limited time limited purchase] Apple products mid-year carnival, enjoy the good things, beauty is in wisdom! Quick Coming >> Check [Protection Service] [Original Factory Guarantee 2 Years] to get the AppleCare + full-service plan, no worries about the original factory extended warranty.\",\r\n  \"quantity\": 1,\r\n  \"sp1\": \"金色\",\r\n  \"sp2\": \"32G\",\r\n  \"sp3\": null\r\n}"
+					"raw": "{\r\n  \"price\": 5499,\r\n  \"productId\": 29,\r\n  \"productName\": \"Apple iPhone 8 Plus\",\r\n  \"productSkuCode\": \"201808270029001\",\r\n  \"productSkuId\": 106,\r\n  \"productSubTitle\": \"[Limited time limited purchase] Apple products mid-year carnival, enjoy the good things, beauty is in wisdom! Quick Coming >> Check [Protection Service] [Original Factory Guarantee 2 Years] to get the AppleCare + full-service plan, no worries about the original factory extended warranty.\",\r\n  \"quantity\": 1,\r\n  \"sp1\": \"Golden\",\r\n  \"sp2\": \"32G\",\r\n  \"sp3\": null\r\n}"
 				},
 				"description": ""
 			},
@@ -143,7 +143,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"defaultStatus\": 1,\r\n  \"name\": \"Big pear\",\r\n  \"phoneNumber\": \"18033441849\",\r\n  \"postCode\": \"518000\",\r\n  \"city\": \"Shenzhen\",\r\n  \"detailAddress\": \"东晓街道\",\r\n  \"province\": \"Guangdong Province\",\r\n  \"region\": \"福田区\"\r\n}"
+					"raw": "{\r\n  \"defaultStatus\": 1,\r\n  \"name\": \"Big pear\",\r\n  \"phoneNumber\": \"18033441849\",\r\n  \"postCode\": \"518000\",\r\n  \"city\": \"Shenzhen\",\r\n  \"detailAddress\": \"Dongxiao Jiedao\",\r\n  \"province\": \"Guangdong Province\",\r\n  \"region\": \"Futian District\"\r\n}"
 				},
 				"description": ""
 			},
@@ -185,7 +185,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"id\": 3,\n        \"memberId\": 1,\n        \"name\": \"Big pear\",\n        \"phoneNumber\": \"18033441849\",\n        \"defaultStatus\": 0,\n        \"postCode\": \"518000\",\n        \"province\": \"Guangdong Province\",\n        \"city\": \"Shenzhen\",\n        \"region\": \"福田区\",\n        \"detailAddress\": \"清水河街道\"\n    }"
+					"raw": "{\n        \"id\": 3,\n        \"memberId\": 1,\n        \"name\": \"Big pear\",\n        \"phoneNumber\": \"18033441849\",\n        \"defaultStatus\": 0,\n        \"postCode\": \"518000\",\n        \"province\": \"Guangdong Province\",\n        \"city\": \"Shenzhen\",\n        \"region\": \"Futian District\",\n        \"detailAddress\": \"清水河街道\"\n    }"
 				},
 				"description": ""
 			},

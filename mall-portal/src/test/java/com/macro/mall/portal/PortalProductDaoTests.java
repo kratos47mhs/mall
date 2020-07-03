@@ -21,14 +21,15 @@ import java.util.List;
 public class PortalProductDaoTests {
     @Autowired
     private PortalProductDao portalProductDao;
+
     @Test
-    public void testGetPromotionProductList(){
+    public void testGetPromotionProductList() {
         List<Long> ids = new ArrayList<>();
         ids.add(26L);
         ids.add(27L);
         ids.add(28L);
         ids.add(29L);
         List<PromotionProduct> promotionProductList = portalProductDao.getPromotionProductList(ids);
-        Assert.assertEquals(4,promotionProductList.size());
+        Assert.assertEquals(4, promotionProductList.size());
     }
 }

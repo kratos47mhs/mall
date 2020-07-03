@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"amount\": 50,\r\n  \"count\": 100,\r\n  \"enableTime\": \"2018-08-27T08:40:46.973Z\",\r\n  \"endTime\": \"2018-08-31T08:40:46.973Z\",\r\n  \"minPoint\": 500,\r\n  \"name\": \"T恤分类专用优惠券\",\r\n  \"note\": \"满500减50\",\r\n  \"perLimit\": 1,\r\n  \"platform\": 0,\r\n  \"publishCount\": 100,\r\n  \"receiveCount\": 0,\r\n  \"startTime\": \"2018-08-27T08:40:46.973Z\",\r\n  \"type\": 0,\r\n  \"useCount\": 0,\r\n  \"useType\": 1,\r\n  \"productCategoryRelationList\": [\r\n    {\r\n      \"productCategoryId\": 8\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"amount\": 50,\r\n  \"count\": 100,\r\n  \"enableTime\": \"2018-08-27T08:40:46.973Z\",\r\n  \"endTime\": \"2018-08-31T08:40:46.973Z\",\r\n  \"minPoint\": 500,\r\n  \"name\": \"Coupons for T-shirt category\",\r\n  \"note\": \"满500减50\",\r\n  \"perLimit\": 1,\r\n  \"platform\": 0,\r\n  \"publishCount\": 100,\r\n  \"receiveCount\": 0,\r\n  \"startTime\": \"2018-08-27T08:40:46.973Z\",\r\n  \"type\": 0,\r\n  \"useCount\": 0,\r\n  \"useType\": 1,\r\n  \"productCategoryRelationList\": [\r\n    {\r\n      \"productCategoryId\": 8\r\n    }\r\n  ]\r\n}"
 				},
 				"description": ""
 			},

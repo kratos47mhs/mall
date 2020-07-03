@@ -15629,7 +15629,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1540542637</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;color&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
+<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;color&quot;},{&quot;key&quot;:&quot;Capacity&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
@@ -16649,7 +16649,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1540542603</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;银色&quot;},{&quot;key&quot;:&quot;容量&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
+<a:Comment>商品销售属性:[{&quot;key&quot;:&quot;color&quot;,&quot;value&quot;:&quot;Silver&quot;},{&quot;key&quot;:&quot;Capacity&quot;,&quot;value&quot;:&quot;4G&quot;}]</a:Comment>
 <a:DataType>varchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
