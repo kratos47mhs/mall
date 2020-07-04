@@ -8,5 +8,8 @@ import org.apache.ibatis.annotations.Param;
  * Created by macro on 2018/8/29.
  */
 public interface SmsCouponDao {
+    /**
+     * Get coupon details including binding relations
+     */
     SmsCouponParam getItem(@Param("id") Long id);
 }

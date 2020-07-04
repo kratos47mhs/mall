@@ -1,6 +1,7 @@
 package com.macro.mall.portal.controller;
 
 import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.model.SmsCoupon;
 import com.macro.mall.model.SmsCouponHistory;
 import com.macro.mall.portal.domain.CartPromotionItem;
 import com.macro.mall.portal.domain.SmsCouponHistoryDetail;
@@ -39,24 +40,42 @@ public class UmsMemberCouponController {
         return CommonResult.success(null,"Successfully received");
     }
 
-    @ApiOperation("Get a list of user coupons")
-    @ApiImplicitParam(name = "useStatus", value = "Coupon screening type: 0-> unused; 1-> used; 2-> expired",
+    @ApiOperation("Get a list of user coupon history")
+    @ApiImplicitParam(name = "useStatus", value = "Coupon screening type: 0->unused; 1->used; 2->expired",
             allowableValues = "0,1,2", paramType = "query", dataType = "integer")
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/listHistory", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<SmsCouponHistory>> list(@RequestParam(value = "useStatus", required = false) Integer useStatus) {
-        List<SmsCouponHistory> couponHistoryList = memberCouponService.list(useStatus);
+    public CommonResult<List<SmsCouponHistory>> listHistory(@RequestParam(value = "useStatus", required = false) Integer useStatus) {
+        List<SmsCouponHistory> couponHistoryList = memberCouponService.listHistory(useStatus);
         return CommonResult.success(couponHistoryList);
     }
 
+    @ApiOperation("Get a list of user coupons")
+    @ApiImplicitParam(name = "useStatus", value = "Coupon screening type: 0->unused; 1->used; 2->expired",
+            allowableValues = "0,1,2", paramType = "query", dataType = "integer")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<List<SmsCoupon>> list(@RequestParam(value = "useStatus", required = false) Integer useStatus) {
+        List<SmsCoupon> couponList = memberCouponService.list(useStatus);
+        return CommonResult.success(couponList);
+    }
+
     @ApiOperation("Get coupons related to the member's shopping cart")
-    @ApiImplicitParam(name = "type", value = "Use available: 0-> not available; 1-> available",
+    @ApiImplicitParam(name = "type", value = "Use available: 0->not available; 1->available",
             defaultValue = "1", allowableValues = "0,1", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsCouponHistoryDetail>> listCart(@PathVariable Integer type) {
-        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId());
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId(), null);
         List<SmsCouponHistoryDetail> couponHistoryList = memberCouponService.listCart(cartPromotionItemList, type);
+        return CommonResult.success(couponHistoryList);
+    }
+
+    @ApiOperation("Get coupons related to the current product")
+    @RequestMapping(value = "/listByProduct/{productId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<List<SmsCoupon>> listByProduct(@PathVariable Long productId) {
+        List<SmsCoupon> couponHistoryList = memberCouponService.listByProduct(productId);
         return CommonResult.success(couponHistoryList);
     }
 }

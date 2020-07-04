@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Background user role management custom Dao
+ * Admin user role management custom Dao
  * Created by macro on 2018/9/30.
  */
 public interface UmsRolePermissionRelationDao {

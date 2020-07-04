@@ -1,5 +1,9 @@
 package com.macro.mall.portal.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollUtil;
+import com.github.pagehelper.PageHelper;
+import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.mapper.*;
 import com.macro.mall.model.*;
@@ -19,6 +23,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Portal Order Management Service
@@ -315,6 +320,92 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         cancelOrderSender.sendMessage(orderId, delayTimes);
     }
 
+    @Override
+    public void confirmReceiveOrder(Long orderId) {
+        UmsMember member = memberService.getCurrentMember();
+        OmsOrder order = orderMapper.selectByPrimaryKey(orderId);
+        if(!member.getId().equals(order.getMemberId())){
+            Asserts.fail("Can't confirm other people's orders！");
+        }
+        if(order.getStatus()!=2){
+            Asserts.fail("The order has not been shipped！");
+        }
+        order.setStatus(3);
+        order.setConfirmStatus(1);
+        order.setReceiveTime(new Date());
+        orderMapper.updateByPrimaryKey(order);
+    }
+
+    @Override
+    public CommonPage<OmsOrderDetail> list(Integer status, Integer pageNum, Integer pageSize) {
+        if(status==-1){
+            status = null;
+        }
+        UmsMember member = memberService.getCurrentMember();
+        PageHelper.startPage(pageNum,pageSize);
+        OmsOrderExample orderExample = new OmsOrderExample();
+        OmsOrderExample.Criteria criteria = orderExample.createCriteria();
+        criteria.andDeleteStatusEqualTo(0)
+                .andMemberIdEqualTo(member.getId());
+        if(status!=null){
+            criteria.andStatusEqualTo(status);
+        }
+        orderExample.setOrderByClause("create_time desc");
+        List<OmsOrder> orderList = orderMapper.selectByExample(orderExample);
+        CommonPage<OmsOrder> orderPage = CommonPage.restPage(orderList);
+        //Set paging information
+        CommonPage<OmsOrderDetail> resultPage = new CommonPage<>();
+        resultPage.setPageNum(orderPage.getPageNum());
+        resultPage.setPageSize(orderPage.getPageSize());
+        resultPage.setTotal(orderPage.getTotal());
+        resultPage.setTotalPage(orderPage.getTotalPage());
+        if(CollUtil.isEmpty(orderList)){
+            return resultPage;
+        }
+        //Set data information
+        List<Long> orderIds = orderList.stream().map(OmsOrder::getId).collect(Collectors.toList());
+        OmsOrderItemExample orderItemExample = new OmsOrderItemExample();
+        orderItemExample.createCriteria().andOrderIdIn(orderIds);
+        List<OmsOrderItem> orderItemList = orderItemMapper.selectByExample(orderItemExample);
+        List<OmsOrderDetail> orderDetailList = new ArrayList<>();
+        for (OmsOrder omsOrder : orderList) {
+            OmsOrderDetail orderDetail = new OmsOrderDetail();
+            BeanUtil.copyProperties(omsOrder,orderDetail);
+            List<OmsOrderItem> relatedItemList = orderItemList.stream().filter(item -> item.getOrderId().equals(orderDetail.getId())).collect(Collectors.toList());
+            orderDetail.setOrderItemList(relatedItemList);
+            orderDetailList.add(orderDetail);
+        }
+        resultPage.setList(orderDetailList);
+        return resultPage;
+    }
+
+    @Override
+    public OmsOrderDetail detail(Long orderId) {
+        OmsOrder omsOrder = orderMapper.selectByPrimaryKey(orderId);
+        OmsOrderItemExample example = new OmsOrderItemExample();
+        example.createCriteria().andOrderIdEqualTo(orderId);
+        List<OmsOrderItem> orderItemList = orderItemMapper.selectByExample(example);
+        OmsOrderDetail orderDetail = new OmsOrderDetail();
+        BeanUtil.copyProperties(omsOrder,orderDetail);
+        orderDetail.setOrderItemList(orderItemList);
+        return orderDetail;
+    }
+
+    @Override
+    public void deleteOrder(Long orderId) {
+        UmsMember member = memberService.getCurrentMember();
+        OmsOrder order = orderMapper.selectByPrimaryKey(orderId);
+        if(!member.getId().equals(order.getMemberId())){
+            Asserts.fail("Cannot delete orders from others！");
+        }
+        if(order.getStatus()==3||order.getStatus()==4){
+            order.setDeleteStatus(1);
+            orderMapper.updateByPrimaryKey(order);
+        }else{
+            Asserts.fail("Can only delete completed or closed orders！");
+        }
+    }
+
     /**
      * Generate 18-digit order number: 8-digit date + 2-digit platform number + 2-digit payment method + 6-digit self-increasing id
      */
@@ -494,7 +585,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         if (useIntegration.compareTo(integrationConsumeSetting.getUseUnit()) < 0) {
             return zeroAmount;
         }
-        //Whether the maximum percentage of order credit is exceeded
+        //是否超过订单抵用最高百分比
         BigDecimal integrationAmount = new BigDecimal(useIntegration).divide(new BigDecimal(integrationConsumeSetting.getUseUnit()), 2, RoundingMode.HALF_EVEN);
         BigDecimal maxPercent = new BigDecimal(integrationConsumeSetting.getMaxPercentPerOrder()).divide(new BigDecimal(100), 2, RoundingMode.HALF_EVEN);
         if (integrationAmount.compareTo(totalAmount.multiply(maxPercent)) > 0) {

@@ -3,6 +3,9 @@ package com.macro.mall.dto;
 import com.macro.mall.model.SmsCoupon;
 import com.macro.mall.model.SmsCouponProductCategoryRelation;
 import com.macro.mall.model.SmsCouponProductRelation;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,23 +15,13 @@ import java.util.List;
  */
 public class SmsCouponParam extends SmsCoupon {
     //Coupon-bound products
+    @Getter
+    @Setter
+    @ApiModelProperty("Coupon-bound products")
     private List<SmsCouponProductRelation> productRelationList;
     //Coupon-bound product category
+    @Getter
+    @Setter
+    @ApiModelProperty("Coupon-bound product categories")
     private List<SmsCouponProductCategoryRelation> productCategoryRelationList;
-
-    public List<SmsCouponProductRelation> getProductRelationList() {
-        return productRelationList;
-    }
-
-    public void setProductRelationList(List<SmsCouponProductRelation> productRelationList) {
-        this.productRelationList = productRelationList;
-    }
-
-    public List<SmsCouponProductCategoryRelation> getProductCategoryRelationList() {
-        return productCategoryRelationList;
-    }
-
-    public void setProductCategoryRelationList(List<SmsCouponProductCategoryRelation> productCategoryRelationList) {
-        this.productCategoryRelationList = productCategoryRelationList;
-    }
 }

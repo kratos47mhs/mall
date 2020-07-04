@@ -1,11 +1,13 @@
 package com.macro.mall.portal.controller;
 
+import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.portal.domain.MemberReadHistory;
 import com.macro.mall.portal.service.MemberReadHistoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,6 +49,14 @@ public class MemberReadHistoryController {
     }
 
     @ApiOperation("Show browsing history")
+    @RequestMapping(value = "/clear", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult clear() {
+        memberReadHistoryService.clear();
+        return CommonResult.success(null);
+    }
+
+    @ApiOperation("Get user browsing records by page")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<MemberReadHistory>> list(Long memberId) {

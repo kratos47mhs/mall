@@ -26,7 +26,7 @@ public interface OmsCartItemService {
     /**
      * Get a list of shopping carts with information about promotions
      */
-    List<CartPromotionItem> listPromotion(Long memberId);
+    List<CartPromotionItem> listPromotion(Long memberId, List<Long> cartIds);
 
     /**
      * Modify the number of items in a shopping cart

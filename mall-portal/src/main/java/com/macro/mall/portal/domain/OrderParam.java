@@ -1,48 +1,26 @@
 package com.macro.mall.portal.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.util.List;
+
 /**
  * Parameters passed in when generating the order
  * Created by macro on 2018/8/30.
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class OrderParam {
-    //Delivery address id
+    @ApiModelProperty("Delivery address ID")
     private Long memberReceiveAddressId;
-    //Coupon id
+    @ApiModelProperty("Coupon ID")
     private Long couponId;
-    //Points used
+    @ApiModelProperty("Integration used")
     private Integer useIntegration;
-    //Payment method
+    @ApiModelProperty("payment method")
     private Integer payType;
-
-    public Long getMemberReceiveAddressId() {
-        return memberReceiveAddressId;
-    }
-
-    public void setMemberReceiveAddressId(Long memberReceiveAddressId) {
-        this.memberReceiveAddressId = memberReceiveAddressId;
-    }
-
-    public Long getCouponId() {
-        return couponId;
-    }
-
-    public void setCouponId(Long couponId) {
-        this.couponId = couponId;
-    }
-
-    public Integer getPayType() {
-        return payType;
-    }
-
-    public void setPayType(Integer payType) {
-        this.payType = payType;
-    }
-
-    public Integer getUseIntegration() {
-        return useIntegration;
-    }
-
-    public void setUseIntegration(Integer useIntegration) {
-        this.useIntegration = useIntegration;
-    }
+    @ApiModelProperty("Product ID of the selected shopping cart")
+    private List<Long> cartIds;
 }

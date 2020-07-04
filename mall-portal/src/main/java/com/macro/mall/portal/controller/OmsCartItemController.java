@@ -49,8 +49,8 @@ public class OmsCartItemController {
     @ApiOperation("Get a member's shopping cart list,Including promotional information")
     @RequestMapping(value = "/list/promotion", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<CartPromotionItem>> listPromotion() {
-        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId());
+    public CommonResult<List<CartPromotionItem>> listPromotion(@RequestParam(required = false) List<Long> cartIds) {
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId(), cartIds);
         return CommonResult.success(cartPromotionItemList);
     }
 

@@ -29,7 +29,7 @@ public interface UmsAdminRoleRelationDao {
     List<UmsPermission> getRolePermissionList(@Param("adminId") Long adminId);
 
     /**
-     * Get all user permissions (including + -permissions)
+     * Get all user permissions (including +- permissions)
      */
     List<UmsPermission> getPermissionList(@Param("adminId") Long adminId);
 

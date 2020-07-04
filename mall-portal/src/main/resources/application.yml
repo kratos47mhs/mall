@@ -11,7 +11,7 @@ jwt:
   tokenHeader: Authorization #Request header stored by JWT
   secret: mall-portal-secret #The key used by JWT encryption and decryption
   expiration: 604800 #JWT overdue time(60*60*24*7)
-  tokenHead: Bearer  #Get the beginning in the JWT load
+  tokenHead: 'Bearer'  #Get the beginning in the JWT load
 
 secure:
   ignored:

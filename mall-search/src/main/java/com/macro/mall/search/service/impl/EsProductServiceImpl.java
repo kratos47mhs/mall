@@ -54,7 +54,6 @@ public class EsProductServiceImpl implements EsProductService {
     private EsProductRepository productRepository;
     @Autowired
     private ElasticsearchTemplate elasticsearchTemplate;
-
     @Override
     public int importAll() {
         List<EsProduct> esProductList = productDao.getAllEsProductList(null);
@@ -104,7 +103,7 @@ public class EsProductServiceImpl implements EsProductService {
     }
 
     @Override
-    public Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort) {
+    public Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort) {
         Pageable pageable = PageRequest.of(pageNum, pageSize);
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
         //Pagination
@@ -148,10 +147,10 @@ public class EsProductServiceImpl implements EsProductService {
         } else if (sort == 3) {
             //By price from low to high
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("price").order(SortOrder.ASC));
-        } else if (sort == 4) {
+        }else if(sort==4){
             //Price high to low
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("price").order(SortOrder.DESC));
-        } else {
+        }else{
             //By relevance
             nativeSearchQueryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
         }
@@ -206,28 +205,28 @@ public class EsProductServiceImpl implements EsProductService {
     public EsProductRelatedInfo searchRelatedInfo(String keyword) {
         NativeSearchQueryBuilder builder = new NativeSearchQueryBuilder();
         //search condition
-        if (StringUtils.isEmpty(keyword)) {
+        if(StringUtils.isEmpty(keyword)){
             builder.withQuery(QueryBuilders.matchAllQuery());
-        } else {
-            builder.withQuery(QueryBuilders.multiMatchQuery(keyword, "name", "subTitle", "keywords"));
+        }else{
+            builder.withQuery(QueryBuilders.multiMatchQuery(keyword,"name","subTitle","keywords"));
         }
         //Aggregate search brand name
         builder.addAggregation(AggregationBuilders.terms("brandNames").field("brandName"));
         //Collection search category name
         builder.addAggregation(AggregationBuilders.terms("productCategoryNames").field("productCategoryName"));
         //Aggregate search product attributes, remove type = 1 attributes
-        AbstractAggregationBuilder aggregationBuilder = AggregationBuilders.nested("allAttrValues", "attrValueList")
-                .subAggregation(AggregationBuilders.filter("productAttrs", QueryBuilders.termQuery("attrValueList.type", 1))
-                        .subAggregation(AggregationBuilders.terms("attrIds")
-                                .field("attrValueList.productAttributeId")
-                                .subAggregation(AggregationBuilders.terms("attrValues")
-                                        .field("attrValueList.value"))
-                                .subAggregation(AggregationBuilders.terms("attrNames")
-                                        .field("attrValueList.name"))));
+        AbstractAggregationBuilder aggregationBuilder = AggregationBuilders.nested("allAttrValues","attrValueList")
+                .subAggregation(AggregationBuilders.filter("productAttrs",QueryBuilders.termQuery("attrValueList.type",1))
+                .subAggregation(AggregationBuilders.terms("attrIds")
+                        .field("attrValueList.productAttributeId")
+                        .subAggregation(AggregationBuilders.terms("attrValues")
+                                .field("attrValueList.value"))
+                        .subAggregation(AggregationBuilders.terms("attrNames")
+                                .field("attrValueList.name"))));
         builder.addAggregation(aggregationBuilder);
         NativeSearchQuery searchQuery = builder.build();
         return elasticsearchTemplate.query(searchQuery, response -> {
-            LOGGER.info("DSL:{}", searchQuery.getQuery().toString());
+            LOGGER.info("DSL:{}",searchQuery.getQuery().toString());
             return convertProductRelatedInfo(response);
         });
     }
@@ -241,14 +240,14 @@ public class EsProductServiceImpl implements EsProductService {
         //Set brand
         Aggregation brandNames = aggregationMap.get("brandNames");
         List<String> brandNameList = new ArrayList<>();
-        for (int i = 0; i < ((Terms) brandNames).getBuckets().size(); i++) {
+        for(int i = 0; i<((Terms) brandNames).getBuckets().size(); i++){
             brandNameList.add(((Terms) brandNames).getBuckets().get(i).getKeyAsString());
         }
         productRelatedInfo.setBrandNames(brandNameList);
         //Set category
         Aggregation productCategoryNames = aggregationMap.get("productCategoryNames");
         List<String> productCategoryNameList = new ArrayList<>();
-        for (int i = 0; i < ((Terms) productCategoryNames).getBuckets().size(); i++) {
+        for(int i=0;i<((Terms) productCategoryNames).getBuckets().size();i++){
             productCategoryNameList.add(((Terms) productCategoryNames).getBuckets().get(i).getKeyAsString());
         }
         productRelatedInfo.setProductCategoryNames(productCategoryNameList);
@@ -266,7 +265,7 @@ public class EsProductServiceImpl implements EsProductService {
                 attrValueList.add(attrValue.getKeyAsString());
             }
             attr.setAttrValues(attrValueList);
-            if (!CollectionUtils.isEmpty(attrNames)) {
+            if(!CollectionUtils.isEmpty(attrNames)){
                 String attrName = attrNames.get(0).getKeyAsString();
                 attr.setAttrName(attrName);
             }

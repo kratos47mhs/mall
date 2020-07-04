@@ -10,5 +10,8 @@ import java.util.List;
  * Created by macro on 2018/8/28.
  */
 public interface SmsCouponProductCategoryRelationDao {
+    /**
+     * Bulk creation
+     */
     int insertList(@Param("list")List<SmsCouponProductCategoryRelation> productCategoryRelationList);
 }

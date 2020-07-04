@@ -28,8 +28,7 @@ public class MinioController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MinioController.class);
     @Value("${minio.endpoint}")
-    private String ENDPOINT;
-    @Value("${minio.bucketName}")
+    private String ENDPOINT;    @Value("${minio.bucketName}")
     private String BUCKET_NAME;
     @Value("${minio.accessKey}")
     private String ACCESS_KEY;
