@@ -59,8 +59,9 @@ public class MemberReadHistoryController {
     @ApiOperation("Get user browsing records by page")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<MemberReadHistory>> list(Long memberId) {
-        List<MemberReadHistory> memberReadHistoryList = memberReadHistoryService.list(memberId);
-        return CommonResult.success(memberReadHistoryList);
+    public CommonResult<CommonPage<MemberReadHistory>> list(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                                            @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
+        Page<MemberReadHistory> page = memberReadHistoryService.list(pageNum, pageSize);
+        return CommonResult.success(CommonPage.restPage(page));
     }
 }

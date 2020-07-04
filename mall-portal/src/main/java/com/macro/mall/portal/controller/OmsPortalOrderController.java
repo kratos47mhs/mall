@@ -30,8 +30,8 @@ public class OmsPortalOrderController {
     @ApiOperation("Generate confirmation information based on shopping cart information")
     @RequestMapping(value = "/generateConfirmOrder", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<ConfirmOrderResult> generateConfirmOrder() {
-        ConfirmOrderResult confirmOrderResult = portalOrderService.generateConfirmOrder();
+    public CommonResult<ConfirmOrderResult> generateConfirmOrder(@RequestBody List<Long> cartIds) {
+        ConfirmOrderResult confirmOrderResult = portalOrderService.generateConfirmOrder(cartIds);
         return CommonResult.success(confirmOrderResult);
     }
 
@@ -40,18 +40,18 @@ public class OmsPortalOrderController {
     @ResponseBody
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
         Map<String, Object> result = portalOrderService.generateOrder(orderParam);
-        return CommonResult.success(result, "下单成功");
+        return CommonResult.success(result, "successfully ordered");
     }
 
-    @ApiOperation("Callback for successful payment")
+    @ApiOperation("Callback for successful user payment")
     @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult paySuccess(@RequestParam Long orderId) {
-        Integer count = portalOrderService.paySuccess(orderId);
-        return CommonResult.success(count, "Payment Successful");
+    public CommonResult paySuccess(@RequestParam Long orderId, @RequestParam Integer payType) {
+        Integer count = portalOrderService.paySuccess(orderId, payType);
+        return CommonResult.success(count, "payment successful");
     }
 
-    @ApiOperation("Automatically cancel overtime orders")
+    @ApiOperation("Automatically cancel TimeOut orders")
     @RequestMapping(value = "/cancelTimeOutOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelTimeOutOrder() {
@@ -59,7 +59,7 @@ public class OmsPortalOrderController {
         return CommonResult.success(null);
     }
 
-    @ApiOperation("Cancel a single overtime order")
+    @ApiOperation("Cancel a single TimeOut order")
     @RequestMapping(value = "/cancelOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelOrder(Long orderId) {
@@ -68,14 +68,14 @@ public class OmsPortalOrderController {
     }
 
     @ApiOperation("Get user order list by status page")
-    @ApiImplicitParam(name = "status", value = "Order Status：-1->Complete；0->Pending payment；1->To be Delivered；2->Shipped；3->Completed；4->Closed",
+    @ApiImplicitParam(name = "status", value = "Order status: -1->All; 0->Pending payment; 1->Pending delivery; 2->Delivered; 3->Completed; 4->Closed",
             defaultValue = "-1", allowableValues = "-1,0,1,2,3,4", paramType = "query", dataType = "int")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<OmsOrderDetail>> list(@RequestParam Integer status,
-                                                   @RequestParam(required = false, defaultValue = "1") Integer pageNum,
-                                                   @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
-        CommonPage<OmsOrderDetail> orderPage = portalOrderService.list(status,pageNum,pageSize);
+                                                         @RequestParam(required = false, defaultValue = "1") Integer pageNum,
+                                                         @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+        CommonPage<OmsOrderDetail> orderPage = portalOrderService.list(status, pageNum, pageSize);
         return CommonResult.success(orderPage);
     }
 

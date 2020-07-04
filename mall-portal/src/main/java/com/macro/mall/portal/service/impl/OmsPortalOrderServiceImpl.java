@@ -53,9 +53,9 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     private SmsCouponHistoryMapper couponHistoryMapper;
     @Autowired
     private RedisService redisService;
-    @Value("${redis.key.orderId}")
+    @Value(" ${redis.key.orderId} ")
     private String REDIS_KEY_ORDER_ID;
-    @Value("${redis.database}")
+    @Value(" ${redis.database} ")
     private String REDIS_DATABASE;
     @Autowired
     private PortalOrderDao portalOrderDao;
@@ -67,11 +67,11 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     private CancelOrderSender cancelOrderSender;
 
     @Override
-    public ConfirmOrderResult generateConfirmOrder() {
+    public ConfirmOrderResult generateConfirmOrder(List<Long> cartIds) {
         ConfirmOrderResult result = new ConfirmOrderResult();
         //Get shopping cart information
         UmsMember currentMember = memberService.getCurrentMember();
-        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId());
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId(), cartIds);
         result.setCartPromotionItemList(cartPromotionItemList);
         //Get a list of user shipping addresses
         List<UmsMemberReceiveAddress> memberReceiveAddressList = memberReceiveAddressService.list();
@@ -95,7 +95,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         List<OmsOrderItem> orderItemList = new ArrayList<>();
         //Get shopping cart and discount information
         UmsMember currentMember = memberService.getCurrentMember();
-        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId());
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId(), orderParam.getCartIds());
         for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
             //Generate order information
             OmsOrderItem orderItem = new OmsOrderItem();
@@ -135,9 +135,9 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
             //Handle coupons for ordering products
             handleCouponAmount(orderItemList, couponHistoryDetail);
         }
-        //Determine whether to use points
-        if (orderParam.getUseIntegration() == null) {
-            //Do not use points
+        //Determine whether to use Integration
+        if (orderParam.getUseIntegration() == null || orderParam.getUseIntegration().equals(0)) {
+            //Do not use Integration
             for (OmsOrderItem orderItem : orderItemList) {
                 orderItem.setIntegrationAmount(new BigDecimal(0));
             }
@@ -210,6 +210,11 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         order.setGrowth(calcGiftGrowth(orderItemList));
         //Generate order number
         order.setOrderSn(generateOrderSn(order));
+        //Set the number of days for automatic order
+        List<OmsOrderSetting> orderSettings = orderSettingMapper.selectByExample(new OmsOrderSettingExample());
+        if (CollUtil.isNotEmpty(orderSettings)) {
+            order.setAutoConfirmDay(orderSettings.get(0).getConfirmOvertime());
+        }
         // TODO: 2018/9/3 bill_*,delivery_*
         //Insert order table and order item table
         orderMapper.insert(order);
@@ -238,12 +243,13 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     }
 
     @Override
-    public Integer paySuccess(Long orderId) {
+    public Integer paySuccess(Long orderId, Integer payType) {
         //Modify order payment status
         OmsOrder order = new OmsOrder();
         order.setId(orderId);
         order.setStatus(1);
         order.setPaymentTime(new Date());
+        order.setPayType(payType);
         orderMapper.updateByPrimaryKeySelective(order);
         //Restore the locked inventory of all ordered products and deduct the real inventory
         OmsOrderDetail orderDetail = portalOrderDao.getDetail(orderId);
@@ -253,7 +259,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 
     @Override
     public Integer cancelTimeOutOrder() {
-        Integer count=0;
+        Integer count = 0;
         OmsOrderSetting orderSetting = orderSettingMapper.selectByPrimaryKey(1L);
         //Check overtime, unpaid orders and order details
         List<OmsOrderDetail> timeOutOrders = portalOrderDao.getTimeOutOrders(orderSetting.getNormalOrderOvertime());
@@ -324,10 +330,10 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     public void confirmReceiveOrder(Long orderId) {
         UmsMember member = memberService.getCurrentMember();
         OmsOrder order = orderMapper.selectByPrimaryKey(orderId);
-        if(!member.getId().equals(order.getMemberId())){
+        if (!member.getId().equals(order.getMemberId())) {
             Asserts.fail("Can't confirm other people's orders！");
         }
-        if(order.getStatus()!=2){
+        if (order.getStatus() != 2) {
             Asserts.fail("The order has not been shipped！");
         }
         order.setStatus(3);
@@ -338,16 +344,16 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 
     @Override
     public CommonPage<OmsOrderDetail> list(Integer status, Integer pageNum, Integer pageSize) {
-        if(status==-1){
+        if (status == -1) {
             status = null;
         }
         UmsMember member = memberService.getCurrentMember();
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         OmsOrderExample orderExample = new OmsOrderExample();
         OmsOrderExample.Criteria criteria = orderExample.createCriteria();
         criteria.andDeleteStatusEqualTo(0)
                 .andMemberIdEqualTo(member.getId());
-        if(status!=null){
+        if (status != null) {
             criteria.andStatusEqualTo(status);
         }
         orderExample.setOrderByClause("create_time desc");
@@ -359,7 +365,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         resultPage.setPageSize(orderPage.getPageSize());
         resultPage.setTotal(orderPage.getTotal());
         resultPage.setTotalPage(orderPage.getTotalPage());
-        if(CollUtil.isEmpty(orderList)){
+        if (CollUtil.isEmpty(orderList)) {
             return resultPage;
         }
         //Set data information
@@ -370,7 +376,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         List<OmsOrderDetail> orderDetailList = new ArrayList<>();
         for (OmsOrder omsOrder : orderList) {
             OmsOrderDetail orderDetail = new OmsOrderDetail();
-            BeanUtil.copyProperties(omsOrder,orderDetail);
+            BeanUtil.copyProperties(omsOrder, orderDetail);
             List<OmsOrderItem> relatedItemList = orderItemList.stream().filter(item -> item.getOrderId().equals(orderDetail.getId())).collect(Collectors.toList());
             orderDetail.setOrderItemList(relatedItemList);
             orderDetailList.add(orderDetail);
@@ -386,7 +392,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         example.createCriteria().andOrderIdEqualTo(orderId);
         List<OmsOrderItem> orderItemList = orderItemMapper.selectByExample(example);
         OmsOrderDetail orderDetail = new OmsOrderDetail();
-        BeanUtil.copyProperties(omsOrder,orderDetail);
+        BeanUtil.copyProperties(omsOrder, orderDetail);
         orderDetail.setOrderItemList(orderItemList);
         return orderDetail;
     }
@@ -395,13 +401,13 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     public void deleteOrder(Long orderId) {
         UmsMember member = memberService.getCurrentMember();
         OmsOrder order = orderMapper.selectByPrimaryKey(orderId);
-        if(!member.getId().equals(order.getMemberId())){
+        if (!member.getId().equals(order.getMemberId())) {
             Asserts.fail("Cannot delete orders from others！");
         }
-        if(order.getStatus()==3||order.getStatus()==4){
+        if (order.getStatus() == 3 || order.getStatus() == 4) {
             order.setDeleteStatus(1);
             orderMapper.updateByPrimaryKey(order);
-        }else{
+        } else {
             Asserts.fail("Can only delete completed or closed orders！");
         }
     }
@@ -412,7 +418,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     private String generateOrderSn(OmsOrder order) {
         StringBuilder sb = new StringBuilder();
         String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        String key = REDIS_DATABASE+":"+ REDIS_KEY_ORDER_ID + date;
+        String key = REDIS_DATABASE + ":" + REDIS_KEY_ORDER_ID + date;
         Long increment = redisService.incr(key, 1);
         sb.append(date);
         sb.append(String.format("%02d", order.getSourceType()));
@@ -499,10 +505,10 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         StringBuilder sb = new StringBuilder();
         for (OmsOrderItem orderItem : orderItemList) {
             sb.append(orderItem.getPromotionName());
-            sb.append(",");
+            sb.append(";");
         }
         String result = sb.toString();
-        if (result.endsWith(",")) {
+        if (result.endsWith(";")) {
             result = result.substring(0, result.length() - 1);
         }
         return result;
@@ -635,7 +641,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
      *
      * @param couponHistoryDetail Coupon details
      * @param orderItemList       Order Products
-     * @param type                Use relationship type: 0-> related classification; 1-> designated product
+     * @param type                Use relationship type: 0-> related categories; 1-> designated product
      */
     private List<OmsOrderItem> getCouponOrderItemByRelation(SmsCouponHistoryDetail couponHistoryDetail, List<OmsOrderItem> orderItemList, int type) {
         List<OmsOrderItem> result = new ArrayList<>();
@@ -710,7 +716,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
      */
     private boolean hasStock(List<CartPromotionItem> cartPromotionItemList) {
         for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
-            if (cartPromotionItem.getRealStock()==null||cartPromotionItem.getRealStock() <= 0) {
+            if (cartPromotionItem.getRealStock() == null || cartPromotionItem.getRealStock() <= 0) {
                 return false;
             }
         }
