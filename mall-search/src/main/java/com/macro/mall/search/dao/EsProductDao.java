@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface EsProductDao {
     /**
-     * 获取指定ID的搜索商品
+     * Get the search product with the specified ID
      */
     List<EsProduct> getAllEsProductList(@Param("id") Long id);
 }

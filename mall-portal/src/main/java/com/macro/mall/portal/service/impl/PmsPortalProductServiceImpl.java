@@ -56,7 +56,7 @@ public class PmsPortalProductServiceImpl implements PmsPortalProductService {
         if (productCategoryId != null) {
             criteria.andProductCategoryIdEqualTo(productCategoryId);
         }
-        //1->按新品；2->按销量；3->价格从低到高；4->价格从高到低
+        //1->According to new products; 2->According to sales volume; 3->Price from low to high; 4->Price from high to low
         if (sort == 1) {
             example.setOrderByClause("id desc");
         } else if (sort == 2) {
@@ -82,18 +82,18 @@ public class PmsPortalProductServiceImpl implements PmsPortalProductService {
     @Override
     public PmsPortalProductDetail detail(Long id) {
         PmsPortalProductDetail result = new PmsPortalProductDetail();
-        //获取商品信息
+        //Get product information
         PmsProduct product = productMapper.selectByPrimaryKey(id);
         result.setProduct(product);
-        //获取品牌信息
+        //Get brand information
         PmsBrand brand = brandMapper.selectByPrimaryKey(product.getBrandId());
         result.setBrand(brand);
-        //获取商品属性信息
+        //Get product attribute information
         PmsProductAttributeExample attributeExample = new PmsProductAttributeExample();
         attributeExample.createCriteria().andProductAttributeCategoryIdEqualTo(product.getProductAttributeCategoryId());
         List<PmsProductAttribute> productAttributeList = productAttributeMapper.selectByExample(attributeExample);
         result.setProductAttributeList(productAttributeList);
-        //获取商品属性值信息
+        //Get product attribute value information
         if(CollUtil.isNotEmpty(productAttributeList)){
             List<Long> attributeIds = productAttributeList.stream().map(PmsProductAttribute::getId).collect(Collectors.toList());
             PmsProductAttributeValueExample attributeValueExample = new PmsProductAttributeValueExample();
@@ -102,33 +102,33 @@ public class PmsPortalProductServiceImpl implements PmsPortalProductService {
             List<PmsProductAttributeValue> productAttributeValueList = productAttributeValueMapper.selectByExample(attributeValueExample);
             result.setProductAttributeValueList(productAttributeValueList);
         }
-        //获取商品SKU库存信息
+        //Get product SKU inventory information
         PmsSkuStockExample skuExample = new PmsSkuStockExample();
         skuExample.createCriteria().andProductIdEqualTo(product.getId());
         List<PmsSkuStock> skuStockList = skuStockMapper.selectByExample(skuExample);
         result.setSkuStockList(skuStockList);
-        //商品阶梯价格设置
+        //Product ladder price setting
         if(product.getPromotionType()==3){
             PmsProductLadderExample ladderExample = new PmsProductLadderExample();
             ladderExample.createCriteria().andProductIdEqualTo(product.getId());
             List<PmsProductLadder> productLadderList = productLadderMapper.selectByExample(ladderExample);
             result.setProductLadderList(productLadderList);
         }
-        //商品满减价格设置
+        //Product full price reduction setting
         if(product.getPromotionType()==4){
             PmsProductFullReductionExample fullReductionExample = new PmsProductFullReductionExample();
             fullReductionExample.createCriteria().andProductIdEqualTo(product.getId());
             List<PmsProductFullReduction> productFullReductionList = productFullReductionMapper.selectByExample(fullReductionExample);
             result.setProductFullReductionList(productFullReductionList);
         }
-        //商品可用优惠券
+        //Available coupons
         result.setCouponList(portalProductDao.getAvailableCouponList(product.getId(),product.getProductCategoryId()));
         return result;
     }
 
 
     /**
-     * 初始对象转化为节点对象
+     * The initial object is converted into a node object
      */
     private PmsProductCategoryNode covert(PmsProductCategory item, List<PmsProductCategory> allList) {
         PmsProductCategoryNode node = new PmsProductCategoryNode();

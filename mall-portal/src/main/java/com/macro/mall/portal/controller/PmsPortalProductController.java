@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 前台商品管理Controller
+ * Portal product management Controller
  * Created by macro on 2020/4/6.
  */
 @Controller
-@Api(tags = "PmsPortalProductController", description = "前台商品管理")
+@Api(tags = "PmsPortalProductController", description = "Portal Product Controller")
 @RequestMapping("/product")
 public class PmsPortalProductController {
 
     @Autowired
     private PmsPortalProductService portalProductService;
 
-    @ApiOperation(value = "综合搜索、筛选、排序")
-    @ApiImplicitParam(name = "sort", value = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
+    @ApiOperation(value = "Comprehensive search, filter, sort")
+    @ApiImplicitParam(name = "sort", value = "Sort field: 0-> by relevance; 1-> by new product; 2-> by sales volume; 3-> price from low to high; 4-> price from high to low",
             defaultValue = "0", allowableValues = "0,1,2,3,4", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
@@ -42,7 +42,7 @@ public class PmsPortalProductController {
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
-    @ApiOperation("以树形结构获取所有商品分类")
+    @ApiOperation("Get all product categories in a tree structure")
     @RequestMapping(value = "/categoryTreeList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProductCategoryNode>> categoryTreeList() {
@@ -50,7 +50,7 @@ public class PmsPortalProductController {
         return CommonResult.success(list);
     }
 
-    @ApiOperation("获取前台商品详情")
+    @ApiOperation("Get product details at the portal")
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsPortalProductDetail> detail(@PathVariable Long id) {

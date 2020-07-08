@@ -1764,19 +1764,19 @@ CREATE TABLE `pms_product_attribute_category`
 INSERT INTO `pms_product_attribute_category`
 VALUES ('1', 'Clothing-T-Shirt', '2', '5');
 INSERT INTO `pms_product_attribute_category`
-VALUES ('2', 'Clothing-裤装', '2', '4');
+VALUES ('2', 'Clothing-Trousers', '2', '4');
 INSERT INTO `pms_product_attribute_category`
 VALUES ('3', 'Mobile phone-Mobile Communications', '2', '4');
 INSERT INTO `pms_product_attribute_category`
-VALUES ('4', '配件', '0', '0');
+VALUES ('4', 'Accessories', '0', '0');
 INSERT INTO `pms_product_attribute_category`
 VALUES ('5', 'Home', '0', '0');
 INSERT INTO `pms_product_attribute_category`
-VALUES ('6', '洗护', '0', '0');
+VALUES ('6', 'Wash', '0', '0');
 INSERT INTO `pms_product_attribute_category`
-VALUES ('10', '测试分类', '0', '0');
+VALUES ('10', 'Test category', '0', '0');
 INSERT INTO `pms_product_attribute_category`
-VALUES ('11', 'Clothing-鞋帽', '3', '0');
+VALUES ('11', 'Clothing-Shoes', '3', '0');
 
 -- ----------------------------
 -- Table structure for pms_product_attribute_value
@@ -1823,23 +1823,23 @@ VALUES ('12', '22', '24', 'no110');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('13', '22', '25', 'Spring');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('14', '22', '37', '青年');
+VALUES ('14', '22', '37', 'Young');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('15', '22', '38', '2018年春');
+VALUES ('15', '22', '38', 'Spring 2018');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('16', '22', '39', '长袖');
+VALUES ('16', '22', '39', 'Long sleeve');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('124', '23', '7', '米白色,浅黄色');
+VALUES ('124', '23', '7', 'Off-white, light yellow');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('125', '23', '24', 'no1098');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('126', '23', '25', 'Spring');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('127', '23', '37', '青年');
+VALUES ('127', '23', '37', 'Young');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('128', '23', '38', '2018年春');
+VALUES ('128', '23', '38', 'Spring 2018');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('129', '23', '39', '长袖');
+VALUES ('129', '23', '39', 'Long sleeve');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('130', '1', '13', null);
 INSERT INTO `pms_product_attribute_value`
@@ -1881,21 +1881,21 @@ VALUES ('183', '31', '24', null);
 INSERT INTO `pms_product_attribute_value`
 VALUES ('184', '31', '25', 'Summer');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('185', '31', '37', '青年');
+VALUES ('185', '31', '37', 'Young');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('186', '31', '38', '2018年夏');
+VALUES ('186', '31', '38', 'Summer 2018');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('187', '31', '39', '短袖');
+VALUES ('187', '31', '39', 'Short sleeve');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('198', '30', '24', null);
 INSERT INTO `pms_product_attribute_value`
 VALUES ('199', '30', '25', 'Summer');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('200', '30', '37', '青年');
+VALUES ('200', '30', '37', 'Young');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('201', '30', '38', '2018年夏');
+VALUES ('201', '30', '38', 'Summer 2018');
 INSERT INTO `pms_product_attribute_value`
-VALUES ('202', '30', '39', '短袖');
+VALUES ('202', '30', '39', 'Short sleeve');
 INSERT INTO `pms_product_attribute_value`
 VALUES ('213', '27', '43', 'Black,Blue');
 INSERT INTO `pms_product_attribute_value`

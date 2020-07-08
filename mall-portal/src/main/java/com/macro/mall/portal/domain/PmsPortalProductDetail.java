@@ -8,26 +8,26 @@ import lombok.Setter;
 import java.util.List;
 
 /**
- * 前台商品详情
+ * Portal product details
  * Created by macro on 2020/4/6.
  */
 @Getter
 @Setter
 public class PmsPortalProductDetail{
-    @ApiModelProperty("商品信息")
+    @ApiModelProperty("Product Information")
     private PmsProduct product;
-    @ApiModelProperty("商品品牌")
+    @ApiModelProperty("Product Brand")
     private PmsBrand brand;
-    @ApiModelProperty("商品属性与参数")
+    @ApiModelProperty("Product Attributes and parameters")
     private List<PmsProductAttribute> productAttributeList;
-    @ApiModelProperty("手动录入的商品属性与参数值")
+    @ApiModelProperty("Product attributes and parameter values entered manually")
     private List<PmsProductAttributeValue> productAttributeValueList;
-    @ApiModelProperty("商品的sku库存信息")
+    @ApiModelProperty("Product sku inventory information")
     private List<PmsSkuStock> skuStockList;
-    @ApiModelProperty("商品阶梯价格设置")
+    @ApiModelProperty("Product ladder price setting")
     private List<PmsProductLadder> productLadderList;
-    @ApiModelProperty("商品满减价格设置")
+    @ApiModelProperty("Product full price reduction setting")
     private List<PmsProductFullReduction> productFullReductionList;
-    @ApiModelProperty("商品可用优惠券")
+    @ApiModelProperty("Available coupons")
     private List<SmsCoupon> couponList;
 }

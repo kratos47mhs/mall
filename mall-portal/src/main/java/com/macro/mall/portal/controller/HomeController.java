@@ -60,7 +60,7 @@ public class HomeController {
         return CommonResult.success(subjectList);
     }
 
-    @ApiOperation("分页获取人气推荐商品")
+    @ApiOperation("Get popular recommended products by page")
     @RequestMapping(value = "/hotProductList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> hotProductList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -69,7 +69,7 @@ public class HomeController {
         return CommonResult.success(productList);
     }
 
-    @ApiOperation("分页获取新品推荐商品")
+    @ApiOperation("Get new recommended products by page")
     @RequestMapping(value = "/newProductList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> newProductList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,

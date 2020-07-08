@@ -36,12 +36,12 @@ public interface HomeService {
     List<CmsSubject> getSubjectList(Long cateId, Integer pageSize, Integer pageNum);
 
     /**
-     * 分页获取人气推荐商品
+     * Get popular recommended products by page
      */
     List<PmsProduct> hotProductList(Integer pageNum, Integer pageSize);
 
     /**
-     * 分页获取新品推荐商品
+     * Get new recommended products by page
      */
     List<PmsProduct> newProductList(Integer pageNum, Integer pageSize);
 }

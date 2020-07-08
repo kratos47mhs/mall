@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * Member Collection Service
+ * Member Product Collection Management Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberCollectionService {

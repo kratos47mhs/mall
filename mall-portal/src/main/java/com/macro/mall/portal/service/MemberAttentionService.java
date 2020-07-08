@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * Members follow Service
+ * Member Brand Attention Management Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberAttentionService {
@@ -26,12 +26,12 @@ public interface MemberAttentionService {
     Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize);
 
     /**
-     * 获取用户关注详情
+     * Get user attention details
      */
     MemberBrandAttention detail(Long brandId);
 
     /**
-     * 清空关注列表
+     * Clear watchlist
      */
     void clear();
 }

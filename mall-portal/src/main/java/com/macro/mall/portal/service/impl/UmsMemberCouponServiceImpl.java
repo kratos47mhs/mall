@@ -172,7 +172,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     @Override
     public List<SmsCoupon> listByProduct(Long productId) {
         List<Long> allCouponIds = new ArrayList<>();
-        //获取指定商品优惠券
+        //Get designated product coupons
         SmsCouponProductRelationExample cprExample = new SmsCouponProductRelationExample();
         cprExample.createCriteria().andProductIdEqualTo(productId);
         List<SmsCouponProductRelation> cprList = couponProductRelationMapper.selectByExample(cprExample);
@@ -180,7 +180,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
             List<Long> couponIds = cprList.stream().map(SmsCouponProductRelation::getCouponId).collect(Collectors.toList());
             allCouponIds.addAll(couponIds);
         }
-        //获取指定分类优惠券
+        //Get coupons in designated categories
         PmsProduct product = productMapper.selectByPrimaryKey(productId);
         SmsCouponProductCategoryRelationExample cpcrExample = new SmsCouponProductCategoryRelationExample();
         cpcrExample.createCriteria().andProductCategoryIdEqualTo(product.getProductCategoryId());
@@ -192,7 +192,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         if(CollUtil.isEmpty(allCouponIds)){
             return new ArrayList<>();
         }
-        //所有优惠券
+        //All coupons
         SmsCouponExample couponExample = new SmsCouponExample();
         couponExample.createCriteria().andEndTimeGreaterThan(new Date())
                 .andStartTimeLessThan(new Date())

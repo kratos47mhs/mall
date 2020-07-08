@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 会员收藏管理Controller
+ * Member Collection Management Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "MemberCollectionController", description = "会员收藏管理")
+@Api(tags = "MemberCollectionController", description = "Member Collection Management")
 @RequestMapping("/member/productCollection")
 public class MemberProductCollectionController {
     @Autowired
     private MemberCollectionService memberCollectionService;
 
-    @ApiOperation("添加商品收藏")
+    @ApiOperation("Add product collection")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody MemberProductCollection productCollection) {
@@ -36,7 +36,7 @@ public class MemberProductCollectionController {
         }
     }
 
-    @ApiOperation("删除收藏商品")
+    @ApiOperation("Delete favorite products")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(Long productId) {
@@ -48,7 +48,7 @@ public class MemberProductCollectionController {
         }
     }
 
-    @ApiOperation("显示收藏列表")
+    @ApiOperation("Show favorite list")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<MemberProductCollection>> list(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -57,7 +57,7 @@ public class MemberProductCollectionController {
         return CommonResult.success(CommonPage.restPage(page));
     }
 
-    @ApiOperation("显示收藏商品详情")
+    @ApiOperation("Show favorite product details")
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<MemberProductCollection> detail(@RequestParam Long productId) {
@@ -65,7 +65,7 @@ public class MemberProductCollectionController {
         return CommonResult.success(memberProductCollection);
     }
 
-    @ApiOperation("清空收藏列表")
+    @ApiOperation("Clear favorites list")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult clear() {
