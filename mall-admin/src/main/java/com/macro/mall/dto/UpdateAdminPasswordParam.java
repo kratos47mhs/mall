@@ -13,13 +13,13 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @Setter
 public class UpdateAdminPasswordParam {
+    @NotEmpty
     @ApiModelProperty(value = "Username", required = true)
-    @NotEmpty(message = "Username can not be empty")
     private String username;
+    @NotEmpty
     @ApiModelProperty(value = "Old Password", required = true)
-    @NotEmpty(message = "Old password cannot be empty")
     private String oldPassword;
+    @NotEmpty
     @ApiModelProperty(value = "New Password", required = true)
-    @NotEmpty(message = "The new password cannot be empty")
     private String newPassword;
 }

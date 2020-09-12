@@ -35,7 +35,14 @@ spring:
     virtual-host: /mall
     username: mall
     password: mall
-    publisher-confirms: true #If the callback is required for asynchronous messages, it must be set to true
-# Log configuration
+
 logging:
-  path: /var/logs
+  file:
+    path: /var/logs
+  level:
+    root: info
+    com.macro.mall: info
+
+logstash:
+  host: logstash
+

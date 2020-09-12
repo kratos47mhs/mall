@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * My Batis configuration class
+ * My Batis related configuration
  * Created by macro on 2019/4/8.
  */
 @Configuration

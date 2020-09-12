@@ -1,7 +1,6 @@
 package com.macro.mall.dao;
 
 import com.macro.mall.model.UmsAdminRoleRelation;
-import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
 import org.apache.ibatis.annotations.Param;
@@ -24,22 +23,12 @@ public interface UmsAdminRoleRelationDao {
     List<UmsRole> getRoleList(@Param("adminId") Long adminId);
 
     /**
-     * Get all user role permissions
-     */
-    List<UmsPermission> getRolePermissionList(@Param("adminId") Long adminId);
-
-    /**
-     * Get all user permissions (including +- permissions)
-     */
-    List<UmsPermission> getPermissionList(@Param("adminId") Long adminId);
-
-    /**
-     * Get all user-accessible resources
+     * Get all accessible resources of the user
      */
     List<UmsResource> getResourceList(@Param("adminId") Long adminId);
 
     /**
-     * Get a list of resource related user IDs
+     * Get a list of resource-related user IDs
      */
     List<Long> getAdminIdList(@Param("resourceId") Long resourceId);
 }

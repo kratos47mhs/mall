@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Message queue configuration
+ * Message queue related configuration
  * Created by macro on 2018/9/14.
  */
 @Configuration
@@ -58,7 +58,7 @@ public class RabbitMqConfig {
      * Bind the order queue to the switch
      */
     @Bean
-    Binding orderBinding(DirectExchange orderDirect, Queue orderQueue) {
+    Binding orderBinding(DirectExchange orderDirect,Queue orderQueue){
         return BindingBuilder
                 .bind(orderQueue)
                 .to(orderDirect)
@@ -69,7 +69,7 @@ public class RabbitMqConfig {
      * Bind the order delay queue to the switch
      */
     @Bean
-    Binding orderTtlBinding(DirectExchange orderTtlDirect, Queue orderTtlQueue) {
+    Binding orderTtlBinding(DirectExchange orderTtlDirect,Queue orderTtlQueue){
         return BindingBuilder
                 .bind(orderTtlQueue)
                 .to(orderTtlDirect)

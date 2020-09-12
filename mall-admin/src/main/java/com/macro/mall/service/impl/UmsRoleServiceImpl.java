@@ -2,10 +2,8 @@ package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.dao.UmsRoleDao;
-import com.macro.mall.dao.UmsRolePermissionRelationDao;
 import com.macro.mall.mapper.UmsRoleMapper;
 import com.macro.mall.mapper.UmsRoleMenuRelationMapper;
-import com.macro.mall.mapper.UmsRolePermissionRelationMapper;
 import com.macro.mall.mapper.UmsRoleResourceRelationMapper;
 import com.macro.mall.model.*;
 import com.macro.mall.service.UmsAdminCacheService;
@@ -14,12 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * Background role management Service implementation class
+ * Admin role management Service implementation class
  * Created by macro on 2018/9/30.
  */
 @Service
@@ -27,18 +24,13 @@ public class UmsRoleServiceImpl implements UmsRoleService {
     @Autowired
     private UmsRoleMapper roleMapper;
     @Autowired
-    private UmsRolePermissionRelationMapper rolePermissionRelationMapper;
-    @Autowired
     private UmsRoleMenuRelationMapper roleMenuRelationMapper;
     @Autowired
     private UmsRoleResourceRelationMapper roleResourceRelationMapper;
     @Autowired
-    private UmsRolePermissionRelationDao rolePermissionRelationDao;
-    @Autowired
     private UmsRoleDao roleDao;
     @Autowired
     private UmsAdminCacheService adminCacheService;
-
     @Override
     public int create(UmsRole role) {
         role.setCreateTime(new Date());
@@ -60,28 +52,6 @@ public class UmsRoleServiceImpl implements UmsRoleService {
         int count = roleMapper.deleteByExample(example);
         adminCacheService.delResourceListByRoleIds(ids);
         return count;
-    }
-
-    @Override
-    public List<UmsPermission> getPermissionList(Long roleId) {
-        return rolePermissionRelationDao.getPermissionList(roleId);
-    }
-
-    @Override
-    public int updatePermission(Long roleId, List<Long> permissionIds) {
-        //First delete the original relationship
-        UmsRolePermissionRelationExample example = new UmsRolePermissionRelationExample();
-        example.createCriteria().andRoleIdEqualTo(roleId);
-        rolePermissionRelationMapper.deleteByExample(example);
-        //Insert new relationships in bulk
-        List<UmsRolePermissionRelation> relationList = new ArrayList<>();
-        for (Long permissionId : permissionIds) {
-            UmsRolePermissionRelation relation = new UmsRolePermissionRelation();
-            relation.setRoleId(roleId);
-            relation.setPermissionId(permissionId);
-            relationList.add(relation);
-        }
-        return rolePermissionRelationDao.insertList(relationList);
     }
 
     @Override
@@ -117,7 +87,7 @@ public class UmsRoleServiceImpl implements UmsRoleService {
     @Override
     public int allocMenu(Long roleId, List<Long> menuIds) {
         //First delete the original relationship
-        UmsRoleMenuRelationExample example = new UmsRoleMenuRelationExample();
+        UmsRoleMenuRelationExample example=new UmsRoleMenuRelationExample();
         example.createCriteria().andRoleIdEqualTo(roleId);
         roleMenuRelationMapper.deleteByExample(example);
         //Insert new relationships in bulk
@@ -133,7 +103,7 @@ public class UmsRoleServiceImpl implements UmsRoleService {
     @Override
     public int allocResource(Long roleId, List<Long> resourceIds) {
         //First delete the original relationship
-        UmsRoleResourceRelationExample example = new UmsRoleResourceRelationExample();
+        UmsRoleResourceRelationExample example=new UmsRoleResourceRelationExample();
         example.createCriteria().andRoleIdEqualTo(roleId);
         roleResourceRelationMapper.deleteByExample(example);
         //Insert new relationships in bulk

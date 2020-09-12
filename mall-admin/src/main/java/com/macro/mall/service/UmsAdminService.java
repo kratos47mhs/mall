@@ -3,7 +3,6 @@ package com.macro.mall.service;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,16 +27,14 @@ public interface UmsAdminService {
 
     /**
      * Login function
-     *
      * @param username Username
      * @param password Password
      * @return The generated token of JWT
      */
-    String login(String username, String password);
+    String login(String username,String password);
 
     /**
      * Refresh token function
-     *
      * @param oldToken Old token
      */
     String refreshToken(String oldToken);
@@ -77,17 +74,6 @@ public interface UmsAdminService {
      * Get the accessible resources of the specified user
      */
     List<UmsResource> getResourceList(Long adminId);
-
-    /**
-     * Modify user's + -permission
-     */
-    @Transactional
-    int updatePermission(Long adminId, List<Long> permissionIds);
-
-    /**
-     * Get all user permissions (including role permissions and +-permissions)
-     */
-    List<UmsPermission> getPermissionList(Long adminId);
 
     /**
      * change Password

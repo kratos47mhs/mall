@@ -15,20 +15,17 @@ spring:
       stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
-
   data:
     mongodb:
       host: localhost
       port: 27017
       database: mall-port
-
   redis:
     host: localhost # Redis server address
     database: 0 # Redis database index (default is 0)
     port: 6379 # Redis server connection port
     password: # Redis server connection password (default is blank)
     timeout: 300ms # Connection timeout (ms)
-
   rabbitmq:
     host: localhost
     port: 5672
@@ -37,10 +34,11 @@ spring:
     password: mall
     publisher-confirms: true #If the callback is required for asynchronous messages, it must be set to true
 
-# Log configuration
 logging:
   level:
-    org.springframework.data.mongodb.core: debug
-    com.macro.mall.mapper: debug
-    com.macro.mall.portal.dao: debug
+    root: info
+    com.macro.mall: debug
+
+logstash:
+  host: localhost
 

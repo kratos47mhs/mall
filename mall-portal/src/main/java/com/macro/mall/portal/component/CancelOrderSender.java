@@ -11,17 +11,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * The sender of the cancellation order message
+ * Producer of cancel order message
  * Created by macro on 2018/9/14.
  */
 @Component
 public class CancelOrderSender {
-    private static Logger LOGGER = LoggerFactory.getLogger(CancelOrderSender.class);
+    private static Logger LOGGER =LoggerFactory.getLogger(CancelOrderSender.class);
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    public void sendMessage(Long orderId, final long delayTimes) {
-        //Send a message to the deferred queue
+    public void sendMessage(Long orderId,final long delayTimes){
+        //Send a message to the delay queue
         amqpTemplate.convertAndSend(QueueEnum.QUEUE_TTL_ORDER_CANCEL.getExchange(), QueueEnum.QUEUE_TTL_ORDER_CANCEL.getRouteKey(), orderId, new MessagePostProcessor() {
             @Override
             public Message postProcessMessage(Message message) throws AmqpException {
@@ -30,6 +30,6 @@ public class CancelOrderSender {
                 return message;
             }
         });
-        LOGGER.info("send orderId:{}", orderId);
+        LOGGER.info("send orderId:{}",orderId);
     }
 }

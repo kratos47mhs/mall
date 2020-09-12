@@ -14,16 +14,16 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @Setter
 public class UmsAdminParam {
+    @NotEmpty
     @ApiModelProperty(value = "Username", required = true)
-    @NotEmpty(message = "Username can not be empty")
     private String username;
+    @NotEmpty
     @ApiModelProperty(value = "Password", required = true)
-    @NotEmpty(message = "Password can not be empty")
     private String password;
     @ApiModelProperty(value = "Profile Picture")
     private String icon;
+    @Email
     @ApiModelProperty(value = "Email")
-    @Email(message = "Email format is illegal")
     private String email;
     @ApiModelProperty(value = "User's Nickname")
     private String nickName;

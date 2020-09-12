@@ -10,7 +10,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 
 /**
- * Jackson configuration class
+ * Jackson related configuration class
  * json does not return null fields
  * Created by macro on 2018/8/2.
  */
@@ -29,7 +29,7 @@ public class JacksonConfig {
         // Include.NON_NULL attribute is NULL not serialized, that is, null fields do not participate in serialization
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
-        // The field is reserved and the null value is converted to""
+        // The field is reserved, and the null value is converted to""
 //        objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>()
 //        {
 //            @Override

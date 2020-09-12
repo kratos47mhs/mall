@@ -19,7 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
 /**
- * Spring Security configuration
+ * Spring Security related configuration
  */
 @Configuration
 @EnableWebSecurity
@@ -30,9 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()//Configure permissions
-//                .antMatchers("/").access("hasRole('TEST')")//This path requires the TEST role
-                .antMatchers("/").authenticated()//This path requires login authentication
-//                .antMatchers("/brand/list").hasAuthority("TEST")//This path requires TEST permission
+//                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
+//                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
                 .antMatchers("/**").permitAll()
                 .and()//Enable http-based authentication
                 .httpBasic()

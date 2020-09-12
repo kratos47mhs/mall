@@ -15,24 +15,24 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsBrandParam {
+    @NotEmpty
     @ApiModelProperty(value = "brand name",required = true)
-    @NotEmpty(message = "Name is required")
     private String name;
     @ApiModelProperty(value = "Brand initials")
     private String firstLetter;
+    @Min(value = 0)
     @ApiModelProperty(value = "Sort field")
-    @Min(value = 0, message = "Sort minimum is 0")
     private Integer sort;
+    @FlagValidator(value = {"0","1"}, message = "Manufacturer status is incorrect")
     @ApiModelProperty(value = "Whether it is a manufacturer")
-    @FlagValidator(value = {"0","1"}, message = "The manufacturer status is incorrect")
     private Integer factoryStatus;
-    @ApiModelProperty(value = "Whether to display")
     @FlagValidator(value = {"0","1"}, message = "Incorrect display status")
+    @ApiModelProperty(value = "Whether to display")
     private Integer showStatus;
+    @NotEmpty
     @ApiModelProperty(value = "Brand logo",required = true)
-    @NotEmpty(message = "Brand logo cannot be empty")
     private String logo;
-    @ApiModelProperty(value = "Brand image")
+    @ApiModelProperty(value = "Brand big picture")
     private String bigPic;
     @ApiModelProperty(value = "Brand story")
     private String brandStory;

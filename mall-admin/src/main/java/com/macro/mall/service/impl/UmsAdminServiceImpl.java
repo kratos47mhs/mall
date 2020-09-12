@@ -4,13 +4,12 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.bo.AdminUserDetails;
-import com.macro.mall.dao.UmsAdminPermissionRelationDao;
+import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.dao.UmsAdminRoleRelationDao;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.mapper.UmsAdminLoginLogMapper;
 import com.macro.mall.mapper.UmsAdminMapper;
-import com.macro.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.macro.mall.mapper.UmsAdminRoleRelationMapper;
 import com.macro.mall.model.*;
 import com.macro.mall.security.util.JwtTokenUtil;
@@ -20,7 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -37,7 +35,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Ums Admin Service implementation class
@@ -57,10 +54,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Autowired
     private UmsAdminRoleRelationDao adminRoleRelationDao;
     @Autowired
-    private UmsAdminPermissionRelationMapper adminPermissionRelationMapper;
-    @Autowired
-    private UmsAdminPermissionRelationDao adminPermissionRelationDao;
-    @Autowired
     private UmsAdminLoginLogMapper loginLogMapper;
     @Autowired
     private UmsAdminCacheService adminCacheService;
@@ -68,7 +61,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public UmsAdmin getAdminByUsername(String username) {
         UmsAdmin admin = adminCacheService.getAdmin(username);
-        if (admin != null) return admin;
+        if(admin!=null) return  admin;
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
@@ -106,8 +99,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         //The password needs to be transmitted after the client encrypts
         try {
             UserDetails userDetails = loadUserByUsername(username);
-            if (!passwordEncoder.matches(password, userDetails.getPassword())) {
-                throw new BadCredentialsException("The password is incorrect");
+            if(!passwordEncoder.matches(password,userDetails.getPassword())){
+                Asserts.fail("The password is incorrect");
+            }
+            if(!userDetails.isEnabled()){
+                Asserts.fail("Account has been disabled");
             }
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -115,19 +111,18 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 //            updateLoginTimeByUsername(username);
             insertLoginLog(username);
         } catch (AuthenticationException e) {
-            LOGGER.warn("Login abnormal:{}", e.getMessage());
+            LOGGER.warn("Login exception:{}", e.getMessage());
         }
         return token;
     }
 
     /**
      * Add login record
-     *
      * @param username Username
      */
     private void insertLoginLog(String username) {
         UmsAdmin admin = getAdminByUsername(username);
-        if (admin == null) return;
+        if(admin==null) return;
         UmsAdminLoginLog loginLog = new UmsAdminLoginLog();
         loginLog.setAdminId(admin.getId());
         loginLog.setCreateTime(new Date());
@@ -174,14 +169,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public int update(Long id, UmsAdmin admin) {
         admin.setId(id);
         UmsAdmin rawAdmin = adminMapper.selectByPrimaryKey(id);
-        if (rawAdmin.getPassword().equals(admin.getPassword())) {
+        if(rawAdmin.getPassword().equals(admin.getPassword())){
             //The same as the original encrypted password does not need to be modified
             admin.setPassword(null);
-        } else {
+        }else{
             //Different from the original encrypted password requires encryption modification
-            if (StrUtil.isEmpty(admin.getPassword())) {
+            if(StrUtil.isEmpty(admin.getPassword())){
                 admin.setPassword(null);
-            } else {
+            }else{
                 admin.setPassword(passwordEncoder.encode(admin.getPassword()));
             }
         }
@@ -228,73 +223,31 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public List<UmsResource> getResourceList(Long adminId) {
         List<UmsResource> resourceList = adminCacheService.getResourceList(adminId);
-        if (CollUtil.isNotEmpty(resourceList)) {
-            return resourceList;
+        if(CollUtil.isNotEmpty(resourceList)){
+            return  resourceList;
         }
         resourceList = adminRoleRelationDao.getResourceList(adminId);
-        if (CollUtil.isNotEmpty(resourceList)) {
-            adminCacheService.setResourceList(adminId, resourceList);
+        if(CollUtil.isNotEmpty(resourceList)){
+            adminCacheService.setResourceList(adminId,resourceList);
         }
         return resourceList;
     }
 
     @Override
-    public int updatePermission(Long adminId, List<Long> permissionIds) {
-        //Delete all original permission relationships
-        UmsAdminPermissionRelationExample relationExample = new UmsAdminPermissionRelationExample();
-        relationExample.createCriteria().andAdminIdEqualTo(adminId);
-        adminPermissionRelationMapper.deleteByExample(relationExample);
-        //Get all user role permissions
-        List<UmsPermission> permissionList = adminRoleRelationDao.getRolePermissionList(adminId);
-        List<Long> rolePermissionList = permissionList.stream().map(UmsPermission::getId).collect(Collectors.toList());
-        if (!CollectionUtils.isEmpty(permissionIds)) {
-            List<UmsAdminPermissionRelation> relationList = new ArrayList<>();
-            //Filter out + permissions
-            List<Long> addPermissionIdList = permissionIds.stream().filter(permissionId -> !rolePermissionList.contains(permissionId)).collect(Collectors.toList());
-            //Filter out-permissions
-            List<Long> subPermissionIdList = rolePermissionList.stream().filter(permissionId -> !permissionIds.contains(permissionId)).collect(Collectors.toList());
-            //Insert + -permission relationship
-            relationList.addAll(convert(adminId, 1, addPermissionIdList));
-            relationList.addAll(convert(adminId, -1, subPermissionIdList));
-            return adminPermissionRelationDao.insertList(relationList);
-        }
-        return 0;
-    }
-
-    /**
-     * Translate + -permission relationship into object
-     */
-    private List<UmsAdminPermissionRelation> convert(Long adminId, Integer type, List<Long> permissionIdList) {
-        List<UmsAdminPermissionRelation> relationList = permissionIdList.stream().map(permissionId -> {
-            UmsAdminPermissionRelation relation = new UmsAdminPermissionRelation();
-            relation.setAdminId(adminId);
-            relation.setType(type);
-            relation.setPermissionId(permissionId);
-            return relation;
-        }).collect(Collectors.toList());
-        return relationList;
-    }
-
-    @Override
-    public List<UmsPermission> getPermissionList(Long adminId) {
-        return adminRoleRelationDao.getPermissionList(adminId);
-    }
-
-    @Override
     public int updatePassword(UpdateAdminPasswordParam param) {
-        if (StrUtil.isEmpty(param.getUsername())
-                || StrUtil.isEmpty(param.getOldPassword())
-                || StrUtil.isEmpty(param.getNewPassword())) {
+        if(StrUtil.isEmpty(param.getUsername())
+                ||StrUtil.isEmpty(param.getOldPassword())
+                ||StrUtil.isEmpty(param.getNewPassword())){
             return -1;
         }
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(param.getUsername());
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
-        if (CollUtil.isEmpty(adminList)) {
+        if(CollUtil.isEmpty(adminList)){
             return -2;
         }
         UmsAdmin umsAdmin = adminList.get(0);
-        if (!passwordEncoder.matches(param.getOldPassword(), umsAdmin.getPassword())) {
+        if(!passwordEncoder.matches(param.getOldPassword(),umsAdmin.getPassword())){
             return -3;
         }
         umsAdmin.setPassword(passwordEncoder.encode(param.getNewPassword()));
@@ -304,13 +257,13 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
+    public UserDetails loadUserByUsername(String username){
         //Get user information
         UmsAdmin admin = getAdminByUsername(username);
         if (admin != null) {
             List<UmsResource> resourceList = getResourceList(admin.getId());
-            return new AdminUserDetails(admin, resourceList);
+            return new AdminUserDetails(admin,resourceList);
         }
-        throw new UsernameNotFoundException("wrong username or password");
+        throw new UsernameNotFoundException("用户名或密码错误");
     }
 }

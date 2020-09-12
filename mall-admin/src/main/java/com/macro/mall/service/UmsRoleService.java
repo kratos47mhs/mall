@@ -1,7 +1,6 @@
 package com.macro.mall.service;
 
 import com.macro.mall.model.UmsMenu;
-import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Background role management service
+ * Admin role management service
  * Created by macro on 2018/9/30.
  */
 public interface UmsRoleService {
@@ -29,23 +28,12 @@ public interface UmsRoleService {
     int delete(List<Long> ids);
 
     /**
-     * Get specified role permissions
-     */
-    List<UmsPermission> getPermissionList(Long roleId);
-
-    /**
-     * Modify the permissions of the specified role
-     */
-    @Transactional
-    int updatePermission(Long roleId, List<Long> permissionIds);
-
-    /**
-     * Get a list of all role
+     * Get a list of all roles
      */
     List<UmsRole> list();
 
     /**
-     * Get a list of roles by page
+     * Get a list of roles
      */
     List<UmsRole> list(String keyword, Integer pageSize, Integer pageNum);
 
@@ -55,17 +43,17 @@ public interface UmsRoleService {
     List<UmsMenu> getMenuList(Long adminId);
 
     /**
-     * Get role related menu
+     * Get role-related menu
      */
     List<UmsMenu> listMenu(Long roleId);
 
     /**
-     * Get role related resources
+     * Get role-related resources
      */
     List<UmsResource> listResource(Long roleId);
 
     /**
-     * Assign Menu to role
+     * Assign menus to roles
      */
     @Transactional
     int allocMenu(Long roleId, List<Long> menuIds);

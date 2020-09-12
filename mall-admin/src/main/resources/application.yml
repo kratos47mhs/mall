@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: mall-admin
   profiles:
     active: dev #The default is the development environment
   servlet:
@@ -63,10 +65,3 @@ minio:
   bucketName: mall #Bucket name
   accessKey: minioadmin #Access key
   secretKey: minioadmin #Secret Key
-
-logging:
-  level:
-    root: info #Log configuration DEBUG,INFO,WARN,ERROR
-    com.macro.mall: debug
-#  file: demo_log.log #Configure log generation path
-#  path: /var/logs #Configure the log file name

@@ -10,18 +10,17 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
- * Product Classification Module Controller
+ * Product Category module Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductCategoryController", description = "Product Category management")
+@Api(tags = "PmsProductCategoryController", description = "Product classification management")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {
     @Autowired
@@ -30,8 +29,7 @@ public class PmsProductCategoryController {
     @ApiOperation("Add product category")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam,
-                               BindingResult result) {
+    public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam) {
         int count = productCategoryService.create(productCategoryParam);
         if (count > 0) {
             return CommonResult.success(count);
@@ -44,9 +42,8 @@ public class PmsProductCategoryController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id,
-                               @Validated
-                               @RequestBody PmsProductCategoryParam productCategoryParam,
-                               BindingResult result) {
+                         @Validated
+                         @RequestBody PmsProductCategoryParam productCategoryParam) {
         int count = productCategoryService.update(id, productCategoryParam);
         if (count > 0) {
             return CommonResult.success(count);

@@ -2388,7 +2388,7 @@ DROP TABLE IF EXISTS `sms_coupon`;
 CREATE TABLE `sms_coupon`
 (
     `id`            bigint(20) NOT NULL AUTO_INCREMENT,
-    `type`          int(1)         DEFAULT NULL COMMENT 'Coupon type; 0-> coupon coupons; 1-> member coupons; 2-> shopping coupons; 3-> registered coupons',
+  `type` int(1) DEFAULT NULL COMMENT 'Coupon type；0->Full coupon；1->Member coupon；2->Shopping coupons；3->Registration coupon',
     `name`          varchar(100)   DEFAULT NULL,
     `platform`      int(1)         DEFAULT NULL COMMENT 'Use platform: 0-> All; 1-> Mobile; 2-> PC',
     `count`         int(11)        DEFAULT NULL COMMENT 'Quantity',
@@ -2406,9 +2406,7 @@ CREATE TABLE `sms_coupon`
     `code`          varchar(64)    DEFAULT NULL COMMENT 'Promo Code',
     `member_level`  int(1)         DEFAULT NULL COMMENT 'Available member types: 0-> infinite time',
     PRIMARY KEY (`id`)
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 24
-  DEFAULT CHARSET = utf8 COMMENT ='Coupon Table';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='优惠卷表';
 
 -- ----------------------------
 -- Records of sms_coupon

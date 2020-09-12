@@ -20,4 +20,11 @@ spring:
     timeout: 300ms # Connection timeout (ms)
 
 logging:
-  path: /var/logs #Configure log generation path
+  file:
+    path: /var/logs
+  level:
+    root: info
+    com.macro.mall: info
+
+logstash:
+  host: logstash

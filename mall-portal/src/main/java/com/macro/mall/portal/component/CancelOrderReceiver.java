@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Processor to cancel the order message
+ * Consumer who canceled the order message
  * Created by macro on 2018/9/14.
  */
 @Component

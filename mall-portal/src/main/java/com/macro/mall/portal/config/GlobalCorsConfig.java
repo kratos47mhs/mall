@@ -7,7 +7,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /**
- * Global cross-domain configuration
+ * Global cross-domain related configuration
  * Created by macro on 2019/7/27.
  */
 @Configuration

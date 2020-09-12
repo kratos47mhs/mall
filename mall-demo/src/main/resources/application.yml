@@ -2,6 +2,8 @@ server:
   port: 8082
 
 spring:
+  application:
+    name: mall-demo
   datasource:
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
@@ -20,11 +22,11 @@ mybatis:
 
 logging:
   level:
-    root: info #Log configuration DEBUG,INFO,WARN,ERROR
+    root: info
     com.macro.mall: debug
 #  file: demo_log.log #Configure log generation path
 #  path: /var/logs #Configure the log file name
 
 host:
   mall:
-    admin: http://localhost:8080
+   admin: http://localhost:8080

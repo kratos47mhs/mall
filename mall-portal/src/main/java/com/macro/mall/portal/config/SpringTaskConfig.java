@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * Scheduled task configuration
+ * Timing task related configuration
  * Created by macro on 2019/4/8.
  */
 @Configuration

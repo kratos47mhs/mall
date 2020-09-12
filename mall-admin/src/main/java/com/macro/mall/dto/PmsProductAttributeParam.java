@@ -14,23 +14,22 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsProductAttributeParam {
-    @ApiModelProperty("Attribute classification ID")
-    @NotEmpty(message = "Attribute category cannot be empty")
+    @NotEmpty
+    @ApiModelProperty("Attribute category ID")
     private Long productAttributeCategoryId;
+    @NotEmpty
     @ApiModelProperty("Attribute name")
-    @NotEmpty(message = "Property name cannot be empty")
     private String name;
-    @ApiModelProperty("Attribute selection type: 0-> Unique; 1-> Single selection; 2-> Multiple selection")
     @FlagValidator({"0","1","2"})
+    @ApiModelProperty("Attribute selection type：0-> Unique；1-> Single selection；2-> Multiple selection")
     private Integer selectType;
-    @ApiModelProperty("Attribute entry method: 0-> manual entry; 1-> select from list")
     @FlagValidator({"0","1"})
+    @ApiModelProperty("Attribute entry method：0-> Manual input；1-> Select from list")
     private Integer inputType;
     @ApiModelProperty("List of optional values, separated by commas")
     private String inputList;
-
     private Integer sort;
-    @ApiModelProperty("Classification screening style: 0-> normal; 1-> color")
+    @ApiModelProperty("Classification filter style: 0->common; 1->color")
     @FlagValidator({"0","1"})
     private Integer filterType;
     @ApiModelProperty("Search type; 0-> No search required; 1-> Keyword search; 2-> Scope search")

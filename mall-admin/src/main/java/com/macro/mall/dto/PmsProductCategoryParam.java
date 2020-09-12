@@ -10,34 +10,34 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 /**
- * Add parameters to update product categories
+ * Add parameters to update product classification
  * Created by macro on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsProductCategoryParam {
-    @ApiModelProperty("Parent category ID")
+    @ApiModelProperty("Number of parent category")
     private Long parentId;
+    @NotEmpty
     @ApiModelProperty(value = "Product category name",required = true)
-    @NotEmpty(message = "Product category name cannot be empty")
     private String name;
     @ApiModelProperty("Product Unit")
     private String productUnit;
-    @ApiModelProperty("Whether to show in the navigation bar")
     @FlagValidator(value = {"0","1"},message = "Status can only be 0 or 1")
+    @ApiModelProperty("Whether to display in the navigation bar")
     private Integer navStatus;
-    @ApiModelProperty("Whether to display")
     @FlagValidator(value = {"0","1"},message = "Status can only be 0 or 1")
+    @ApiModelProperty("Whether to display")
     private Integer showStatus;
+    @Min(value = 0)
     @ApiModelProperty("Sort")
-    @Min(value = 0,message = "Sort minimum is 0")
     private Integer sort;
     @ApiModelProperty("Icon")
     private String icon;
-    @ApiModelProperty("Keywords")
+    @ApiModelProperty("Keyword")
     private String keywords;
     @ApiModelProperty("Description")
     private String description;
-    @ApiModelProperty("Product-related filtering attribute List")
+    @ApiModelProperty("Product-related filter attribute collection")
     private List<Long> productAttributeIdList;
 }

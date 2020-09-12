@@ -18,3 +18,11 @@ spring:
     port: 6379 # Redis server connection port
     password: # Redis server connection password (default is blank)
     timeout: 300ms # Connection timeout (ms)
+
+logging:
+  level:
+    root: info
+    com.macro.mall: debug
+
+logstash:
+  host: localhost

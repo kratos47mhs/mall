@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * My Batis configuration class
+ * My Batis related configuration
  * Created by macro on 2019/4/8.
  */
 @Configuration

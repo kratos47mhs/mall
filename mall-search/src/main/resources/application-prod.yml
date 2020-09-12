@@ -12,12 +12,20 @@ spring:
       stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
-
   data:
     elasticsearch:
       repositories:
         enabled: true
-      cluster-nodes: es:9300
+  elasticsearch:
+    rest:
+      uris: es:9200
 
 logging:
-  path: /var/logs #Configure log generation path
+  file:
+    path: /var/logs
+  level:
+    root: info
+    com.macro.mall: info
+
+logstash:
+  host: logstash

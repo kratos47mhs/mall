@@ -1,12 +1,13 @@
 # mall
 
 <p>
-  <a href="#No public"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
-  <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="Study course"></a>
-  <a href="https://github.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/Cloud%E7%89%88%E6%9C%AC-mall--swarm-brightgreen.svg" alt="Spring Cloud version"></a>
-  <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="Front-end project"></a>
-  <a href="#No public"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
-  <a href="https://gitee.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="Code Cloud"></a>
+  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
+  <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="学习教程"></a>
+  <a href="https://github.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/Cloud%E7%89%88%E6%9C%AC-mall--swarm-brightgreen.svg" alt="SpringCloud版本"></a>
+  <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="前端项目"></a>
+  <a href="http://qm.qq.com/cgi-bin/qm/qr?k=V6xu5c12j9qhnMUNdDRzakNxRKzOxibQ"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/QQ%E7%BE%A4-959351312-red.svg" alt="QQ群"></a>
+  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
+  <a href="https://gitee.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
 </p>
 
 ## Preface
@@ -57,7 +58,7 @@ mall
 
 #### Backend technology
 
-| Technology                 | explanation                | Official website                                                 |
+| 技术                 | 说明                | 官网                                                 |
 | -------------------- | ------------------- | ---------------------------------------------------- |
 | SpringBoot           | 容器+MVC框架        | https://spring.io/projects/spring-boot               |
 | SpringSecurity       | 认证和授权框架      | https://spring.io/projects/spring-security           |
@@ -67,9 +68,9 @@ mall
 | Swagger-UI           | 文档生产工具        | https://github.com/swagger-api/swagger-ui            |
 | Hibernator-Validator | 验证框架            | http://hibernate.org/validator                       |
 | Elasticsearch        | 搜索引擎            | https://github.com/elastic/elasticsearch             |
-| RabbitMq             | 消息队列            | https://www.rabbitmq.com/                            |
+| RabbitMQ             | 消息队列            | https://www.rabbitmq.com/                            |
 | Redis                | 分布式缓存          | https://redis.io/                                    |
-| MongoDb              | NoSql数据库         | https://www.mongodb.com                              |
+| MongoDB              | NoSql数据库         | https://www.mongodb.com                              |
 | Docker               | 应用容器引擎        | https://www.docker.com                               |
 | Druid                | 数据库连接池        | https://github.com/alibaba/druid                     |
 | OSS                  | 对象存储            | https://github.com/aliyun/aliyun-oss-java-sdk        |
@@ -148,23 +149,22 @@ mall
 | ------------- | ------ | ------------------------------------------------------------ |
 | JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
 | Mysql         | 5.7    | https://www.mysql.com/                                       |
-| Redis         | 3.2    | https://redis.io/download                                    |
-| Elasticsearch | 6.2.2  | https://www.elastic.co/downloads                             |
-| MongoDb       | 3.2    | https://www.mongodb.com/download-center                      |
-| RabbitMq      | 3.7.14 | http://www.rabbitmq.com/download.html                        |
+| Redis         | 5.0    | https://redis.io/download                                    |
+| MongoDB       | 4.2.5  | https://www.mongodb.com/download-center                      |
+| RabbitMQ      | 3.7.14 | http://www.rabbitmq.com/download.html                        |
 | Nginx         | 1.10   | http://nginx.org/en/download.html                            |
+| Elasticsearch | 7.6.2  | https://www.elastic.co/downloads/elasticsearch               |
+| Logstash      | 7.6.2  | https://www.elastic.co/cn/downloads/logstash                 |
+| Kibana        | 7.6.2  | https://www.elastic.co/cn/downloads/kibana                   |
 
 ### Construction steps
 
 > Windows environment deployment
 
 - Windows环境搭建请参考：[mall在Windows环境下的部署](http://www.macrozheng.com/#/deploy/mall_deploy_windows);
-- 注意：只启动mall-admin,仅需安装mysql即可;
+- 注意：只启动mall-admin,仅需安装Mysql、Redis即可;
 - 克隆`mall-admin-web`项目，并导入到IDEA中完成编译：[前端项目地址](https://github.com/macrozheng/mall-admin-web);
-- `mall-admin-web`项目的安装及部署请参考：[mall前端项目的安装与部署](http://www.macrozheng.com/#/deploy/mall_deploy_web);
-- ELK日志收集系统的搭建请参考：[SpringBoot应用整合ELK实现日志收集](http://www.macrozheng.com/#/technology/mall_tiny_elk);
-- 使用MinIO存储文件请参考：[前后端分离项目，如何优雅实现文件存储](http://www.macrozheng.com/#/technology/minio_use);
-- 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](http://www.macrozheng.com/#/reference/gaea)。
+- `mall-admin-web`项目的安装及部署请参考：[mall前端项目的安装与部署](http://www.macrozheng.com/#/deploy/mall_deploy_web)。
 
 > Docker environment deployment
 
@@ -173,18 +173,25 @@ mall
 - 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](http://www.macrozheng.com/#/reference/docker_maven);
 - 本项目在Docker容器下的部署请参考：[mall在Linux环境下的部署（基于Docker容器）](http://www.macrozheng.com/#/deploy/mall_deploy_docker);
 - 本项目使用Docker Compose请参考： [mall在Linux环境下的部署（基于Docker Compose）](http://www.macrozheng.com/#/deploy/mall_deploy_docker_compose);
-- 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](http://www.macrozheng.com/#/deploy/mall_deploy_jenkins)。
+- 本项目在Linux下的自动化部署请参考：[mall在Linux环境下的自动化部署（基于Jenkins）](http://www.macrozheng.com/#/deploy/mall_deploy_jenkins);
+
+> 相关环境部署
+
+- ELK日志收集系统的搭建请参考：[SpringBoot应用整合ELK实现日志收集](http://www.macrozheng.com/#/technology/mall_tiny_elk);
+- 使用MinIO存储文件请参考：[前后端分离项目，如何优雅实现文件存储](http://www.macrozheng.com/#/technology/minio_use);
+- 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](http://www.macrozheng.com/#/reference/gaea);
+- Redis集群解决方案请参考：[Docker环境下秒建Redis集群，连SpringBoot也整上了！](http://www.macrozheng.com/#/reference/redis_cluster)。
 
 ## No public
 
-In the serialization of the full set of learning tutorials for the mall project, pay attention to the public number "** kratos47mhs **" for the first time.
+mall项目全套学习教程连载中，关注公众号「**macrozheng**」第一时间获取。
 
-To add WeChat group communication, just reply "** Add Group **" on the public account background.
+加微信群交流，公众号后台回复「**加群**」即可。
 
 ![Public account picture](https://kratos47mhs.github.io/images/logo.png)
 
 ## Licence
 
-[Apache License 2.0](https://github.com/kratos47mhs/mall/blob/master/LICENSE)
+[Apache License 2.0](https://github.com/macrozheng/mall/blob/master/LICENSE)
 
 Copyright (c) 2018-2020 kratos47mhs

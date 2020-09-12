@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * Member Brand Attention Management Service
+ * Member Brand Concern Management Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberAttentionService {

@@ -5,13 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Rest Template configuration
+ * Rest Template related configuration
  * Created by macro on 2018/9/18.
  */
 @Configuration
 public class RestTemplateConfig {
     @Bean
-    public RestTemplate restTemplate() {
+    public RestTemplate restTemplate(){
         return new RestTemplate();
     }
 }
